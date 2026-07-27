@@ -21,6 +21,7 @@ Dieses Plugin registriert projektspezifische Content Types, Taxonomien und klein
 - Interessen
 - Unterkunftsarten
 - Anfrage-Kontext
+- versionierte ACF-Feldgruppen
 
 ## Nicht enthalten
 
@@ -29,6 +30,11 @@ Dieses Plugin registriert projektspezifische Content Types, Taxonomien und klein
 - Headspin UI Tokens
 - ACF-Feldgruppen
 - Designlogik
+
+## ACF Local JSON
+
+Die Feldgruppen liegen unter `acf-json/` und werden beim Laden des Plugins
+automatisch als ACF-JSON-Pfad registriert.
 
 ## Deployment
 

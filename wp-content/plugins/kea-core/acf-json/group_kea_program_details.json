@@ -1,0 +1,18 @@
+{
+    "key":"group_kea_program_details","title":"Programm Details","fields":[
+        {"key":"field_kea_program_destination","label":"Reiseziel","name":"kea_program_destination","type":"post_object","required":1,"post_type":["kea_destination"],"return_format":"id","ui":1},
+        {"key":"field_kea_program_school","label":"Partnerschule","name":"kea_program_school","type":"post_object","required":1,"post_type":["kea_school"],"return_format":"id","ui":1},
+        {"key":"field_kea_program_intro","label":"Kurzprofil","name":"kea_program_intro","type":"textarea","required":1,"rows":3,"new_lines":""},
+        {"key":"field_kea_program_lessons_per_week","label":"Lektionen pro Woche","name":"kea_program_lessons_per_week","type":"number","min":1},
+        {"key":"field_kea_program_duration","label":"Dauer","name":"kea_program_duration","type":"text"},
+        {"key":"field_kea_program_language_level","label":"Sprachniveau","name":"kea_program_language_level","type":"text"},
+        {"key":"field_kea_program_min_age","label":"Mindestalter","name":"kea_program_min_age","type":"number","min":0,"append":"Jahre"},
+        {"key":"field_kea_program_start_dates","label":"Starttermine","name":"kea_program_start_dates","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_program_price_from","label":"Preis ab","name":"kea_program_price_from","type":"number","min":0,"step":"0.01","append":"EUR"},
+        {"key":"field_kea_program_currency","label":"Währung","name":"kea_program_currency","type":"select","choices":{"EUR":"EUR"},"default_value":"EUR","return_format":"value","allow_null":0},
+        {"key":"field_kea_program_price_note","label":"Preis-Hinweis","name":"kea_program_price_note","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_program_included","label":"Enthalten","name":"kea_program_included","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_program_not_included","label":"Nicht enthalten","name":"kea_program_not_included","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_program_cta_note","label":"CTA-Hinweis","name":"kea_program_cta_note","type":"textarea","rows":2,"new_lines":""}
+    ],"location":[[{"param":"post_type","operator":"==","value":"kea_program"}]],"position":"normal","style":"default","label_placement":"top","instruction_placement":"label","active":true,"show_in_rest":1,"modified":1785160800
+}

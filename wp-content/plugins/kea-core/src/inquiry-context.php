@@ -35,6 +35,10 @@ function kea_get_inquiry_url(array $context = []): string
             continue;
         }
 
+        if (!kea_core_is_published_inquiry_context($key, $value)) {
+            continue;
+        }
+
         $query_args[$key] = $value;
     }
 
@@ -52,8 +56,31 @@ function kea_get_current_inquiry_context(): array
             continue;
         }
 
-        $context[$key] = sanitize_title($raw_value);
+        $slug = sanitize_title($raw_value);
+
+        if (!kea_core_is_published_inquiry_context($key, $slug)) {
+            continue;
+        }
+
+        $context[$key] = $slug;
     }
 
     return $context;
+}
+
+function kea_core_is_published_inquiry_context(string $key, string $slug): bool
+{
+    $post_types = [
+        'destination' => 'kea_destination',
+        'program' => 'kea_program',
+        'school' => 'kea_school',
+    ];
+
+    if ($slug === '' || !isset($post_types[$key])) {
+        return false;
+    }
+
+    $post = get_page_by_path($slug, OBJECT, $post_types[$key]);
+
+    return $post instanceof WP_Post && $post->post_status === 'publish';
 }

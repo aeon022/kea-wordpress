@@ -1,0 +1,14 @@
+# Dateipfad: .gitignore
+
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Dependencies, falls später Composer/NPM dazukommt
+/vendor/
+/node_modules/
+
+# Build-Artefakte
+/dist/
+*.zip

@@ -1,0 +1,14 @@
+{
+    "key":"group_kea_school_details","title":"Partnerschule Details","fields":[
+        {"key":"field_kea_school_destination","label":"Reiseziel","name":"kea_school_destination","type":"post_object","required":1,"post_type":["kea_destination"],"return_format":"id","ui":1},
+        {"key":"field_kea_school_logo","label":"Logo","name":"kea_school_logo","type":"image","return_format":"id","preview_size":"medium","library":"all"},
+        {"key":"field_kea_school_gallery","label":"Galerie","name":"kea_school_gallery","type":"gallery","return_format":"id","preview_size":"medium","library":"all"},
+        {"key":"field_kea_school_intro","label":"Kurzprofil","name":"kea_school_intro","type":"textarea","required":1,"rows":3,"new_lines":""},
+        {"key":"field_kea_school_location_note","label":"Hinweis zur Lage","name":"kea_school_location_note","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_school_kea_assessment","label":"KEA-Einschätzung","name":"kea_school_kea_assessment","type":"wysiwyg","tabs":"visual","toolbar":"basic","media_upload":0},
+        {"key":"field_kea_school_accreditations","label":"Akkreditierungen","name":"kea_school_accreditations","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_school_group_size","label":"Durchschnittliche Gruppengröße","name":"kea_school_group_size","type":"number","min":1,"append":"Personen"},
+        {"key":"field_kea_school_min_age","label":"Mindestalter","name":"kea_school_min_age","type":"number","min":0,"append":"Jahre"},
+        {"key":"field_kea_school_facilities","label":"Ausstattung","name":"kea_school_facilities","type":"textarea","rows":3,"new_lines":""}
+    ],"location":[[{"param":"post_type","operator":"==","value":"kea_school"}]],"position":"normal","style":"default","label_placement":"top","instruction_placement":"label","active":true,"show_in_rest":1,"modified":1785160800
+}

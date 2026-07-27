@@ -1,0 +1,20 @@
+{
+    "key": "group_kea_destination_details",
+    "title": "Reiseziel Details",
+    "fields": [
+        {"key":"field_kea_destination_hero_image","label":"Hero-Bild","name":"kea_destination_hero_image","type":"image","return_format":"id","preview_size":"medium","library":"all"},
+        {"key":"field_kea_destination_gallery","label":"Galerie","name":"kea_destination_gallery","type":"gallery","return_format":"id","preview_size":"medium","library":"all"},
+        {"key":"field_kea_destination_intro","label":"Kurzprofil","name":"kea_destination_intro","type":"textarea","required":1,"rows":3,"new_lines":""},
+        {"key":"field_kea_destination_character","label":"Charakter","name":"kea_destination_character","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_destination_kea_recommendation","label":"KEA-Empfehlung","name":"kea_destination_kea_recommendation","type":"wysiwyg","tabs":"visual","toolbar":"basic","media_upload":0},
+        {"key":"field_kea_destination_best_season","label":"Beste Reisezeit","name":"kea_destination_best_season","type":"text"},
+        {"key":"field_kea_destination_min_duration","label":"Mindestdauer","name":"kea_destination_min_duration","type":"text","instructions":"Zum Beispiel: 1 Woche"},
+        {"key":"field_kea_destination_accommodation_note","label":"Hinweis zur Unterkunft","name":"kea_destination_accommodation_note","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_destination_travel_note","label":"Hinweis zur Anreise","name":"kea_destination_travel_note","type":"textarea","rows":3,"new_lines":""},
+        {"key":"field_kea_destination_faq","label":"FAQ","name":"kea_destination_faq","type":"repeater","layout":"block","button_label":"Frage hinzufügen","sub_fields":[{"key":"field_kea_destination_faq_question","label":"Frage","name":"question","type":"text","required":1},{"key":"field_kea_destination_faq_answer","label":"Antwort","name":"answer","type":"wysiwyg","tabs":"visual","toolbar":"basic","media_upload":0}]},
+        {"key":"field_kea_destination_featured_schools","label":"Empfohlene Partnerschulen","name":"kea_destination_featured_schools","type":"relationship","post_type":["kea_school"],"filters":["search"],"return_format":"id"},
+        {"key":"field_kea_destination_featured_programs","label":"Empfohlene Programme","name":"kea_destination_featured_programs","type":"relationship","post_type":["kea_program"],"filters":["search"],"return_format":"id"}
+    ],
+    "location":[[{"param":"post_type","operator":"==","value":"kea_destination"}]],
+    "position":"normal","style":"default","label_placement":"top","instruction_placement":"label","active":true,"show_in_rest":1,"modified":1785160800
+}
