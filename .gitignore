@@ -6,6 +6,8 @@
 # Ignore everything in the WP root except the "wp-content" directory.
 /*
 !.gitignore
+!docs/
+!docs/**
 !wp-content/
  
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
