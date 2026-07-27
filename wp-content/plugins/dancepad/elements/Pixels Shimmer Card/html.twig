@@ -1,0 +1,7 @@
+<pixel-canvas class="dan-gradiently__canvas"
+data-speed="{{ content.pixels.speed.style }}"
+data-gap="{{ content.pixels.gap }}"
+data-active-color="{{ content.border_animation.active_color }}"
+data-colors="{% for item in content.pixels.colors %}{{ item.color }},{% endfor %}">
+</pixel-canvas>
+%%CHILDREN%%

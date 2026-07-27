@@ -1,0 +1,16 @@
+%%SELECTOR%% {
+    flex-direction: {{ content.content.direction }};
+
+    --corner-color: {{ design.corners.color }};
+    --corner-thickness: {{ design.corners.thickness.style }};
+    --corner-width: {{ design.corners.width.style }};
+    --corner-height: {{ design.corners.height.style }};
+
+    --color-active: {{ content.color_animation.active_color }};
+    --color-duration: {{ content.color_animation.duration.style }};
+    --color-ease: {{ content.color_animation.css_easing }};
+}
+%%SELECTOR%% .dan-focus-nav__item {
+    {{ macros.spacing_padding_all(design.focus_items.padding) }}
+    {{ macros.typography(design.focus_items.typography, globalSettings) }}
+}

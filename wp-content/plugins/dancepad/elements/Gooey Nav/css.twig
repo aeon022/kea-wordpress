@@ -1,0 +1,37 @@
+%%SELECTOR%%{
+    width: {{ design.dimensions.width.style }};
+    height: {{ design.dimensions.height.style }};
+    gap: {{ design.dimensions.gap.style }};
+
+    --gooey-merge-distance: {{ content.animation.merge_distance.style }};
+    --gooey-duration: {{ content.animation.duration.style }};
+    --gooey-ease: {{ content.animation.css_easing }};
+
+    {{ macros.spacing_margin_all(design.margin) }}
+    {{ macros.spacing_padding_all(design.padding) }}
+}
+%%SELECTOR%% .dan-gooey-nav__item {
+    {{ macros.spacing_padding_all(design.gooey_items.padding) }}
+    {{ macros.background(design.gooey_items.background) }}
+    {{ macros.borders(design.gooey_items.borders) }}
+    {{ macros.typography(design.gooey_items.typography, globalSettings) }}
+}
+
+{% if design.direction.switch_direction_at.style %}
+@media (max-width: {{ design.direction.switch_direction_at.style }}) {
+  %%SELECTOR%%.dan-gooey-nav--horizontal {
+    flex-direction: column !important;
+  }
+  %%SELECTOR%%.dan-gooey-nav--horizontal .dan-gooey-nav__item:hover {
+    margin-top: calc(-1 * var(--gooey-merge-distance)) !important;
+    margin-bottom: calc(-1 * var(--gooey-merge-distance)) !important;
+  }
+  %%SELECTOR%%.dan-gooey-nav--vertical {
+    flex-direction: row !important;
+  }
+  %%SELECTOR%%.dan-gooey-nav--vertical .dan-gooey-nav__item:hover {
+    margin-left: calc(-1 * var(--gooey-merge-distance)) !important;
+    margin-right: calc(-1 * var(--gooey-merge-distance)) !important;
+  }
+}
+{% endif %}

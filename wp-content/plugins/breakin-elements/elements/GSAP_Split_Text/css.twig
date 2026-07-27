@@ -1,0 +1,10 @@
+%%SELECTOR%% { 
+width: {{ design.design.width.style }};
+{{ macros.typography(design.design.typography, globalSettings) }}
+perspective: {{ content.custom_effect.perspective.style }};
+{{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% span.char {
+  overflow:{{ content.content.overflow_effect }};
+}

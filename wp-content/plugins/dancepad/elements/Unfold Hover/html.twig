@@ -1,0 +1,13 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-unfold-hover__anchor') }}
+  <span class='dan-unfold-hover__wrapper'>
+    <span class='dan-unfold-hover__text' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-unfold-hover__text' data-content="{{ content.content.unfolded_text|escape('html_attr') }}">{{ content.content.unfolded_text|raw }}</span>
+  </span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <span class='dan-unfold-hover__wrapper'>
+    <span class='dan-unfold-hover__text' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-unfold-hover__text' data-content="{{ content.content.unfolded_text|escape('html_attr') }}">{{ content.content.unfolded_text|raw }}</span>
+  </span>
+{% endif %}

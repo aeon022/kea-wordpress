@@ -1,0 +1,20 @@
+.breakdance .gsap-slice-image {
+--slice-row: 1;
+--slice-col: 1;
+max-width: 100%;
+width:100%;
+aspect-ratio:1;
+display: grid;
+grid-template-columns: repeat(var(--slice-col), 1fr);
+grid-template-rows: repeat(var(--slice-row), 1fr);
+}
+
+.breakdance .gsap-slice-image .sliced {
+background-size: calc(100% * var(--slice-col)) calc(100% * var(--slice-row));
+}
+@media not all and (prefers-reduced-motion: reduce) {
+.breakdance .gsap-slice-image.visible {
+opacity:0;
+visibility: hidden;
+}
+}

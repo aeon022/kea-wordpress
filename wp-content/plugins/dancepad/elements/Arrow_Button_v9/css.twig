@@ -1,0 +1,29 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_all(design.margin) }}
+}
+
+%%SELECTOR%% .dan-arrow-button-v9__anchor {
+  background-color: {{ design.button.background }};
+  {{ macros.borders(design.button.borders) }}
+  --dan-ab9-arrow-inset: {{ design.arrow.inset.style }};
+  --dan-ab9-arrow-width: {{ design.arrow.width.style }};
+  --dan-ab9-arrow-radius: {{ design.arrow.radius.style }};
+  --dan-ab9-arrow-fill: {{ design.arrow.fill }};
+  --dan-ab9-arrow-highlight: {{ design.arrow.highlight }};
+  --dan-ab9-arrow-duration: {{ content.interaction.arrow_duration.style }};
+  --dan-ab9-arrow-easing: {{ content.interaction.arrow_easing }};
+  --dan-ab9-track-height: {{ content.interaction.track_height.style }};
+  --dan-ab9-track-duration: {{ content.interaction.track_duration.style }};
+  --dan-ab9-track-easing: {{ content.interaction.track_easing }};
+  --dan-ab9-arrow-shadow: {{ design.arrow.shadow }};
+}
+
+%%SELECTOR%% .dan-arrow-button-v9__label {
+  {{ macros.spacing_padding_all(design.label_padding) }}
+  {{ macros.typography(design.typography, globalSettings) }}
+}
+
+%%SELECTOR%% .dan-arrow-button-v9__anchor:is(:hover, :focus-visible) .dan-arrow-button-v9__label {
+  {{ macros.typographyWithHoverableEverything(design.typography) }}
+}
+

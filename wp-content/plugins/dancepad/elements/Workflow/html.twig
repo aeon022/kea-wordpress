@@ -1,0 +1,23 @@
+<div class="dan-workflow__timeline">
+  {% for step in content.steps.repeater %}
+    <div class="dan-workflow__step">
+      <div class="dan-workflow__badge">
+        <svg class="dan-workflow__progress" viewBox="0 0 258 258">
+          <path class="dan-workflow__circle-fill" d="M 130 6 C 198.483 6 254 61.517 254 130 C 254 198.483 198.483 254 130 254 C 61.517 254 6 198.483 6 130 C 6 61.517 61.517 6 130 6 Z" fill="transparent" pathLength="1"/>
+          <path class="dan-workflow__checkmark" transform="translate(60 85)" d="M3 50L45 92L134 3" fill="transparent" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+          <path class="dan-workflow__circle-stroke" d="M 130 6 C 198.483 6 254 61.517 254 130 C 254 198.483 198.483 254 130 254 C 61.517 254 6 198.483 6 130 C 6 61.517 61.517 6 130 6 Z" fill="transparent" pathLength="1"/>
+        </svg>
+        <span class="dan-workflow__text">{{ step.text }}</span>
+      </div>
+
+      {% if not loop.last %}
+        <div class="dan-workflow__connector">
+          <div class="dan-workflow__line-track">
+            <div class="dan-workflow__line-fill"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+

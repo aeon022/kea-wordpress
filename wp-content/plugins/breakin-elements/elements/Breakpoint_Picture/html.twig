@@ -1,0 +1,18 @@
+<picture>
+{% if content.content.image_phone_portrait %}
+<source media="(max-width: 479px)" srcset="{% if content.content.image_phone_portrait_size %}{{ content.content.image_phone_portrait.sizes[content.content.image_phone_portrait_size].url }}{% else %}{{ content.content.image_phone_portrait.url }}{% endif %}"> 
+{% endif %}
+{% if content.content.image_phone_landscape %}
+<source media="(max-width: 767px)" srcset="{% if content.content.image_phone_landscape_size %}{{ content.content.image_phone_landscape.sizes[content.content.image_phone_landscape_size].url }}{% else %}{{ content.content.image_phone_landscape.url }}{% endif %}"> 
+{% endif %}
+{% if content.content.image_portrait %}
+<source media="(max-width: 1023px)" srcset="{% if content.content.image_portrait_size %}{{ content.content.image_portrait.sizes[content.content.image_portrait_size].url }}{% else %}{{ content.content.image_portrait.url }}{% endif %}"> 
+{% endif %}
+{% if content.content.image_tablet_landcape %}
+<source media="(max-width: 1119px)" srcset="{% if content.content.image_tablet_landcape_size %}{{ content.content.image_tablet_landcape.sizes[content.content.image_tablet_landcape_size].url }}{% else %}{{ content.content.image_tablet_landcape.url }}{% endif %}"> 
+{% endif %}
+{% if content.content.image_desktop %}
+<img src="{% if content.content.image_desktop_size %}{{ content.content.image_desktop.sizes[content.content.image_desktop_size].url }}{% else %}{{ content.content.image_desktop.url }}{% endif %}" {% if content.content.alt == 'from_media_library' %}
+alt="{{ content.content.image_desktop.alt }}"{% elseif content.content.alt == 'custom' %}alt="{{ content.content.custom_alt }}"{% endif %} {% if content.content.lazy_load %}loading="lazy"{% endif %}>
+{% endif %}
+</picture>

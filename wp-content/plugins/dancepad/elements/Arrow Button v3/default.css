@@ -1,0 +1,74 @@
+.breakdance .dan-arrow-button-v3 {
+    --height: calc(var(--dimensions) + var(--padding-top) + var(--padding-bottom));
+
+    padding-left: var(--padding-left);
+    padding-right: calc(var(--gap) + var(--dimensions));
+
+    height: var(--height);
+
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+.breakdance .dan-arrow-button-v3:not(:has(> a)),
+.breakdance .dan-arrow-button-v3 > a{
+    cursor: pointer;
+}
+.breakdance .dan-arrow-button-v3 .dan-arrow-button-v3__anchor{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  
+  	color: currentColor !important;
+    text-decoration: unset;
+}
+.breakdance .dan-arrow-button-v3 svg{
+    min-width: unset;
+    min-height: unset;
+
+    width: var(--dimensions);
+    height: var(--dimensions);
+}
+.breakdance .dan-arrow-button-v3[data-direction="left"]{
+    padding-right: var(--padding-right);
+    padding-left: calc(var(--gap) + var(--dimensions));
+}
+.breakdance .dan-arrow-button-v3 .dan-arrow-button-v3__arrow-wrapper{
+    width: var(--dimensions);
+    height: var(--dimensions);
+    transition: width var(--duration) var(--ease);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: var(--padding-right);
+}
+.breakdance .dan-arrow-button-v3[data-direction="left"] .dan-arrow-button-v3__arrow-wrapper{
+    left: var(--padding-left);
+    right: auto;
+}
+.breakdance .dan-arrow-button-v3 .dan-arrow-button-v3__arrow-container{
+    position: absolute;
+
+    width: var(--dimensions);
+    height: var(--dimensions);
+}
+.breakdance .dan-arrow-button-v3 .dan-arrow-button-v3__arrow{
+    transform: rotate(var(--arrow-default-rotation));
+    transition: transform var(--duration) var(--ease);
+}
+.breakdance .dan-arrow-button-v3:hover .dan-arrow-button-v3__arrow-wrapper{
+    width: calc(100% - var(--padding-right) * 2);
+}
+.breakdance .dan-arrow-button-v3[data-direction="left"]:hover .dan-arrow-button-v3__arrow-wrapper{
+    width: calc(100% - var(--padding-left) * 2);
+}
+.breakdance .dan-arrow-button-v3:hover .dan-arrow-button-v3__arrow{
+    transform: rotate(var(--arrow-rotation));
+} 

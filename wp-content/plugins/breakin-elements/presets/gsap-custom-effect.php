@@ -1,0 +1,142 @@
+<?php
+
+namespace BreakinElements;
+
+use function Breakdance\Elements\c;
+use function Breakdance\Elements\PresetSections\getPresetSection;
+
+\Breakdance\Elements\PresetSections\PresetSectionsController::getInstance()->register(
+    "BreakinElements\\gsap-custom-effect",
+    c(
+        "custom_effect",
+        "Custom Effect",
+        [c(
+        "x",
+        "X",
+        [],
+        ['type' => 'unit', 'layout' => 'inline', 'rangeOptions' => ['min' => -100, 'max' => 100], 'unitOptions' => ['types' => [], 'defaultType' => '%']],
+        false,
+        false,
+        [],
+      ), c(
+        "y",
+        "Y",
+        [],
+        ['type' => 'unit', 'layout' => 'inline', 'rangeOptions' => ['min' => -100, 'max' => 100], 'unitOptions' => ['types' => [], 'defaultType' => '%']],
+        false,
+        false,
+        [],
+      ), c(
+        "scale",
+        "Scale",
+        [],
+        ['type' => 'number', 'layout' => 'inline', 'rangeOptions' => ['min' => 0, 'max' => 10, 'step' => 0.1]],
+        false,
+        false,
+        [],
+      ), c(
+        "rotation_x",
+        "Rotation X",
+        [],
+        ['type' => 'number', 'layout' => 'inline', 'rangeOptions' => ['min' => -360, 'max' => 360]],
+        false,
+        false,
+        [],
+      ), c(
+        "rotation_y",
+        "Rotation Y",
+        [],
+        ['type' => 'number', 'layout' => 'inline', 'rangeOptions' => ['min' => -360, 'max' => 360]],
+        false,
+        false,
+        [],
+      ), c(
+        "rotation_z",
+        "Rotation Z",
+        [],
+        ['type' => 'number', 'layout' => 'inline', 'rangeOptions' => ['min' => -360, 'max' => 360]],
+        false,
+        false,
+        [],
+      ), c(
+        "perspective",
+        "Perspective",
+        [],
+        ['type' => 'unit', 'layout' => 'inline', 'unitOptions' => ['types' => ['px'], 'defaultType' => 'px'], 'rangeOptions' => ['min' => 400, 'max' => 1200, 'step' => 10]],
+        false,
+        false,
+        [],
+      ), c(
+        "transform_origin",
+        "Transform Origin",
+        [],
+        ['type' => 'focus_point', 'layout' => 'vertical', 'focusPointOptions' => ['gridMode' => true]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_values",
+        "Random Values",
+        [c(
+        "random_x",
+        "Random X",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => -500, 'max' => 500, 'step' => 10]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_y",
+        "Random Y",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => -500, 'max' => 500, 'step' => 10]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_scale",
+        "Random Scale",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => 0, 'max' => 10, 'step' => 0.1]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_rotation_x",
+        "Random Rotation X",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => -360, 'max' => 360, 'step' => 10]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_rotation_y",
+        "Random Rotation Y",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => -360, 'max' => 360, 'step' => 10]],
+        false,
+        false,
+        [],
+      ), c(
+        "random_rotation_z",
+        "Random Rotation Z",
+        [],
+        ['type' => 'slider', 'layout' => 'vertical', 'rangeOptions' => ['min' => -360, 'max' => 360, 'step' => 10]],
+        false,
+        false,
+        [],
+      )],
+        ['type' => 'section', 'layout' => 'inline', 'sectionOptions' => ['type' => 'popout']],
+        false,
+        false,
+        [],
+      )],
+        ['type' => 'section', 'layout' => 'vertical', 'condition' => [[['path' => 'content.animation.effect', 'operand' => 'equals', 'value' => 'customeffect']]], 'sectionOptions' => ['preset' => ['slug' => 'BreakinElements\\gsap-custom-effect']]],
+        false,
+        false,
+        [],
+      ),
+    true,
+    null
+);
+

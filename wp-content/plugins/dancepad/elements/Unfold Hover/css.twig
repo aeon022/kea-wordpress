@@ -1,0 +1,18 @@
+%%SELECTOR%%{
+    --intensity: {{ content.animation.intensity.style }}; /**/
+    --link-translate-x: {{ content.animation.amount_to_translate.style }}; /**/
+    --delay-between-letters: {{ content.animation.stagger.style }}; /**/
+
+    --transition-duration: {{ content.animation.duration.style }}; /**/
+    --transition-easing: {{ content.animation.css_easing }}; /**/
+
+    {{ macros.typography(design.typography, globalSettings) }}
+    {{ macros.spacing_margin_all(design.margin) }}
+}
+%%SELECTOR%%:not(:has(> a)),
+%%SELECTOR%% > a{
+    {{ macros.spacing_padding_all(design.padding) }}
+}
+%%SELECTOR%%:hover {
+    {{ macros.typographyWithHoverableEverything(design.typography) }}
+}

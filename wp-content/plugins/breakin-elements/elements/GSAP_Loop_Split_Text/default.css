@@ -1,0 +1,11 @@
+.breakdance .gsap-loop-split-text {
+  max-width:100%;
+  margin:0;
+}
+.breakdance .gsap-loop-split-text span.word,
+.breakdance .gsap-loop-split-text span.char,
+.breakdance .gsap-loop-split-text span.wordwrap,
+.breakdance .gsap-loop-split-text span.charwrap
+{
+  display:inline-flex;
+}

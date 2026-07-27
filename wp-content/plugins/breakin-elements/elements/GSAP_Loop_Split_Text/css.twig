@@ -1,0 +1,8 @@
+%%SELECTOR%% { 
+width: {{ design.design.width.style }};
+{{ macros.typography(design.design.typography, globalSettings) }}
+{{ macros.spacing_margin_y(design.spacing) }}
+}
+%%SELECTOR%% span {
+  {{ macros.typography(design.design.typography_split_text, globalSettings) }}
+}

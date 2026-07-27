@@ -1,0 +1,26 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_all(design.margin) }}
+  --dan-wf-gap: {{ design.layout.gap.style }};
+  --dan-wf-badge-gap: {{ design.badge.gap.style }};
+  --dan-wf-badge-bg: {{ design.badge.background }};
+  --dan-wf-active-bg: {{ design.active_badge.background }};
+  --dan-wf-active-text: {{ design.active_badge.text_color }};
+  --dan-wf-active-border: {{ design.active_badge.border_color }};
+  --dan-wf-progress-color: {{ design.progress.color }};
+  --dan-wf-completed-color: {{ design.progress.completed_color }};
+  --dan-wf-check-color: {{ design.progress.checkmark_color }};
+  --dan-wf-progress-size: {{ design.progress.size.style }};
+  --dan-wf-line-bg: {{ design.line.color }};
+  --dan-wf-line-fill: {{ design.line.fill_color }};
+  --dan-wf-line-h: {{ design.line.height.style }};
+  --dan-wf-line-w: {{ design.line.width.style }};
+  --dan-wf-progress-dur: {{ content.animation.progress_duration }}s;
+  --dan-wf-line-dur: {{ content.animation.line_duration }}s;
+}
+
+%%SELECTOR%% .dan-workflow__badge {
+  {{ macros.typography(design.badge.typography, globalSettings) }}
+  {{ macros.spacing_padding_all(design.badge.padding) }}
+  {{ macros.borders(design.badge.borders) }}
+}
+

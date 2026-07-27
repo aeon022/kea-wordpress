@@ -1,0 +1,38 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_all(design.margin) }}
+  --dan-sync-gap: {{ design.layout.gap_between.style }};
+  --dan-sync-logo-color: {{ design.logo.color }};
+  --dan-sync-logo-size: {{ design.logo.size.style }};
+  --dan-sync-logo-box-size: {{ design.logo.box_size.style }};
+  --dan-sync-logo-box-bg: {{ design.logo.box_background }};
+  --dan-sync-ripple-color: {{ design.ripple.color }};
+  --dan-sync-ripple-border-width: {{ design.ripple.border_width.style }};
+  --dan-sync-ripple-width: {{ design.ripple.width.style }};
+  --dan-sync-line-color: {{ design.line.color }};
+  --dan-sync-path-color: {{ design.line.path_color }};
+  --dan-sync-line-height: {{ design.line.height.style }};
+  --dan-sync-badge-bg: {{ design.badge.background }};
+  --dan-sync-spinner-color: {{ design.spinner.color }};
+  --dan-sync-spinner-bg: {{ design.spinner.background }};
+  --dan-sync-spinner-padding: {{ design.spinner.padding.style }};
+  --dan-sync-ripple-dur: {{ content.animation.ripple_duration }};
+  --dan-sync-trail-dur: {{ content.animation.trail_duration }};
+  --dan-sync-spinner-dur: {{ content.animation.spinner_duration }};
+}
+
+%%SELECTOR%% .dan-sync__icon-box {
+  {{ macros.borders(design.logo.box_borders) }}
+  box-shadow: {{ design.logo.box_shadow }};
+}
+
+%%SELECTOR%% .dan-sync__badge {
+  {{ macros.typography(design.badge.typography, globalSettings) }}
+  {{ macros.spacing_padding_all(design.badge.padding) }}
+  {{ macros.borders(design.badge.borders) }}
+  box-shadow: {{ design.badge.shadow }};
+}
+
+%%SELECTOR%% .dan-sync__spinner {
+  {{ macros.borders(design.spinner.borders) }}
+}
+

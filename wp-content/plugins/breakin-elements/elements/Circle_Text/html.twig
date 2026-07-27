@@ -1,0 +1,15 @@
+{%- set r = content.content.radius -%}
+{%- set rr = r * 2 -%}
+{%- set rrr = 200 - r -%}
+
+<svg viewBox="0 0 400 400">
+  <defs>
+    <path id="circlePath%%ID%%" d="M200,{{ rrr }}a{{ r }},{{ r }} 0 1,1 0,{{ rr }}a{{ r }},{{ r }} 0 1,1 0,-{{ rr }}" />
+
+  </defs>
+  <text font-size="60" fill="#fff" transform="rotate({{ content.content.rotation }},200,200)">
+    <textPath xlink:href="#circlePath%%ID%%" startOffset="50">
+{{ content.content.text }}
+    </textPath>
+  </text>
+</svg>

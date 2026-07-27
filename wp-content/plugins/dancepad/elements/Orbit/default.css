@@ -1,0 +1,143 @@
+/* Orbit - Animated ring of orbiting icons */
+
+.dan-orbit {
+  position: relative;
+  width: var(--dan-orb-size, 328px);
+  height: var(--dan-orb-size, 328px);
+}
+
+.dan-orbit__gradients {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: dan-orbit-grad calc(var(--dan-orb-grad-speed, 10) * 1s) linear infinite;
+  will-change: transform;
+}
+
+.dan-orbit__grad-ring,
+.dan-orbit__circle-ring {
+  --_rs: calc(var(--dan-orb-ring-start, 104px) + var(--ring-i) * var(--dan-orb-ring-gap, 32px));
+  position: absolute;
+  border-radius: 9999px;
+  width: var(--_rs);
+  height: var(--_rs);
+  top: calc(50% - var(--_rs) / 2);
+  left: calc(50% - var(--_rs) / 2);
+}
+
+.dan-orbit__grad-ring {
+  transform: rotate(calc(-1 * var(--ring-rot)));
+}
+
+.dan-orbit__grad-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: conic-gradient(
+    transparent 6.7%,
+    var(--dan-orb-ring-c1, rgba(158, 122, 255, 0.35)) 20.8%,
+    var(--dan-orb-ring-c2, rgba(254, 139, 187, 0.7)) 34.9%,
+    var(--dan-orb-ring-c3, #ffbd7a) 49.99%,
+    transparent 50%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.dan-orbit__circle-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  pointer-events: none;
+  background: var(--dan-orb-circle-color, rgba(235, 235, 255, 0.06));
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.dan-orbit__items {
+  position: absolute;
+  inset: 0;
+  animation: dan-orbit-items calc(var(--dan-orb-orbit-speed, 80) * 1s) linear infinite;
+  will-change: transform;
+}
+
+.dan-orbit__item {
+  position: absolute;
+  left: calc(50% + var(--dan-orb-orbit-d, 240px) / 2 * cos(var(--item-a)) - var(--dan-orb-item-size, 48px) / 2);
+  top: calc(50% + var(--dan-orb-orbit-d, 240px) / 2 * sin(var(--item-a)) - var(--dan-orb-item-size, 48px) / 2);
+  width: var(--dan-orb-item-size, 48px);
+  height: var(--dan-orb-item-size, 48px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: dan-orbit-icon calc(var(--dan-orb-orbit-speed, 80) * 1s) linear infinite;
+  will-change: transform;
+}
+
+.dan-orbit__item img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dan-orbit__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.dan-orbit__logo img {
+  width: calc(var(--dan-orb-size, 328px) * 0.19512);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@keyframes dan-orbit-grad {
+  from {
+    transform: translateZ(0) rotate(0deg);
+  }
+  to {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+@keyframes dan-orbit-items {
+  from {
+    transform: translateZ(0) rotate(0turn);
+  }
+  to {
+    transform: translateZ(0) rotate(-1turn);
+  }
+}
+
+@keyframes dan-orbit-icon {
+  from {
+    transform: translateZ(0) rotate(0turn);
+  }
+  to {
+    transform: translateZ(0) rotate(1turn);
+  }
+}

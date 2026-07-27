@@ -1,0 +1,26 @@
+.breakdance .dan-looping-lines-v3 {
+  display: inline;
+}
+.breakdance .dan-looping-lines-v3[data-flickering="1"] {
+  opacity: 0;
+}
+.breakdance .dan-looping-lines-v3__lines {
+  white-space: nowrap;
+  position: relative;
+  width: 0;
+  display: inline-block;
+}
+.breakdance .dan-looping-lines-v3__line {
+  position: absolute;
+  opacity: 0;
+}
+.breakdance .dan-looping-lines-v3__line[data-active="true"] {
+  position: static;
+  opacity: 1;
+}
+.breakdance .dan-looping-lines-v3__char {
+  display: inline-block;
+  white-space: pre;
+  filter: blur(var(--blur));
+  will-change: filter;
+}

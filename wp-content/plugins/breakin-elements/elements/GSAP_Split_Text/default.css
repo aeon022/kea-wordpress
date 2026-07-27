@@ -1,0 +1,21 @@
+.breakdance .gsap-split-text {
+max-width:100%;
+margin:0;
+}
+@media not all and (prefers-reduced-motion: reduce) {
+.breakdance .gsap-split-text.visible {
+opacity:0;
+visibility: hidden;
+}
+}
+.breakdance .gsap-split-text span.word,
+.breakdance .gsap-split-text span.char {
+   display:inline-flex;
+   transform-style:preserve-3d;
+ 
+}
+.breakdance .gsap-split-text span.wordwrap,
+.breakdance .gsap-split-text span.charwrap {
+  overflow:hidden;
+  display:inline-flex;
+}

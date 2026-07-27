@@ -1,0 +1,26 @@
+<svg class="svgpath" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 550 50">
+<g transform="translate(-25,0)"><path id="wavepath%%ID%%" {% if content.content.flip_vertically %}transform="scale(1,-1) translate(0,-50)"{% endif %}
+{% if content.content.path == 'wave1' %}
+d="M0 0c66.667 0 133.333 50 200 50S333.333 0 400 0s133.333 50 200 50"/>
+{% elseif content.content.path == 'wave2' %}
+d="m0 0 189.509 47.377a43.256 43.256 0 0 0 20.982 0L389.509 2.623a43.256 43.256 0 0 1 20.982 0L600 50"/>
+{% elseif content.content.path == 'wave3' %}
+d="M0 25C50 25 100 0 150 0s100 50 150 50S400 0 450 0s100 25 150 25"/>
+{% elseif content.content.path == 'wave4' %}
+d="M0 50s209-71 300-25C396.789 73.927 600 0 600 0"/>
+{% elseif content.content.path == 'wave5' %}
+d="M0 50C100 33.333 200 0 300 0s200 33.333 300 50"/>
+{% elseif content.content.path == 'wave6' %}
+d="M0 49C40 49 80 0 120 0s80 49 120 49S320 0 360 0s80 49 120 49S560 0 600 0"/>
+{% elseif content.content.path == 'line1' %}
+d="m0 0 600 50" />
+{% elseif content.content.path == 'waves' %}
+d="M0 31c25 0 50-12 75-12s50 12 75 12 50-12 75-12 50 12 75 12 50-12 75-12 50 12 75 12 50-12 75-12 50 12 75 12" />
+{% endif %}/>
+<text text-anchor="middle">
+<textPath id="path%%ID%%" class="my-text" href="#wavepath%%ID%%" startOffset="{{ content.content.start_offset.style |default('50%') }}" alignment-baseline="{{ design.path.alignment |default('middle') }}">
+{{ content.content.text }}
+</textPath>
+</text>
+</g>
+</svg>

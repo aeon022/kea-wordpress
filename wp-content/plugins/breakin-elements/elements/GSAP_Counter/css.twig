@@ -1,0 +1,13 @@
+%%SELECTOR%% {
+width: {{ design.design.width.style }};
+{{ macros.typography(design.design.typography, globalSettings) }}
+{{ macros.spacing_margin_y(design.spacing) }}
+}
+%%SELECTOR%% .counter-prefix {
+{{ macros.typography(design.design.typography_prefix, globalSettings) }}
+}
+%%SELECTOR%% .counter-suffix {
+{{ macros.typography(design.design.typography_suffix, globalSettings) }}
+}
+
+{{ macros.layoutV2(design.layout_v2, breakpoint, isBaseBreakpoint, '%%SELECTOR%%') }}

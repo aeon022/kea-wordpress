@@ -1,0 +1,12 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+%%SELECTOR%% .atropos-shadow { 
+background-color: {{ design.shadow.color }};
+}
+%%SELECTOR%% .atropos-highlight {
+{% if design.highlight.opacity or design.highlight.radius %}
+background-image:radial-gradient(circle at 50%,rgba(255,255,255,{{ design.highlight.opacity }}),transparent {{ design.highlight.radius.style }})
+  {% endif %}
+}
+{{ macros.layoutV2(design.layout_v2, breakpoint, isBaseBreakpoint, '%%SELECTOR%% .atropos-inner') }}

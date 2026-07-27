@@ -1,0 +1,13 @@
+{% for item in content.content.texts %}
+{% if item.link %}
+{{ macros.linkStart(item.link) }}
+{% if item.wrapped %}<span>{% endif %}
+{{ item.text }}
+{% if item.wrapped %}</span>{% endif %}
+{{ macros.linkEnd() }}
+{% else %}
+{% if item.wrapped %}<span>{% endif %}
+{{ item.text }}
+{% if item.wrapped %}</span>{% endif %}
+{% endif %}
+{% endfor %}

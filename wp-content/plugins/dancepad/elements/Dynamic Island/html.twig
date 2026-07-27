@@ -1,0 +1,18 @@
+<div class="dan-dynamic-island__container" tabindex="0" role="button" aria-expanded="false" aria-controls="dynamic-island-nav">
+  <div class="dan-dynamic-island__header">
+    <div class="dan-dynamic-island__progress">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" class="dan-dynamic-island__progress-bg"/>
+        <circle cx="50" cy="50" r="40" class="dan-dynamic-island__progress-bar"/>
+      </svg>
+    </div>
+    <span class="dan-dynamic-island__title"> {{ content.texts.title }} </span>
+    <span class="dan-dynamic-island__percentage">0%</span>
+  </div>
+  <nav class="dan-dynamic-island__nav" id="dynamic-island-nav">
+    <div class="dan-dynamic-island__nav-wrapper">
+    %%CHILDREN%%
+    </div>
+  </nav>
+</div>
+<div class="dan-dynamic-island__overlay"></div>

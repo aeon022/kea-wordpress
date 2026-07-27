@@ -1,0 +1,15 @@
+.breakdance .Prismium-accordion {
+   max-width:100%;
+  --pr-icon-size:14px;
+}
+.breakdance .Prismium-Accordion-Content {
+   max-width:100%;
+}
+.breakdance .Prismium-accordion [data-prismium-content] {
+display:flex;
+flex-direction: column;
+align-items:flex-start;
+}
+.breakdance .Prismium-accordion [data-prismium-hidden] {
+  width:100%
+}

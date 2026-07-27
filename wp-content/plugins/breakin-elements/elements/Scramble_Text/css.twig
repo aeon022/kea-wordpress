@@ -1,0 +1,10 @@
+%%SELECTOR%% { 
+  width: {{ design.size.width.style }};
+  min-height: {{ design.size.min_height.style }};
+  {{ macros.typography(design.design.typography, globalSettings) }}
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% .gw-glitched {
+  {{ macros.typography(design.design.typography_glitched, globalSettings) }}
+}

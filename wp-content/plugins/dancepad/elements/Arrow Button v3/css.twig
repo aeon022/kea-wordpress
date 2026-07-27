@@ -1,0 +1,38 @@
+%%SELECTOR%% {
+    {{ macros.spacing_margin_all(design.margin) }}
+    {{ macros.borders(design.borders) }}
+
+    {{ macros.background(design.background) }}
+
+    --dimensions: {{ design.arrow_styles.dimensions.style }};
+
+    --gap: {{ design.direction.gap.style }};
+
+    --padding-top: {{ design.padding.padding_top.style }};
+    --padding-right: {{ design.padding.padding_right.style }};
+    --padding-bottom: {{ design.padding.padding_bottom.style }};
+    --padding-left: {{ design.padding.padding_left.style }};
+
+    --arrow-rotation: {{ content.animation.rotation.style }};
+    --duration: {{ content.animation.duration.style }};
+    --ease: {{ content.animation.css_easing }};
+}
+%%SELECTOR%% .dan-arrow-button-v3__text {
+    {{ macros.typography(design.typography, globalSettings) }};
+}
+%%SELECTOR%% .dan-arrow-button-v3__arrow-wrapper{
+    background-color: {{ design.arrow_styles.background }};
+    {{ macros.border_radius(design.arrow_styles.border_radius) }}
+    {{ macros.border_complex(design.arrow_styles.border) }}
+}
+%%SELECTOR%% .dan-arrow-button-v3__arrow{
+    --arrow-default-rotation: {{ design.arrow_styles.rotation.style }};
+
+    {{ macros.spacing_complex(design.arrow_styles.padding, 'padding') }}
+    stroke: {{ design.arrow_styles.color }};
+    fill: {{ design.arrow_styles.color }};
+    stroke-width: {{ design.arrow_styles.weight }};
+}
+%%SELECTOR%%:hover .dan-arrow-button-v3__text{
+    {{ macros.typographyWithHoverableEverything(design.typography) }}
+}

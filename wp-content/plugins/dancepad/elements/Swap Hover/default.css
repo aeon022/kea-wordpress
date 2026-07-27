@@ -1,0 +1,76 @@
+.breakdance .dan-swap-hover{
+    display: block;
+    width: fit-content;
+    position: relative;
+
+    padding: 0;
+    line-height: normal;
+}
+.breakdance .dan-swap-hover *{
+    will-change: transform; /*FIXES BLUR*/
+}
+.breakdance .dan-swap-hover .dan-swap-hover__anchor{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+
+    color: currentColor !important;
+    text-decoration: unset;
+}
+.breakdance .dan-swap-hover .dan-swap-hover__span-wrapper {
+    display: block;
+    overflow: hidden;
+}
+.breakdance .dan-swap-hover .dan-swap-hover__span,
+.breakdance .dan-swap-hover .dan-swap-hover__span .char,
+.breakdance .dan-swap-hover .dan-swap-hover__span .word {
+    display: block;
+    position: relative;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    transition: transform var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease), -moz-transform var(--duration) var(--ease), -o-transform var(--duration) var(--ease);
+}
+.breakdance .dan-swap-hover .dan-swap-hover__span::after,
+.breakdance .dan-swap-hover .dan-swap-hover__span .char::after,
+.breakdance .dan-swap-hover .dan-swap-hover__span .word::after {
+    content: var(--after-content);
+    display: block;
+    position: absolute;
+    top: calc(var(--fromtype) * 100%);
+    left: 0;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    transform: skewY(calc(var(--skew) * var(--fromtype)));
+    transition: transform var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease), -moz-transform var(--duration) var(--ease), -o-transform var(--duration) var(--ease);
+}
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span,
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span .char,
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span .word {
+    -webkit-transform: translateY(calc(var(--fromtype) * -100%)) skewY(calc(var(--skew) * -1 * var(--fromtype)));
+    -moz-transform: translateY(calc(var(--fromtype) * -100%)) skewY(calc(var(--skew) * -1 * var(--fromtype)));
+    -ms-transform: translateY(calc(var(--fromtype) * -100%)) skewY(calc(var(--skew) * -1 * var(--fromtype)));
+    -o-transform: translateY(calc(var(--fromtype) * -100%)) skewY(calc(var(--skew) * -1 * var(--fromtype)));
+    transform: translateY(calc(var(--fromtype) * -100%)) skewY(calc(var(--skew) * -1 * var(--fromtype)));
+}
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span-wrapper--remove-line .dan-swap-hover__span{
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+}
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span::after,
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span .char::after,
+.breakdance .dan-swap-hover:hover .dan-swap-hover__span .word::after {
+    -webkit-transform: skewY(calc(var(--skew) * var(--fromtype)));
+    -moz-transform: skewY(calc(var(--skew) * var(--fromtype)));
+    -ms-transform: skewY(calc(var(--skew) * var(--fromtype)));
+    -o-transform: skewY(calc(var(--skew) * var(--fromtype)));
+    transform: skewY(calc(var(--skew) * var(--fromtype)));
+}

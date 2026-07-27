@@ -1,0 +1,33 @@
+<div class="dan-portfolio__bg-container">
+  <img class="dan-portfolio__bg-image" alt="" />
+</div>
+
+{% if content.noise.enabled %}
+<div class="dan-portfolio__noise"></div>
+{% endif %}
+
+<div class="dan-portfolio__container">
+  <div class="dan-portfolio__projects">
+    {% for item in content.projects.repeater %}
+      {% set titleTag = design.project_item.title_tag|default('span') %}
+      {% set imageUrl = item.image.url|default('') %}
+      {% set itemLink = item.link.url|default('') %}
+      {% set openInNewTab = item.link.openInNewTab|default(false) %}
+
+      {% if itemLink %}
+      <a class="dan-portfolio__item"
+         href="{{ itemLink|e('html_attr') }}"
+         {% if openInNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}
+         {% if imageUrl %}data-image="{{ imageUrl|e('html_attr') }}"{% endif %}>
+        <{{ titleTag }} class="dan-portfolio__title">{{ item.title }}</{{ titleTag }}>
+        <span class="dan-portfolio__date">{{ item.date }}</span>
+      </a>
+      {% else %}
+      <div class="dan-portfolio__item" {% if imageUrl %}data-image="{{ imageUrl|e('html_attr') }}"{% endif %}>
+        <{{ titleTag }} class="dan-portfolio__title">{{ item.title }}</{{ titleTag }}>
+        <span class="dan-portfolio__date">{{ item.date }}</span>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

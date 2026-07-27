@@ -1,0 +1,21 @@
+%%SELECTOR%%{
+    --border-width: {{ design.border.border_width.style }};
+    --border-radius: {{ design.border.border_radius.style }};
+
+    --shiny-color: {{ content.animation.shiny_color }};
+    --shiny-background: {{ content.animation.shiny_background }};
+    --fade-duration: {{ content.animation.duration.style }};
+
+    {{ macros.background(design.background) }}
+    {{ macros.spacing_margin_all(design.margin) }}
+}
+%%SELECTOR%%:not(:has(> a)),
+%%SELECTOR%% > a{
+    {{ macros.spacing_padding_all(design.padding) }}
+}
+%%SELECTOR%% .dan-shiny-button__text {
+    {{ macros.typography(design.typography, globalSettings) }}
+}
+%%SELECTOR%%:hover .dan-shiny-button__text{
+    {{ macros.typographyWithHoverableEverything(design.typography) }}
+}

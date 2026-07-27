@@ -1,0 +1,51 @@
+.breakdance .dan-3d-swap-hover{
+    position: relative;
+
+    width: fit-content;
+    height: fit-content;
+
+    display: block;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__anchor{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+
+    color: currentColor !important;
+    text-decoration: unset;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__inner-wrapper{
+    position: relative;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__title--back {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: auto;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__title--front .char {
+    transform-origin: 50% 0%;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__title--back .char {
+    transform-origin: 50% 100%;
+}
+.breakdance .dan-3d-swap-hover *{
+    height: 100%;
+}
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__inner-wrapper,
+.breakdance .dan-3d-swap-hover .dan-3d-swap-hover__title--front{
+  display: block;
+}
+.breakdance .dan-3d-swap-hover[data-flickering="1"]{
+    opacity: 0;
+} 

@@ -1,0 +1,21 @@
+.breakdance .gsap-pathtext {
+   max-width:100%;
+  display:flex;
+}
+@media not all and (prefers-reduced-motion: reduce) {
+.breakdance .gsap-pathtext.visible {
+opacity:0;
+visibility: hidden;
+}
+}
+.breakdance .gsap-pathtext svg.svgpath {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.breakdance .gsap-pathtext svg.svgpath path {
+    fill:transparent;
+    stroke:orange;
+    stroke-width:0px;
+}

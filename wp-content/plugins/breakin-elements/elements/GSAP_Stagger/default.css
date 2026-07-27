@@ -1,0 +1,15 @@
+.breakdance .gsap-stagger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 100%;
+  position: relative;
+  background-size: cover;
+}
+@media not all and (prefers-reduced-motion: reduce) {
+.breakdance .gsap-stagger.visible {
+opacity:0;
+visibility: hidden;
+}
+}

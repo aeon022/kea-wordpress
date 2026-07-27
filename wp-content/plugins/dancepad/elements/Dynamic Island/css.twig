@@ -1,0 +1,54 @@
+%%SELECTOR%% .dan-dynamic-island__container {
+    --left: {{ content.island.left.style }};
+
+    position: {{ content.island.position }};
+    z-index: {{ content.island.zindex }};
+    top: {{ content.island.top.style }};
+
+    width: {{ content.island.width.style }};
+    background-color: {{ content.island.background }};
+    {{ macros.borders(content.island.borders) }}
+}
+
+%%SELECTOR%% .dan-dynamic-island__header {
+    gap: {{ content.island_header.gap.style }};
+    {{ macros.spacing_padding_all(content.island_header.padding) }}
+}
+%%SELECTOR%% .dan-dynamic-island__title {
+    {{ macros.typography(content.texts.title_typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-dynamic-island__link {
+    {{ macros.typography(content.texts.links_typography, globalSettings) }}
+
+    --link-color-duration: {{ content.texts.links_hover_duration.style }};
+    --link-color-ease: {{ content.texts.links_hover_ease }};
+}
+%%SELECTOR%% .dan-dynamic-island__link:hover{
+    color: {{ content.texts.links_hover_color }} !important;
+}
+%%SELECTOR%% .dan-dynamic-island__progress {
+    --dimensions: {{ content.progress.dimensions.style }};
+    --thickness: {{ content.progress.thickness.style }};
+}
+%%SELECTOR%% .dan-dynamic-island__progress-bg {
+    stroke: {{ content.progress.background_color }};
+}
+%%SELECTOR%% .dan-dynamic-island__progress-bar {
+    --progress-bar-duration: {{ content.progress.duration.style }};
+    --progress-bar-ease: {{ content.progress.css_easing }};
+
+    stroke: {{ content.progress.color }};
+}
+%%SELECTOR%% .dan-dynamic-island__nav-wrapper {
+    gap: {{ content.links_wrapper.gap.style }};
+
+    {{ macros.spacing_padding_all(content.links_wrapper.padding) }}
+}
+%%SELECTOR%% .dan-dynamic-island__overlay {
+    z-index: {{ content.overlay.zindex }};
+    --blur: {{ content.overlay.blur.style }};
+    background-color: {{ content.overlay.background }}
+}
+%%SELECTOR%% .dan-dynamic-island__percentage{
+    {{ macros.typography(content.texts.percentage_typography, globalSettings) }}
+}

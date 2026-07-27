@@ -1,0 +1,9 @@
+.breakdance .gsap-parallax-mouse {
+max-width:100%;
+width:100%;
+height:600px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}

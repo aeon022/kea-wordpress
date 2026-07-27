@@ -1,0 +1,13 @@
+%%SELECTOR%%{
+  {{ macros.layout(design.layout) }}
+  {{ macros.size(design.size) }}
+  {{ macros.spacing_margin_all(design.margin) }}
+  {{ macros.spacing_padding_all(design.padding) }}
+  {{ macros.borders(design.borders) }}
+  {{ macros.background(design.background) }}
+  background-color: {{ content.colors.bg_color }};
+}
+
+%%SELECTOR%% .dan-blinds__canvas{
+  mix-blend-mode: {{ content.colors.mix_blend_mode }};
+}

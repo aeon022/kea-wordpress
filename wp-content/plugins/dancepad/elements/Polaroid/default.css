@@ -1,0 +1,59 @@
+/* Polaroid - Draggable stacked image cards */
+
+.dan-polaroid[data-flickering="1"] {
+  opacity: 0;
+}
+
+.dan-polaroid {
+  position: relative;
+  width: var(--dan-pol-w, 220px);
+  height: var(--dan-pol-h, 220px);
+  perspective: 600px;
+}
+
+.dan-polaroid__card {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dan-polaroid__card,
+.dan-polaroid__frame {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dan-polaroid__card.is-dragging,
+.dan-polaroid__card.is-dragging .dan-polaroid__frame {
+  transition: none;
+}
+
+.dan-polaroid__card.is-dragging {
+  cursor: grabbing;
+}
+
+.dan-polaroid__frame {
+  overflow: hidden;
+  width: var(--dan-pol-w, 220px);
+  height: var(--dan-pol-h, 220px);
+  transform-origin: 90% 90%;
+}
+
+.dan-polaroid__img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.dan-polaroid__empty {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 14px;
+}

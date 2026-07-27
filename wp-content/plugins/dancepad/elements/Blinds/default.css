@@ -1,0 +1,27 @@
+.breakdance .dan-blinds {
+    position: relative;
+    overflow: hidden;
+}
+
+.breakdance .dan-blinds[data-flickering="1"] {
+    opacity: 0;
+}
+
+.breakdance .dan-blinds .dan-blinds__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+.breakdance .dan-blinds > :not(.dan-blinds__canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+#breakdance_canvas .dan-blinds {
+    opacity: 0.99;
+}

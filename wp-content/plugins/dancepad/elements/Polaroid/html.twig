@@ -1,0 +1,21 @@
+{% set cards = content.cards.repeater|default([]) %}
+{% set totalCards = cards|length %}
+{% set rotationSpread = content.interaction.rotation|default(4) %}
+
+{% if totalCards == 0 %}
+<p class="dan-polaroid__empty">Add images to the Cards repeater.</p>
+{% endif %}
+
+{% for item in cards %}
+  {% set imageUrl = item.image.url|default('') %}
+  {% if imageUrl %}
+    {% set reverseIndex = totalCards - loop.index %}
+    {% set rotation = reverseIndex * rotationSpread %}
+    {% set scale = 1 + (loop.index0 * 0.05) - (totalCards * 0.05) %}
+    <div class="dan-polaroid__card" style="z-index: {{ loop.index }};">
+      <div class="dan-polaroid__frame" style="transform: rotateZ({{ rotation }}deg) scale({{ scale }});">
+        <img class="dan-polaroid__img" src="{{ imageUrl|e('html_attr') }}" alt="" draggable="false" loading="lazy" />
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

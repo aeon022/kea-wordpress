@@ -1,0 +1,23 @@
+%%SELECTOR%%{
+  {{ macros.spacing_margin_all(design.margin) }}
+  --dan-orb-size: {{ design.orbit.size.style }};
+  --dan-orb-orbit-d: {{ design.orbit.orbit_diameter.style }};
+  --dan-orb-item-size: {{ design.orbit.item_size.style }};
+  --dan-orb-ring-start: {{ design.rings.ring_start.style }};
+  --dan-orb-ring-gap: {{ design.rings.ring_gap.style }};
+  --dan-orb-circle-color: {{ design.rings.path_color }};
+  --dan-orb-ring-c1: {{ design.rings.ring_color_1 }};
+  --dan-orb-ring-c2: {{ design.rings.ring_color_2 }};
+  --dan-orb-ring-c3: {{ design.rings.ring_color_3 }};
+  --dan-orb-grad-speed: {{ design.animation.gradient_speed }};
+  --dan-orb-orbit-speed: {{ design.animation.orbit_speed }};
+}
+
+%%SELECTOR%% .dan-orbit__gradients{
+  opacity: {{ design.rings.gradient_opacity }};
+}
+
+%%SELECTOR%% .dan-orbit__item{
+  {{ macros.background(design.item.background) }}
+  {{ macros.borders(design.item.border) }}
+}

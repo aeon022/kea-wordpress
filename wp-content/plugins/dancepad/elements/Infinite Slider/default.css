@@ -1,0 +1,37 @@
+.breakdance .dan-infinite-slider[data-flickering="1"]{
+    opacity: 0;
+}
+.breakdance .dan-infinite-slider {
+    overflow: hidden;
+    cursor: grab;
+
+    height: var(--items-height);
+}
+.breakdance .dan-infinite-slider .dan-infinite-slider--is-dragging {
+    cursor: grabbing;
+}
+.breakdance .dan-infinite-slider .dan-infinite-slider__wrapper {
+    counter-reset: count;
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.breakdance .dan-infinite-slider .dan-infinite-slider__item {
+    counter-increment: count;
+    position: absolute;
+
+    width: var(--items-width);
+    height: var(--items-height);
+
+    overflow: hidden;
+}
+.breakdance .dan-infinite-slider .dan-infinite-slider__item img{
+    user-select: none;
+    pointer-events: none;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}

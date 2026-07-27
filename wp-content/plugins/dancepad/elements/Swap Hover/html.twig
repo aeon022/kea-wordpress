@@ -1,0 +1,11 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-swap-hover__anchor') }}
+  <span class="dan-swap-hover__span-wrapper {% if content.animation.split_type in ['chars', 'words'] %}dan-swap-hover__span-wrapper--remove-line{% endif %}">
+    <span class="dan-swap-hover__span" data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+  </span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <span class="dan-swap-hover__span-wrapper {% if content.animation.split_type in ['chars', 'words'] %}dan-swap-hover__span-wrapper--remove-line{% endif %}">
+    <span class="dan-swap-hover__span" data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+  </span>
+{% endif %}

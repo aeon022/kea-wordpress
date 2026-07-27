@@ -1,0 +1,13 @@
+.breakdance .dan-decode-hover{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+.breakdance .dan-decode-hover .dan-decode-hover__anchor{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+  
+  	color: currentColor !important;
+    text-decoration: unset;
+} 

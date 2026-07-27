@@ -1,0 +1,27 @@
+.breakdance .dan-pixels {
+    position: relative;
+    overflow: hidden;
+}
+
+.breakdance .dan-pixels[data-flickering="1"] {
+    opacity: 0;
+}
+
+.breakdance .dan-pixels .dan-pixels__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+.breakdance .dan-pixels > :not(.dan-pixels__canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+#breakdance_canvas .dan-pixels {
+    opacity: 0.99;
+}

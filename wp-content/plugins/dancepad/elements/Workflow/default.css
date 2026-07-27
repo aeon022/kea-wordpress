@@ -1,0 +1,145 @@
+.breakdance .dan-workflow {
+  display: grid;
+  place-items: center;
+}
+
+.breakdance .dan-workflow[data-flickering="1"] {
+  opacity: 0;
+}
+
+.breakdance .dan-workflow .dan-workflow__timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: var(--dan-wf-gap, 8px);
+}
+
+.breakdance .dan-workflow .dan-workflow__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: inherit;
+}
+
+.breakdance .dan-workflow .dan-workflow__badge {
+  background: var(--dan-wf-badge-bg, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: var(--dan-wf-badge-gap, 8px);
+  color: var(--dan-wf-badge-text, #000000);
+  font-size: var(--dan-wf-badge-font-size, 15px);
+  font-weight: var(--dan-wf-badge-font-weight, 500);
+  padding: var(--dan-wf-badge-py, 8px) var(--dan-wf-badge-px, 12px);
+  border-width: var(--dan-wf-badge-border-width, 1px);
+  border-style: var(--dan-wf-badge-border-style, solid);
+  border-color: var(--dan-wf-badge-border-color, #ffffff);
+  border-radius: var(--dan-wf-badge-radius, 999px);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-active .dan-workflow__badge {
+  background-color: var(--dan-wf-active-bg, #000000);
+  color: var(--dan-wf-active-text, #ffffff);
+  border-color: var(--dan-wf-active-border, #000000);
+}
+
+.breakdance .dan-workflow .dan-workflow__text {
+  display: inline-block;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-active .dan-workflow__text {
+  animation: dan-wf-text-slide 0.25s ease-out;
+}
+
+@keyframes dan-wf-text-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.breakdance .dan-workflow .dan-workflow__progress {
+  display: none;
+  width: var(--dan-wf-progress-size, 20px);
+  height: var(--dan-wf-progress-size, 20px);
+  flex-shrink: 0;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-active .dan-workflow__progress {
+  display: block;
+}
+
+.breakdance .dan-workflow .dan-workflow__circle-stroke {
+  stroke: var(--dan-wf-progress-color, #c2da91);
+  stroke-width: 12;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-active .dan-workflow__circle-stroke {
+  animation: dan-wf-draw var(--dan-wf-progress-dur, 1s) ease-out 0.5s forwards;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-completed .dan-workflow__circle-stroke {
+  stroke: var(--dan-wf-completed-color, #ffffff);
+  stroke-dashoffset: 0;
+  animation: none;
+}
+
+.breakdance .dan-workflow .dan-workflow__circle-fill {
+  transition: fill 0.15s ease-out;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-completed .dan-workflow__circle-fill {
+  fill: var(--dan-wf-completed-color, #ffffff);
+}
+
+.breakdance .dan-workflow .dan-workflow__checkmark {
+  stroke: var(--dan-wf-check-color, #000000);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.breakdance .dan-workflow .dan-workflow__step.is-completed .dan-workflow__checkmark {
+  animation: dan-wf-draw 0.3s ease-out forwards;
+}
+
+@keyframes dan-wf-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.breakdance .dan-workflow .dan-workflow__connector {
+  height: var(--dan-wf-line-h, 54px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.breakdance .dan-workflow .dan-workflow__line-track {
+  width: var(--dan-wf-line-w, 2px);
+  height: 100%;
+  background: var(--dan-wf-line-bg, #ffffff);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.breakdance .dan-workflow .dan-workflow__line-fill {
+  width: 100%;
+  height: 0;
+  background: var(--dan-wf-line-fill, #000000);
+  border-radius: 9999px;
+}
+

@@ -1,0 +1,12 @@
+<button data-prismium-current class='prismium__current'><span>{{ content.content.title |default('CLICK') }}</span>
+{% if not content.content.disable_icon %}
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="nuxt-icon nuxt-icon--fill prismium__icon" data-prismium-icon="open"><g clip-path="url(#i-333077812__a)"><path d="M23 11H13V1a1 1 0 0 0-1-1 1 1 0 0 0-1 1v10H1a1 1 0 0 0-1 1 1 1 0 0 0 1 1h10v10a1 1 0 0 0 2 0V13h10a1 1 0 0 0 0-2Z"></path></g><defs><clipPath id="i-333077812__a"><path fill="#fff" d="M0 0h24v24H0z"></path></clipPath></defs></svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="nuxt-icon nuxt-icon--fill prismium__icon prismium__icon_hidden" data-prismium-icon="close"><path d="M23 11H1a1 1 0 1 0 0 2h22a1 1 0 1 0 0-2Z"></path></svg>
+{% endif %}
+
+</button>
+<div data-prismium-hidden>
+<div data-prismium-content>
+%%CHILDREN%%
+</div>
+</div>

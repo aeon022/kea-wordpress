@@ -1,0 +1,28 @@
+.breakdance .supa-liquid-glass {
+  max-width:100%;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.breakdance .supa-liquid-glass .liquidGlass-effect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  backdrop-filter: blur(3px); 
+  overflow: hidden;
+  isolation: isolate;
+}
+.breakdance .supa-liquid-glass .liquidGlass-tint {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+}
+.breakdance .supa-liquid-glass .liquidGlass-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+.breakdance .supa-liquid-glass .liquidGlass-text {
+  z-index: 3;
+}

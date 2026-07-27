@@ -1,0 +1,30 @@
+.breakdance .dan-sticky-footer{
+    position: relative;
+    bottom: 0;
+
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+
+    width: 100%;
+    background-color: #000000;
+}
+
+.breakdance .dan-sticky-footer .dan-sticky-footer__wrapper{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.breakdance .dan-sticky-footer__wrapper.breakdance--active-element,
+.breakdance .dan-sticky-footer__wrapper:has(.breakdance--active-element) {
+    position: static !important;
+}
+
+body:not(:has(> footer)){
+    position: relative !important;
+}
+
+footer{
+    position: relative;
+}

@@ -1,0 +1,45 @@
+%%SELECTOR%% {
+    --nav-item-transition-duration: {{ design.nav_items.transition.duration.style }};
+    --nav-item-transition-easing: {{ design.nav_items.transition.easing }};
+    --expanding-horizontal-expand: {{ content.animation.horizontal_offset.style }};
+    --expanding-duration: {{ content.animation.expanding_duration.style }};
+    --expanding-easing: {{ content.animation.expanding_easing }};
+    --expanding-fade-duration: {{ content.animation.fade_duration.style }};
+    --expanding-fade-easing: {{ content.animation.fade_easing }};
+    gap: {{ design.nav_container.gap.style ?? '0px' }};
+
+    {{ macros.spacing_margin_all(design.margin) }}
+    {{ macros.spacing_padding_all(design.nav_container.padding) }}
+}
+%%SELECTOR%% .dan-expanding-nav__expanding-content {
+    {{ macros.background(design.expanding_content.background) }}
+    {{ macros.borders(design.expanding_content.borders) }}
+{% if design.expanding_content.box_shadow.style %}
+    box-shadow: {{ design.expanding_content.box_shadow.style }};
+{% endif %}
+}
+%%SELECTOR%% .dan-expanding-nav__nav-item {
+    {{ macros.spacing_padding_all(design.nav_items.padding) }}
+    {{ macros.borders(design.nav_items.borders) }}
+{% if design.nav_items.box_shadow.style %}
+    box-shadow: {{ design.nav_items.box_shadow.style }};
+{% endif %}
+    {{ macros.typography(design.nav_items.typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-expanding-nav__nav-item * {
+    {{ macros.typography(design.nav_items.typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-expanding-nav__nav-item[data-active="true"] {
+    {{ macros.background(design.nav_items_active.background) }}
+{% if design.nav_items_active.color %}
+    color: {{ design.nav_items_active.color }};
+{% endif %}
+}
+{% if design.nav_items_active.color %}
+%%SELECTOR%% .dan-expanding-nav__nav-item[data-active="true"] * {
+    color: {{ design.nav_items_active.color }};
+}
+{% endif %}
+%%SELECTOR%% .dan-expanding-nav__expanding-content-item {
+    {{ macros.spacing_padding_all(design.expanding_items.padding) }}
+}

@@ -1,0 +1,13 @@
+.breakdance .gsap-reveal {
+  position:relative;
+  overflow:hidden;
+  max-width:100%;
+}
+.breakdance .gsap-reveal .supa-reveal-overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:100
+}

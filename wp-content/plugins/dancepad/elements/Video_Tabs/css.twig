@@ -1,0 +1,107 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_all(design.margin) }}
+  {{ macros.spacing_padding_all(design.padding) }}
+  {{ macros.layout(design.layout) }}
+  {{ macros.size(design.size) }}
+  {{ macros.background(design.background) }}
+  {{ macros.borders(design.border) }}
+{% if design.video_tabs.direction %}
+  flex-direction: {{ design.video_tabs.direction }};
+{% endif %}
+{% if design.video_tabs.gap is defined and design.video_tabs.gap.style %}
+  gap: {{ design.video_tabs.gap.style }};
+{% endif %}
+{% if design.video_tabs.width is defined and design.video_tabs.width.style %}
+  width: {{ design.video_tabs.width.style }};
+{% endif %}
+{% if design.video_tabs.max_width is defined and design.video_tabs.max_width.style %}
+  max-width: {{ design.video_tabs.max_width.style }};
+{% endif %}
+{% if design.nav_items_active.transition_duration is defined and design.nav_items_active.transition_duration.style %}
+  --nav-items-transition-duration: {{ design.nav_items_active.transition_duration.style }};
+{% endif %}
+{% if design.nav_items_active.transition_easing is defined and design.nav_items_active.transition_easing %}
+  --nav-items-transition-easing: {{ design.nav_items_active.transition_easing }};
+{% endif %}
+{% if design.progress_transition.duration is defined and design.progress_transition.duration.style %}
+  --progress-transition-duration: {{ design.progress_transition.duration.style }};
+{% endif %}
+{% if design.progress_transition.easing is defined and design.progress_transition.easing %}
+  --progress-transition-easing: {{ design.progress_transition.easing }};
+{% endif %}
+{% if design.path_animation.duration is defined and design.path_animation.duration.style %}
+  --progress-bar-transition-duration: {{ design.path_animation.duration.style }};
+{% endif %}
+{% if design.path_animation.easing is defined and design.path_animation.easing %}
+  --progress-bar-transition-easing: {{ design.path_animation.easing }};
+{% endif %}
+}
+%%SELECTOR%% .dan-video-tabs__nav-item {
+  {{ macros.spacing_padding_all(design.nav_items.padding) }}
+{% if design.nav_items.gap is defined and design.nav_items.gap.style %}
+  gap: {{ design.nav_items.gap.style }};
+{% endif %}
+  {{ macros.borders(design.nav_items.borders) }}
+{% if design.nav_items.box_shadow is defined and design.nav_items.box_shadow.style %}
+  box-shadow: {{ design.nav_items.box_shadow.style }};
+{% endif %}
+  {{ macros.background(design.nav_items.background) }}
+  {{ macros.typography(design.nav_items.typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-video-tabs__nav-item * {
+  {{ macros.typography(design.nav_items.typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-video-tabs__nav-item:hover,
+%%SELECTOR%% .dan-video-tabs__nav-item:focus {
+  {{ macros.background(design.nav_items_active.hover_background) }}
+{% if design.nav_items_active.hover_color is defined and design.nav_items_active.hover_color %}
+  color: {{ design.nav_items_active.hover_color }};
+{% endif %}
+}
+{% if design.nav_items_active.hover_color is defined and design.nav_items_active.hover_color %}
+%%SELECTOR%% .dan-video-tabs__nav-item:hover *,
+%%SELECTOR%% .dan-video-tabs__nav-item:focus * {
+  color: {{ design.nav_items_active.hover_color }};
+}
+{% endif %}
+%%SELECTOR%% .dan-video-tabs__nav-item[data-active="true"] {
+  {{ macros.background(design.nav_items_active.active_background) }}
+{% if design.nav_items_active.active_color is defined and design.nav_items_active.active_color %}
+  color: {{ design.nav_items_active.active_color }};
+{% endif %}
+}
+{% if design.nav_items_active.active_color is defined and design.nav_items_active.active_color %}
+%%SELECTOR%% .dan-video-tabs__nav-item[data-active="true"] * {
+  color: {{ design.nav_items_active.active_color }};
+}
+{% endif %}
+%%SELECTOR%% .dan-video-tabs__progress-bar {
+{% if design.progress_bar.width is defined and design.progress_bar.width.style %}
+  width: {{ design.progress_bar.width.style }};
+{% endif %}
+{% if design.progress_bar.height is defined and design.progress_bar.height.style %}
+  height: {{ design.progress_bar.height.style }};
+{% endif %}
+  {{ macros.background(design.progress_bar.path_background) }}
+  {{ macros.borders(design.progress_bar.border) }}
+{% if design.progress_bar.box_shadow is defined and design.progress_bar.box_shadow.style %}
+  box-shadow: {{ design.progress_bar.box_shadow.style }};
+{% endif %}
+}
+%%SELECTOR%% .dan-video-tabs__nav-item:hover .dan-video-tabs__progress-bar,
+%%SELECTOR%% .dan-video-tabs__nav-item:focus .dan-video-tabs__progress-bar {
+  {{ macros.background(design.path_animation.hover_background) }}
+}
+%%SELECTOR%% .dan-video-tabs__nav-item[data-active="true"] .dan-video-tabs__progress-bar {
+  {{ macros.background(design.path_animation.active_background) }}
+}
+%%SELECTOR%% .dan-video-tabs__progress {
+  {{ macros.background(design.progress_bar.progress_background) }}
+}
+%%SELECTOR%% .dan-video-tabs__videos {
+  {{ macros.background(design.videos_wrapper.background) }}
+  {{ macros.borders(design.videos_wrapper.border) }}
+{% if design.videos_wrapper.box_shadow is defined and design.videos_wrapper.box_shadow.style %}
+  box-shadow: {{ design.videos_wrapper.box_shadow.style }};
+{% endif %}
+}

@@ -1,0 +1,13 @@
+%%SELECTOR%% {
+  width: {{ design.design.width.style }};
+  {% if content.content.speed %}
+  --speed: {{ content.content.speed.style }};
+  {% endif %}
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% text { 
+{{ macros.typography(design.design.typography, globalSettings) }}
+  fill:{{ design.design.typography.color }};
+}
+

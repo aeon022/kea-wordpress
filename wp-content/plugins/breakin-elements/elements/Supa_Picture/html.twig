@@ -1,0 +1,13 @@
+{% set size = content.picture.image_size |default('full') %}
+{% set imageurl = attribute(content.picture.desktop_image.sizes, size).url %}
+<picture class='%%UNIQUESLUG%% supa-picture'>
+{% for item in content.picture.breakpoint_images %}
+{% set currentBreakpoint =  item.breakpoint %}
+{% set breakpointWidth = get_breakpoint_max_width(currentBreakpoint) %}
+{% if currentBreakpoint != "breakpoint_base" and currentBreakpoint is not empty %}
+<source media="(max-width: {{ breakpointWidth }}px)" srcset="{% if item.size %}{{ item.image.sizes[item.size].url }}{% else %}{{ item.image.url }}{% endif %}" />
+{% endif %}
+{% endfor %}
+<img src="{{ imageurl|default("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='540' height='540' viewBox='0 0 140 140'%3e%3cpath d='M0 0h140v140H0z' fill='%23e5e7eb'/%3e%3cpath d='M88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23e5e7eb'/%3e%3cpath d='M89.48 52.32H50.29a4.52 4.52 0 00-4.52 4.52V84a4.53 4.53 0 004.52 4.52h39.19A4.52 4.52 0 0094 84V56.84a4.52 4.52 0 00-4.52-4.52zm-33.16 5.27a5.28 5.28 0 11-5.27 5.28 5.27 5.27 0 015.27-5.28zM88 82.46H51.8v-4.52l6.74-6.74a1.13 1.13 0 011.6 0l5.23 5.23 12.76-12.77a1.13 1.13 0 011.6 0L88 71.91z' fill='%23d1d5db'/%3e%3c/svg%3e") }}" {% if content.picture.alt == 'from_media_library' %}
+alt="{{ get_attachment_alt(content.picture.desktop_image.id) }}"{% elseif content.picture.alt == 'custom' %}alt="{{ content.picture.custom_alt }}"{% endif %} {% if content.picture.lazy_load %}loading="lazy"{% endif %} {% if content.picture.set_html_width_height %}width="{{ content.picture.width }}" height="{{ content.picture.height }}"{% endif %} >
+</picture>

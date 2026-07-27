@@ -1,0 +1,7 @@
+{% set slice_row = content.content.slice_row %}
+{% set slice_col = content.content.slice_col %}
+{% for row in 0..(slice_row - 1) %}
+{% for col in 0..(slice_col - 1) %}
+<div class="sliced" style="background-image: url('{{ content.content.image.url }}');"></div>
+{% endfor %}
+{% endfor %}

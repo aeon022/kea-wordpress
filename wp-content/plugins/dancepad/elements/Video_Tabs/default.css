@@ -1,0 +1,58 @@
+.breakdance .dan-video-tabs[data-flickering="1"] {
+  opacity: 0;
+}
+.breakdance .dan-video-tabs {
+  display: flex;
+  height: fit-content;
+}
+.breakdance .dan-video-tabs__nav {
+  display: flex;
+  width: fit-content;
+}
+.breakdance .dan-video-tabs__nav-item {
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--nav-items-transition-duration, 0.3s) var(--nav-items-transition-easing, ease);
+}
+.breakdance .dan-video-tabs__progress-bar {
+  overflow: hidden;
+  transition: all var(--progress-bar-transition-duration, 0.3s) var(--progress-bar-transition-easing, ease);
+  outline: none !important;
+}
+.breakdance .dan-video-tabs__progress-bar .breakdance-empty-container{
+  display: none;
+}
+.breakdance .dan-video-tabs__progress {
+  width: 0%;
+  height: 100%;
+  transition: width var(--progress-transition-duration, 0.1s) var(--progress-transition-easing, linear);
+}
+.breakdance .dan-video-tabs__videos {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.breakdance .bde-div.dan-video-tabs__video-item {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.breakdance .bde-div.dan-video-tabs__video-item[data-active="true"] {
+  opacity: 1;
+  position: static;
+  pointer-events: auto;
+}
+.breakdance .dan-video-tabs__video-item video,
+.breakdance .dan-video-tabs__video-item iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

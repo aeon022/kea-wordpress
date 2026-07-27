@@ -1,0 +1,41 @@
+.breakdance .dan-gooey-nav{
+    filter: url("#dan-gooey-nav__filter");
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.breakdance .dan-gooey-nav svg{
+    display: none;
+}
+.breakdance .dan-gooey-nav .dan-gooey-nav__item {
+    position: relative;
+
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    transition: margin var(--gooey-duration) var(--gooey-ease);
+}
+.breakdance .dan-gooey-nav.dan-gooey-nav--horizontal{
+    flex-direction: row;
+}
+.breakdance .dan-gooey-nav.dan-gooey-nav--vertical{
+    flex-direction: column;
+}
+.breakdance .dan-gooey-nav.dan-gooey-nav--horizontal .dan-gooey-nav__item:hover {
+    margin-left: calc(-1 * var(--gooey-merge-distance));
+    margin-right: calc(-1 * var(--gooey-merge-distance));
+}
+.breakdance .dan-gooey-nav.dan-gooey-nav--vertical .dan-gooey-nav__item:hover {
+    margin-top: calc(-1 * var(--gooey-merge-distance));
+    margin-bottom: calc(-1 * var(--gooey-merge-distance));
+}

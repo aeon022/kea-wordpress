@@ -1,0 +1,7 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-text-shimmer__anchor') }}
+    <span class='dan-text-shimmer__inner' data-duration="{{ content.animation.duration.style }}" data-stagger="{{ content.animation.delay_between_shimmers.style }}" data-ease="{{ content.animation.gsap_easing }}">{{ content.content.text }}</span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <span class='dan-text-shimmer__inner' data-duration="{{ content.animation.duration.style }}" data-stagger="{{ content.animation.delay_between_shimmers.style }}" data-ease="{{ content.animation.gsap_easing }}">{{ content.content.text }}</span>
+{% endif %}

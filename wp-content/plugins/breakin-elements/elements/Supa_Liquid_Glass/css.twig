@@ -1,0 +1,28 @@
+%%SELECTOR%% {
+  width: {{ design.container.width.style }};
+  {{ macros.border_radius(design.container.borders.radius) }}
+  {{ macros.border_complex(design.container.borders.styling) }}
+  {{ macros.spacing_padding_all(design.container.padding) }}
+  box-shadow: {{ design.container.borders.shadow.style }};
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+{{ macros.layoutV2(design.layout_v2, breakpoint, isBaseBreakpoint, '%%SELECTOR%% .liquidGlass-text') }}
+
+%%SELECTOR%% .liquidGlass-effect  {
+  filter: url(#glass-distortion-%%ID%%);
+}
+%%SELECTOR%% .liquidGlass-tint {
+  {{ macros.backgroundColor(design.container.tint) }}
+}
+%%SELECTOR%% .liquidGlass-shine {
+  {{ macros.border_radius(design.container.borders.radius) }}
+  {% if design.container.borders.inset_shadow.style %}
+  box-shadow: inset {{ design.container.borders.inset_shadow.style }};
+  {% endif %}
+}
+
+{% if breakpoint == design.mobile.disable_on %}
+%%SELECTOR%% .liquidGlass-effect {
+  filter: none!important
+}
+{% endif %}

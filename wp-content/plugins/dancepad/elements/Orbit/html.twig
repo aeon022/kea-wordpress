@@ -1,0 +1,44 @@
+{% set logoUrl = content.content.logo.url|default('https://nextbricks.io/wp-content/uploads/2024/07/logo-next-bricks.png') %}
+{% set iconUrls = [] %}
+
+{% for item in content.icons.items|default([]) %}
+  {% set iconUrl = item.image.url|default('') %}
+  {% if iconUrl %}
+    {% set iconUrls = iconUrls|merge([iconUrl]) %}
+  {% endif %}
+{% endfor %}
+
+{% if iconUrls is empty %}
+  {% set iconUrls = [logoUrl, logoUrl, logoUrl] %}
+{% endif %}
+
+{% set totalIcons = iconUrls|length %}
+{% set ringCount = content.rings.ring_count|default(8) %}
+{% if ringCount < 1 %}
+  {% set ringCount = 1 %}
+{% endif %}
+
+<div class="dan-orbit__gradients">
+  {% for i in 0..(ringCount - 1) %}
+    {% set rot = i * 16 %}
+    <div class="dan-orbit__grad-ring" style="--ring-i: {{ i }}; --ring-rot: {{ rot }}deg;"></div>
+  {% endfor %}
+</div>
+
+<div class="dan-orbit__circles">
+  {% for i in 0..(ringCount - 1) %}
+    <div class="dan-orbit__circle-ring" style="--ring-i: {{ i }};"></div>
+  {% endfor %}
+</div>
+
+<div class="dan-orbit__items">
+  {% for iconUrl in iconUrls %}
+    <div class="dan-orbit__item" style="--item-a: {{ loop.index0 / totalIcons }}turn;">
+      <img src="{{ iconUrl|e('html_attr') }}" alt="" draggable="false" />
+    </div>
+  {% endfor %}
+</div>
+
+<div class="dan-orbit__logo">
+  <img src="{{ logoUrl|e('html_attr') }}" alt="" draggable="false" />
+</div>

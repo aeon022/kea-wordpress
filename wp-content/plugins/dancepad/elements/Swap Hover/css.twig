@@ -1,0 +1,19 @@
+%%SELECTOR%%{
+    {{ macros.typography(design.typography, globalSettings) }}
+    {{ macros.spacing_margin_all(design.margin) }}
+}
+%%SELECTOR%%:not(:has(> a)),
+%%SELECTOR%% > a{
+    {{ macros.spacing_padding_all(design.padding) }}
+}
+%%SELECTOR%% .dan-swap-hover__span,
+%%SELECTOR%% .dan-swap-hover__span .char,
+%%SELECTOR%% .dan-swap-hover__span .word {
+    --skew: {{ content.animation.skew.style }};
+    --duration: {{ content.animation.duration.style }};
+    --ease: {{ content.animation.css_easing }};
+    --fromtype: {{ content.animation.from }};
+}
+%%SELECTOR%%:hover {
+    {{ macros.typographyWithHoverableEverything(design.typography) }}
+}

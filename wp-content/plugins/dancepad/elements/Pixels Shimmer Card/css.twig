@@ -1,0 +1,12 @@
+%%SELECTOR%% {
+    {{ macros.layout(design.layout) }}
+    {{ macros.spacing_margin_all(design.margin) }}
+    {{ macros.spacing_padding_all(design.padding) }}
+    {{ macros.size(design.size) }}
+    {{ macros.background(design.background) }}
+    {{ macros.borders(design.borders) }}
+
+    --active-color: {{ content.border_animation.active_color }};
+    --border-duration: {{ content.border_animation.duration.style }};
+    --border-ease: {{ content.border_animation.css_easing }};
+}

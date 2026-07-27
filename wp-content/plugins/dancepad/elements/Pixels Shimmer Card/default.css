@@ -1,0 +1,22 @@
+.breakdance .dan-pixels-shimmer-card[data-flickering="1"]{
+    opacity: 0;
+}
+.breakdance .dan-pixels-shimmer-card {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: border-color var(--border-duration) var(--border-ease);
+}
+.breakdance .dan-pixels-shimmer-card:hover,
+.breakdance .dan-pixels-shimmer-card:focus-within {
+    border-color: var(--active-color) !important;
+}
+.breakdance .dan-pixels-shimmer-card pixel-canvas{
+    position: absolute;
+    z-index: -1;
+}

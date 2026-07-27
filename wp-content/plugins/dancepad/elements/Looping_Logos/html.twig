@@ -1,0 +1,42 @@
+{% set logos = [] %}
+{% for item in content.logos.repeater|default([]) %}
+  {% set imageUrl = item.image.url|default('') %}
+  {% if imageUrl %}
+    {% set logos = logos|merge([imageUrl]) %}
+  {% endif %}
+{% endfor %}
+
+{% if logos is empty %}
+  {% set logos = [
+    'https://reverseui.com/images/logo-carousel/canva.svg',
+    'https://reverseui.com/images/logo-carousel/canopy.svg',
+    'https://reverseui.com/images/logo-carousel/clearbit.svg',
+    'https://reverseui.com/images/logo-carousel/descript.svg',
+    'https://reverseui.com/images/logo-carousel/duolingo.svg',
+    'https://reverseui.com/images/logo-carousel/khanacademy.svg',
+    'https://reverseui.com/images/logo-carousel/quizlet.svg',
+    'https://reverseui.com/images/logo-carousel/ramp.svg',
+    'https://reverseui.com/images/logo-carousel/strava.svg'
+  ] %}
+{% endif %}
+
+{% set perGroup = content.settings.logos_per_loop|default(3) %}
+{% if perGroup < 1 %}
+  {% set perGroup = 1 %}
+{% endif %}
+
+{% set groups = logos|batch(perGroup, null) %}
+
+<div class="dan-looping-logos__track">
+  {% for group in groups %}
+    <div class="dan-looping-logos__group" data-group="{{ loop.index0 }}">
+      {% for logo in group %}
+        {% if logo %}
+          <div class="dan-looping-logos__item">
+            <img src="{{ logo|e('html_attr') }}" alt="" loading="lazy" draggable="false" />
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

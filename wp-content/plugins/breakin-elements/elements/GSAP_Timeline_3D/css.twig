@@ -1,0 +1,41 @@
+%%SELECTOR%% {
+  {{ macros.backgroundColor(design.container.background) }}
+  perspective: {{ content.transformation.perspective.style }};
+  width: {{ design.container.width.style }};
+  --rotx: {{ content.transformation.rotate_x.style }};
+  --roty: {{ content.transformation.rotate_y.style }};
+  --rotz: {{ content.transformation.rotate_z.style }};
+  --trx: {{ content.transformation.translate_x.style }};
+  --try: {{ content.transformation.translate_y.style }};
+  --trz: {{ content.transformation.translate_z.style }};
+  --thickness: {{ content.transformation.thickness.style }};
+  {% if content.transformation.thickness.style %}
+  --half: calc( {{ content.transformation.thickness.style }} / 2);
+  {% endif %}
+
+{% if content.content.reverse_front_back == true %}
+--inv:-1;
+{% endif %}
+  
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+{% if content.transformation.origin.x is defined and content.transformation.origin.y is defined %}
+%%SELECTOR%% .cube-scene {
+ transform-origin: {{ content.transformation.origin.x }}% {{ content.transformation.origin.y }}%;
+}
+{% endif %}
+%%SELECTOR%% .cube-scene .cube-scene-bottom  {
+  {{ macros.background(design.background.face_bottom) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-top  {
+  {{ macros.background(design.background.face_top) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-left  {
+  {{ macros.background(design.background.face_left) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-right  {
+  {{ macros.background(design.background.face_right) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-back  {
+  {{ macros.background(design.background.face_back) }}
+}

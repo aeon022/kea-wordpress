@@ -1,0 +1,15 @@
+%%SELECTOR%% {
+width: {{ design.design.width.style }};
+{{ macros.typography(design.design.typography, globalSettings) }}
+{{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% a {
+{{ macros.typography(design.design.link_typography, globalSettings) }}
+}
+%%SELECTOR%% a:hover {
+{{ macros.typographyWithHoverableColorAndEffects(design.design.link_typography) }}
+}
+%%SELECTOR%% span:not(a span) {
+{{ macros.typography(design.design.wrap_typography, globalSettings) }}
+}

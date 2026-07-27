@@ -1,0 +1,19 @@
+%%SELECTOR%% {
+width: {{ design.design.width.style }};
+--pr-border-radius: {{ design.design.border_radius.style }};
+--pr-bg: {{ design.design.background }};
+--pr-bg-nested-active: {{ design.design.background_nested_active }};
+--pr-bg-hover:{{ design.design.background_hover }};
+--pr-padding: {{ design.design.padding.style }};
+--pr-border-color: {{ design.design.border_color }};
+--pr-border-width: {{ design.design.border_width.style }};
+--pr-gap: {{ design.design.gap.style }};
+--pr-content-offset: {{ design.design.offset.style }};
+--pr-icon-color: {{ design.design.icon_color }};
+}
+%%SELECTOR%% .Prismium-Accordion-Content {
+  width: {{ design.design.width.style }};
+}
+%%SELECTOR%% button {
+  {{ macros.typography(design.design.button_typography, globalSettings) }}
+}

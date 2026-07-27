@@ -1,0 +1,20 @@
+%%SELECTOR%% {
+  width: {{ design.container.width.style }};
+  height: {{ design.container.height.style }};
+  {% if content.content.overflow %}
+  overflow:hidden;
+  {% endif %}
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+%%SELECTOR%% text {
+  {{ macros.typography(design.typography, globalSettings) }}
+  fill:{{ design.typography.color }};
+}
+
+{% if content.content.show_path %}
+%%SELECTOR%% svg.svgpath path {
+    stroke-width:{{ design.path.stroke_width }};
+    stroke:{{ design.path.color }};
+    stroke-dasharray:{{ design.path.stroke_dasharray }};
+}
+{% endif %}

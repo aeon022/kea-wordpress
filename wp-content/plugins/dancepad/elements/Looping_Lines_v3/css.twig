@@ -1,0 +1,23 @@
+%%SELECTOR%% {
+  --blur: {{ content.animation.blur.style }};
+  {{ macros.spacing_margin_all(design.margin) }}
+  {{ macros.spacing_padding_all(design.padding) }}
+}
+%%SELECTOR%% .dan-looping-lines-v3__prefix {
+  {{ macros.typography(design.prefix_typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-looping-lines-v3__char {
+  {{ macros.typography(design.lines_typography, globalSettings) }}
+}
+%%SELECTOR%% .dan-looping-lines-v3__suffix {
+  {{ macros.typography(design.suffix_typography, globalSettings) }}
+}
+%%SELECTOR%%:hover .dan-looping-lines-v3__prefix {
+  {{ macros.typographyWithHoverableEverything(design.prefix_typography) }}
+}
+%%SELECTOR%%:hover .dan-looping-lines-v3__char {
+  {{ macros.typographyWithHoverableEverything(design.lines_typography) }}
+}
+%%SELECTOR%%:hover .dan-looping-lines-v3__suffix {
+  {{ macros.typographyWithHoverableEverything(design.suffix_typography) }}
+}

@@ -1,0 +1,9 @@
+{% set x = design.design.position.x - 50 %}
+{% set y = design.design.position.y - 50 %}
+
+%%SELECTOR%% > * {
+  {% if design.design.position.x %}left:{{ x }}%;{% endif %}
+  {% if design.design.position.y %}top:{{ y }}%;{% endif %}
+}
+
+{{ macros.layoutV2(design.layout_v2, breakpoint, isBaseBreakpoint, '%%SELECTOR%%') }}

@@ -1,0 +1,30 @@
+%%SELECTOR%% {
+  {{ macros.backgroundColor(design.container.background) }}
+  perspective: {{ content.perspective.perspective.style }};
+  width: {{ design.container.width.style }};
+  --thickness: {{ content.perspective.thickness.style }};
+  {% if content.perspective.thickness.style %}
+  --trz:calc( var(--half) * var(--inv));
+  {% endif %}
+  {% if content.content.perspective == 'back' %}
+--inv:-1;
+{% endif %}
+  z-index:{{ content.content.z_index }};
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% .cube-scene .cube-scene-bottom  {
+ {{ macros.backgroundColor(design.background.face_bottom) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-top  {
+ {{ macros.backgroundColor(design.background.face_top) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-left  {
+ {{ macros.backgroundColor(design.background.face_left) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-right  {
+ {{ macros.backgroundColor(design.background.face_right) }}
+}
+%%SELECTOR%% .cube-scene .cube-scene-back  {
+ {{ macros.backgroundColor(design.background.face_back) }}
+}

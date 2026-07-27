@@ -1,0 +1,36 @@
+{% set slice_row = content.content.slice_row %}
+{% set slice_col = content.content.slice_col %}
+
+%%SELECTOR%% {
+--slice-row: {{ content.content.slice_row }};
+--slice-col: {{ content.content.slice_col }};
+width: {{ design.design.width.style }};
+height: {{ design.design.height.style }};
+gap:{{ content.content.gap.style }};
+
+{% if (design.design.aspect_ratio == "custom") %}
+aspect-ratio:{{ design.design.custom_aspect_ratio }};
+{% else %}
+aspect-ratio:{{ design.design.aspect_ratio }};
+{% endif %}
+{{ macros.spacing_margin_y(design.spacing) }}
+}
+
+
+{% for row in 1..slice_row %}
+{% for col in 1..slice_col %}
+%%SELECTOR%% .sliced:nth-child({{ (row - 1) * slice_col + col }}) {
+    background-position: 
+        {% if slice_col > 1 %}
+            calc({{ col - 1 }} * 100% / (var(--slice-col,1) - 1))
+        {% else %}
+            0%
+        {% endif %}
+        {% if slice_row > 1 %}
+            calc({{ row - 1 }} * 100% / (var(--slice-row,1) - 1))
+        {% else %}
+            0%
+        {% endif %};
+}
+{% endfor %}
+{% endfor %}

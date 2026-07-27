@@ -1,0 +1,13 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-blended-hover__anchor') }}
+  <span class='dan-blended-hover__inner-wrapper'>
+    <span class='dan-blended-hover__title dan-blended-hover__title--front' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-blended-hover__title dan-blended-hover__title--back' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+  </span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <span class='dan-blended-hover__inner-wrapper'>
+    <span class='dan-blended-hover__title dan-blended-hover__title--front' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-blended-hover__title dan-blended-hover__title--back' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+  </span>
+{% endif %}

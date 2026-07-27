@@ -1,0 +1,73 @@
+.breakdance .dan-chart[data-flickering="1"] {
+  opacity: 0;
+}
+
+.breakdance .dan-chart {
+  display: inline-block;
+  width: 100%;
+}
+
+.breakdance .dan-chart .dan-chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.breakdance .dan-chart .dan-chart__area {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: dan-chart-reveal calc(var(--dan-chart-duration, 8) * 1s) ease-out forwards;
+  animation-play-state: paused;
+}
+
+.breakdance .dan-chart .dan-chart__line {
+  stroke: var(--dan-chart-line, #2f9e63);
+  stroke-width: var(--dan-chart-stroke-w, 2.28px);
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dan-chart-draw calc(var(--dan-chart-duration, 8) * 1s) ease-out forwards;
+  animation-play-state: paused;
+}
+
+.breakdance .dan-chart.dan-chart--visible .dan-chart__area,
+.breakdance .dan-chart.dan-chart--visible .dan-chart__line {
+  animation-play-state: running;
+}
+
+.breakdance .dan-chart.dan-chart--loop .dan-chart__area,
+.breakdance .dan-chart.dan-chart--loop .dan-chart__line {
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+}
+
+.breakdance .dan-chart .dan-chart__grad-start {
+  stop-color: var(--dan-chart-fill, #c3e4c9);
+}
+
+.breakdance .dan-chart .dan-chart__grad-end {
+  stop-color: var(--dan-chart-fill, #c3e4c9);
+  stop-opacity: 0;
+}
+
+@keyframes dan-chart-reveal {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes dan-chart-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+

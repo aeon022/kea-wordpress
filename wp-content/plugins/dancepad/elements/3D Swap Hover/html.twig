@@ -1,0 +1,13 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-3d-swap-hover__anchor') }}
+  <span class='dan-3d-swap-hover__inner-wrapper'>
+    <span class='dan-3d-swap-hover__title dan-3d-swap-hover__title--front' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-3d-swap-hover__title dan-3d-swap-hover__title--back' data-content="{{ content.content.swapped_text|escape('html_attr') }}">{{ content.content.swapped_text|raw }}</span>
+  </span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <span class='dan-3d-swap-hover__inner-wrapper'>
+    <span class='dan-3d-swap-hover__title dan-3d-swap-hover__title--front' data-content="{{ content.content.text|escape('html_attr') }}">{{ content.content.text|raw }}</span>
+    <span class='dan-3d-swap-hover__title dan-3d-swap-hover__title--back' data-content="{{ content.content.swapped_text|escape('html_attr') }}">{{ content.content.swapped_text|raw }}</span>
+  </span>
+{% endif %}

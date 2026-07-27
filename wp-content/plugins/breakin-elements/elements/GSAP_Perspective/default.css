@@ -1,0 +1,77 @@
+.breakdance .gsap-perspective {
+  position:relative;
+  max-width:100%;
+  transform-style:preserve-3d;
+  --rotx:0deg;
+  --roty:0deg;
+  --rotz:0deg;
+  --trx:0;
+  --try:0;
+  --trz:0;
+  --scalex:1;
+  --scaley:1;
+  --scalez:1;
+  --thickness:0px;
+  --half:calc( var(--thickness) / 2);
+  --inv:1;
+}
+
+.breakdance .gsap-perspective .cube-scene {
+  transform: translate3d(var(--trx),var(--try),var(--trz)) rotateX(var(--rotx)) rotateY(var(--roty)) rotateZ(var(--rotz))  scale3d(var(--scalex), var(--scaley), var(--scalez));
+}
+
+
+.breakdance .gsap-perspective .cube-scene {
+  position:relative;
+  transform-style: preserve-3d;
+  display:flex;
+}
+.breakdance .gsap-perspective .cube-scene-face {
+  position: absolute;
+  background:grey;
+}
+
+.breakdance .gsap-perspective .cube-scene > :first-child {
+  transform: translateZ(calc(var(--half) * var(--inv) ));
+}
+
+.breakdance .gsap-perspective .cube-scene .cube-scene-bottom {
+  width:100%;
+  height:var(--thickness);
+  bottom:calc(var(--thickness) * -1);
+  transform-origin:top;
+  transform: rotateX(-90deg) translateY(calc(var(--half) * -1));
+}
+
+.breakdance .gsap-perspective .cube-scene .cube-scene-top {
+  width:100%;
+  height:var(--thickness);
+  top:calc(var(--thickness) * -1);
+  transform-origin:bottom;
+  transform: rotateX(90deg) translateY(var(--half));
+}
+
+.breakdance .gsap-perspective .cube-scene .cube-scene-left {
+  width:var(--thickness);
+  height:100%;
+  top:0;
+  left:calc(var(--thickness) * -1);
+  transform-origin:right;
+  transform: rotateY(-90deg) translateX(var(--half));
+}
+
+.breakdance .gsap-perspective .cube-scene .cube-scene-right {
+  width:var(--thickness);
+  height:100%;
+  top:0;
+  right:calc(var(--thickness) * -1);
+  transform-origin:left;
+  transform: rotateY(90deg) translateX(calc(var(--half) * -1));
+}
+
+.breakdance .gsap-perspective .cube-scene .cube-scene-back {
+  width:100%;
+  height:100%;
+  top:0;
+  transform: translateZ(calc(var(--half) * var(--inv,1) * -1)) scalex(-1);
+}

@@ -1,0 +1,31 @@
+%%SELECTOR%%{
+  {{ macros.spacing_margin_all(design.margin) }}
+  {{ macros.size(design.container.size) }}
+  {{ macros.spacing_padding_all(design.container.padding) }}
+  {{ macros.background(design.container.background) }}
+
+  --dan-portfolio-hover-fill: {{ design.project_item.hover_fill }};
+  --dan-portfolio-noise-opacity: {{ content.noise.opacity }};
+  --dan-portfolio-noise-speed: {{ content.noise.speed.style }};
+  --dan-portfolio-fill-in: {{ content.animation.fill_in_duration.style }};
+  --dan-portfolio-fill-out: {{ content.animation.fill_out_duration.style }};
+  --dan-portfolio-zoom-duration: {{ content.animation.zoom_duration.style }};
+}
+
+%%SELECTOR%% .dan-portfolio__container{
+  max-width: {{ design.items_container.max_width.style }};
+}
+
+%%SELECTOR%% .dan-portfolio__item{
+  {{ macros.spacing_padding_all(design.project_item.padding) }}
+  {{ macros.borders(design.project_item.border) }}
+  gap: {{ design.project_item.gap.style }};
+}
+
+%%SELECTOR%% .dan-portfolio__title{
+  {{ macros.typography(design.title.typography, globalSettings) }}
+}
+
+%%SELECTOR%% .dan-portfolio__date{
+  {{ macros.typography(design.date.typography, globalSettings) }}
+}

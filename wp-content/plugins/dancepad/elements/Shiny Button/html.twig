@@ -1,0 +1,17 @@
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-shiny-button__anchor') }}
+    <div class='dan-shiny-button__effects'>
+        <div class='dan-shiny-button__glow'></div>
+        <div class='dan-shiny-button__shine'></div>
+    </div>
+    <div class='dan-shiny-button__background'></div>
+    <div class='dan-shiny-button__text'>{{ content.content.text }}</div>
+  {{ macros.linkEnd() }}
+{% else %}
+  <div class='dan-shiny-button__effects'>
+      <div class='dan-shiny-button__glow'></div>
+      <div class='dan-shiny-button__shine'></div>
+  </div>
+  <div class='dan-shiny-button__background'></div>
+  <div class='dan-shiny-button__text'>{{ content.content.text }}</div>
+{% endif %}

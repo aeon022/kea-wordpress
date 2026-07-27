@@ -1,0 +1,32 @@
+{% set innerLabel = content.content.label|default('Book a demo') %}
+{% set ariaLabel = content.accessibility.aria_label|default('') %}
+{% if ariaLabel == '' %}
+  {% set ariaLabel = innerLabel %}
+{% endif %}
+
+{% set requestedTag = content.content.tag|default('button') %}
+{% if requestedTag == 'custom' %}
+  {% set requestedTag = content.content.custom_tag|default('button') %}
+{% endif %}
+
+{% set tagName = requestedTag|lower|trim %}
+{% if tagName not in ['button', 'div', 'span', 'p'] %}
+  {% set tagName = 'button' %}
+{% endif %}
+
+{% if content.content.link %}
+  {{ macros.linkStart(content.content.link, 'dan-arrow-button-v9__anchor') }}
+    <div class="dan-arrow-button-v9__arrow" aria-hidden="true">
+      <div class="dan-arrow-button-v9__track"></div>
+    </div>
+    <span class="dan-arrow-button-v9__label">{{ innerLabel }}</span>
+  {{ macros.linkEnd() }}
+{% else %}
+  <{{ tagName }} class="dan-arrow-button-v9__anchor"{% if tagName == 'button' %} type="button"{% endif %}{% if ariaLabel %} aria-label="{{ ariaLabel|escape('html_attr') }}"{% endif %}>
+    <div class="dan-arrow-button-v9__arrow" aria-hidden="true">
+      <div class="dan-arrow-button-v9__track"></div>
+    </div>
+    <span class="dan-arrow-button-v9__label">{{ innerLabel }}</span>
+  </{{ tagName }}>
+{% endif %}
+

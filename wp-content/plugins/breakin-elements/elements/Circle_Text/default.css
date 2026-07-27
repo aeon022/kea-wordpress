@@ -1,0 +1,27 @@
+.breakdance .Circle-text {
+max-width:100%;
+--speed:5s;
+}
+
+@keyframes circlerotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes circlerotateinv {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.rotatingcircle {
+  animation: circlerotate var(--speed) linear infinite;
+}
+.rotatingcircleinv {
+  animation: circlerotateinv var(--speed) linear infinite;
+}

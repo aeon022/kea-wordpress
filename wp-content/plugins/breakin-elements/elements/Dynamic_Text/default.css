@@ -1,0 +1,7 @@
+.breakdance .supa-dynamictext {
+margin: 0;
+color: var(--bde-text-color, var(--bde-body-text-color));
+}
+.breakdance .supa-dynamictext a {
+  display:inline-block;
+}
