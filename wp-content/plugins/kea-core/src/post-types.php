@@ -32,7 +32,7 @@ function kea_core_register_destination_post_type(): void
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-location-alt',
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'thumbnail', 'revisions'],
         'has_archive' => 'reiseziele',
         'rewrite' => [
             'slug' => 'reiseziele',
@@ -57,7 +57,7 @@ function kea_core_register_school_post_type(): void
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-welcome-learn-more',
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'thumbnail', 'revisions'],
         'has_archive' => 'partnerschulen',
         'rewrite' => [
             'slug' => 'partnerschulen',
@@ -82,7 +82,7 @@ function kea_core_register_program_post_type(): void
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-welcome-write-blog',
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'thumbnail', 'revisions'],
         'has_archive' => 'programme',
         'rewrite' => [
             'slug' => 'programme',
@@ -107,7 +107,7 @@ function kea_core_register_testimonial_post_type(): void
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-format-quote',
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'thumbnail', 'revisions'],
         'has_archive' => 'erfahrungen',
         'rewrite' => [
             'slug' => 'erfahrungen',
@@ -132,7 +132,7 @@ function kea_core_register_team_post_type(): void
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-businessperson',
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports' => ['title', 'thumbnail', 'revisions'],
         'has_archive' => false,
         'rewrite' => [
             'slug' => 'team',

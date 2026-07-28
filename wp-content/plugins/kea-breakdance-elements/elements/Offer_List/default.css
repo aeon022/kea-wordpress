@@ -1,3 +1,6 @@
+body.post-type-archive-kea_program .kea-offer-list__title { font-size: clamp(1.85rem, 3.2vw, 3.25rem); }
+body.post-type-archive-kea_program .kea-offer-list__title { font-size: var(--hfs-h2); }
+
 .kea-offer-list {
     width: min(100% - 2rem, 78rem);
     margin: 0 auto;
@@ -90,6 +93,8 @@
     font-size: 1.5rem;
     line-height: 1;
 }
+
+.kea-offer-list__eyebrow,.kea-offer-list__index,.kea-offer-list__meta,.kea-offer-list__arrow{font-size:var(--hfs-text-s)}.kea-offer-list__title{font-size:var(--hfs-h1)}.kea-offer-list__intro,.kea-offer-list__empty,.kea-offer-list__text{font-size:var(--hfs-text-m)}.kea-offer-list__name{font-size:var(--hfs-h3)}
 
 @media (max-width: 767px) {
     .kea-offer-list__header,

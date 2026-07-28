@@ -1,38 +1,70 @@
 # To-do – KEA-Redesign
 
-Stand: 27. Juli 2026
+Stand: 28. Juli 2026
 
-## Jetzt
+## Nächste Umsetzung – KEA-Redesign
 
-- [x] ACF Pro ist lokal aktiv; die fünf Feldgruppen aus `kea-core/acf-json/` werden geladen.
+- [ ] Dublin visuell auf Desktop und Mobil abnehmen: Abstände, Typografie, Bildwirkung, leere Datenzustände, CTA-, Hover- und Fokuszustände.
+- [ ] Header mit klarer Desktop-Navigation und sichtbarem Beratungs-CTA ausbauen.
+- [ ] Mobile Navigation als eigenständigen, einfachen Einstieg gestalten.
+- [ ] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
+- [ ] Impressum, Datenschutz, Kontakt und Anfrage als verlinkte Standardseiten aufbauen; Consent und Versand anschließend technisch prüfen.
+
+## Vom Kunden: Bestandsdaten und Bilder
+
 - [ ] Die 31 Reiseziele im Backend stichprobenartig prüfen: Titel, Land, Sprache, Text, Bild und Permalink.
 - [ ] Die sieben fehlenden Altbilder recherchieren, ersetzen oder bewusst aus den Datensätzen entfernen.
-- [ ] Für Dublin ein Hero-Bild, Galerie und die fehlenden redaktionellen Fakten ergänzen.
 
-## Daten vor dem Design vervollständigen
+## Vom Kunden: Anfrageformular freigeben
+
+- [ ] Verbindliche Empfängeradresse für neue Anfragen sowie gewünschte CC-Empfänger nennen.
+- [ ] Absenderadresse auf der KEA-Domain und SMTP-Versand bereitstellen beziehungsweise freigeben; den Versand anschließend mit einer echten Testanfrage prüfen.
+- [ ] Finalen Einleitungstext, Button-Text, Erfolgs- und Fehlermeldung liefern oder freigeben.
+- [ ] Datenschutz-Text und Ziel der verlinkten Datenschutzerklärung rechtlich freigeben.
+- [ ] Entscheiden, ob zusätzlich Angaben wie gewünschter Zeitraum, Budget, Alter oder Rückrufzeit abgefragt werden sollen.
+- [ ] Die Auswahltexte für Reiseform, Anfragetyp und die sichtbare Programm-/Kursauswahl fachlich prüfen. Die aktuell veröffentlichten Reiseziele und Programme sind als Startliste hinterlegt.
+
+## Vom Kunden: Reiseziel-Inhalte ergänzen
+
+- [ ] Für alle 31 Reiseziele den **Charakter** des Ortes liefern oder freigeben.
+- [ ] Für alle 31 Reiseziele eine konkrete **KEA-Empfehlung** formulieren: Für wen passt der Ort besonders gut und warum?
+- [ ] **Beste Reisezeit**, **Mindestdauer**, **Unterkunftshinweis** und **Anreisehinweis** fachlich ergänzen beziehungsweise freigeben.
+- [ ] Pro Reiseziel mindestens drei häufige Fragen mit verbindlichen Antworten liefern; keine Preis- oder Verfügbarkeitszusagen ohne aktuelle Prüfung.
+- [ ] Die 24 übernommenen Hero-/Galeriebilder auf Bildrechte, Aktualität und passende Alt-Texte prüfen; für die sieben fehlenden Bilder neue Dateien bereitstellen.
+- [ ] Bestehende Kurzprofile vor Veröffentlichung fachlich auf Aktualität prüfen.
+
+## Vom Kunden: Programme, Partnerschaften und weitere Inhalte freigeben
 
 - [x] Erste Partnerschulen als `kea_school` angelegt und einem Reiseziel zugeordnet: CES Dublin/Cork, Emerald Cultural Institute, CAVILAM – Alliance Française, Wimbledon School of English, International House London und BLS English.
 - [x] Drei verifizierte CES-Dublin-Programme sind angelegt und dem Reiseziel sowie der Partnerschule zugeordnet.
 - [ ] Die Partnerschaften und Programme vor Veröffentlichung mit KEA fachlich bestätigen; der historische Partnerbestand ist keine Preis- oder Verfügbarkeitszusage.
 - [ ] Für jedes Programm mindestens Kurzprofil, Kursart, Lektionen, Dauer, Mindestalter, Starttermine und Preis-Hinweis fachlich prüfen.
-- [ ] Kursarten, Zielgruppen und Altersgruppen als Taxonomien pflegen; keine Kurslisten in Breakdance hardcodieren.
+- [ ] Kursarten, Zielgruppen und Altersgruppen fachlich freigeben; wir pflegen sie strukturiert, ohne Kurslisten in Breakdance zu hardcodieren.
 - [ ] Bestehende WPBakery-Seiten nur als Inhaltsquelle verwenden und übernommene Texte vor dem Import bereinigen.
 - [ ] Erfahrungen und Teamdaten als eigene Datensätze prüfen und bei Bedarf übernehmen.
 
-## Eigene Breakdance-Bausteine
+## Technische Umsetzung und Qualitätssicherung – KEA-Redesign
 
-- [ ] Die neue **Angebotsliste** auf dem Dublin-Template testen: Programme des aktuellen Reiseziels, anschließend Partnerschulen.
+- [x] Dynamisches Reiseziel-Template erstellt: Hero, Fakten, Inhalte, Partnerschulen, Programme, Galerie, Erfahrungen, FAQ und Anfrage-CTA.
+- [ ] Die Reiseziel-Blöcke mit befüllten ACF-Daten auf Desktop und Mobil testen.
 - [ ] Gestaltungsvariablen der Angebotsliste an die Headspin-Token binden, sobald Farben und Typografie final sind.
-- [ ] Als nächste eigene Elemente nur bei tatsächlichem Bedarf bauen: Faktenleiste, Anfrage-CTA und Erfahrungs-Teaser.
 - [ ] Keine einzelnen Reiseziele oder Programme als manuelle Breakdance-Seiten anlegen.
 
 ## Templates und Seiten
 
-- [ ] Single-Template für Reiseziele mit dynamischen Abschnitten erstellen.
-- [ ] Single-Templates für Partnerschulen und Programme erstellen.
-- [ ] Archive für Reiseziele und Programme erstellen.
-- [ ] Startseite nach der Komponenten- und Template-Matrix aufbauen.
-- [ ] Anfrageformular mit validiertem Kontext für Reiseziel, Schule und Programm anbinden.
+- [x] Single-Template für Reiseziele mit dynamischen Abschnitten erstellen.
+- [x] Single-Templates für Partnerschulen und Programme erstellen.
+- [x] Archive für Reiseziele und Programme erstellen.
+- [x] Erfahrungsarchiv erstellen und mit einem klar markierten Dublin-Testbericht prüfen.
+- [ ] Den Dublin-Testbericht vor dem Launch durch eine freigegebene echte Erfahrung ersetzen oder löschen.
+- [x] Startseite nach der Komponenten- und Template-Matrix aufbauen.
+- [x] Anfrageformular mit validiertem Kontext für Reiseziel, Schule und Programm anbinden.
+
+## Vom Kunden: Rechtliches und Consent freigeben
+
+- [ ] Finales Impressum mit verantwortlicher Person, Unternehmens- und Kontaktdaten liefern oder freigeben.
+- [ ] Datenschutzerklärung, eingesetzte Dienste und die Rechtsgrundlage für Formulare, Analytics und externe Medien rechtlich freigeben.
+- [ ] Entscheiden, welche optionalen Dienste tatsächlich eingesetzt werden; nur dafür wird ein Consent-Banner konfiguriert.
 
 ## Vor Veröffentlichung
 

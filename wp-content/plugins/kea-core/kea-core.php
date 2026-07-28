@@ -4,7 +4,7 @@
 /**
  * Plugin Name: KEA Core
  * Description: Content Types, Taxonomien und Projektlogik für KEA Sprachreisen.
- * Version: 0.2.0
+ * Version: 0.2.2
  * Author: ABTEILUNG83
  * Text Domain: kea-core
  */
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KEA_CORE_VERSION', '0.2.0');
+define('KEA_CORE_VERSION', '0.2.2');
 define('KEA_CORE_PATH', plugin_dir_path(__FILE__));
 define('KEA_CORE_URL', plugin_dir_url(__FILE__));
 

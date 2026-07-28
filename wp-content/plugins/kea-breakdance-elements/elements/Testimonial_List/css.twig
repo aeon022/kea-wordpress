@@ -1,0 +1,6 @@
+{% if design.colors.background %}%%SELECTOR%%{background:{{ design.colors.background }};}{% endif %}{% if design.colors.text %}%%SELECTOR%%{color:{{ design.colors.text }};}{% endif %}
+%%SELECTOR%% .kea-testimonial-list__header p{ {{ macros.typography(design.typography.eyebrow, globalSettings) }} }
+%%SELECTOR%% .kea-testimonial-list__header h1{ {{ macros.typography(design.typography.title, globalSettings) }} }
+%%SELECTOR%% .kea-testimonial-list__header>div{ {{ macros.typography(design.typography.intro, globalSettings) }} }
+%%SELECTOR%% blockquote{ {{ macros.typography(design.typography.quote, globalSettings) }} }
+%%SELECTOR%% article p{ {{ macros.typography(design.typography.source, globalSettings) }} }

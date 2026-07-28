@@ -1,0 +1,6 @@
+{% if design.colors.background %}%%SELECTOR%%{background:{{ design.colors.background }};}{% endif %}
+{% if design.colors.heading %}%%SELECTOR%% .kea-destination-faq__heading{color:{{ design.colors.heading }};}{% endif %}
+{% if design.colors.text %}%%SELECTOR%%{color:{{ design.colors.text }};}{% endif %}
+%%SELECTOR%% .kea-destination-faq__heading{ {{ macros.typography(design.typography.heading, globalSettings) }} }
+%%SELECTOR%% summary{ {{ macros.typography(design.typography.question, globalSettings) }} }
+%%SELECTOR%% .kea-destination-faq__item>div{ {{ macros.typography(design.typography.answer, globalSettings) }} }

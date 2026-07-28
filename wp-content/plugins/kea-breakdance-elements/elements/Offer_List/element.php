@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 
 use function Breakdance\Elements\c;
+use function Breakdance\Elements\PresetSections\getPresetSection;
 
 \Breakdance\ElementStudio\registerElementForEditing(
     'KeaBreakdanceElements\\OfferList',
@@ -93,6 +94,7 @@ class OfferList extends \Breakdance\Elements\Element
                     'layout' => 'inline',
                     'items' => [
                         ['text' => 'Aktuelles Reiseziel', 'value' => 'current_destination'],
+                        ['text' => 'Aktuelle Partnerschule', 'value' => 'current_school'],
                         ['text' => 'Alle', 'value' => 'all'],
                     ],
                 ], false, false, []),
@@ -113,7 +115,14 @@ class OfferList extends \Breakdance\Elements\Element
 
     public static function designControls(): array
     {
-        return [];
+        return [c('typography', 'Typografie', [
+            getPresetSection('EssentialElements\\typography', 'Kicker', 'eyebrow', ['type' => 'popout']),
+            getPresetSection('EssentialElements\\typography', 'Überschrift', 'title', ['type' => 'popout']),
+            getPresetSection('EssentialElements\\typography', 'Einleitung', 'intro', ['type' => 'popout']),
+            getPresetSection('EssentialElements\\typography', 'Listen-Titel', 'item_title', ['type' => 'popout']),
+            getPresetSection('EssentialElements\\typography', 'Listen-Text', 'item_text', ['type' => 'popout']),
+            getPresetSection('EssentialElements\\typography', 'Fakten', 'meta', ['type' => 'popout']),
+        ], ['type' => 'section'], false, false, [])];
     }
 
 }

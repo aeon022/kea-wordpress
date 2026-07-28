@@ -84,3 +84,29 @@ function kea_core_is_published_inquiry_context(string $key, string $slug): bool
 
     return $post instanceof WP_Post && $post->post_status === 'publish';
 }
+
+/**
+ * Prüft den dynamisch aus der URL übernommenen Anfragekontext erneut beim Versand.
+ */
+function kea_core_validate_inquiry_form_context(WP_Error $errors, array $field): WP_Error
+{
+    $key = (string) ($field['advanced']['id'] ?? '');
+
+    if (!in_array($key, ['destination', 'school', 'program'], true)) {
+        return $errors;
+    }
+
+    $value = $field['value'] ?? '';
+
+    if ($value === '') {
+        return $errors;
+    }
+
+    if (!is_string($value) || !kea_core_is_published_inquiry_context($key, sanitize_title($value))) {
+        $errors->add('invalid_inquiry_context', __('Der übernommene Anfragekontext ist nicht mehr verfügbar. Bitte rufe die Angebotsseite erneut auf.', 'kea-core'));
+    }
+
+    return $errors;
+}
+
+add_filter('breakdance_form_validate_field', 'kea_core_validate_inquiry_form_context', 10, 2);

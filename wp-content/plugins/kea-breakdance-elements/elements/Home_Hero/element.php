@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 
 use function Breakdance\Elements\c;
+use function Breakdance\Elements\PresetSections\getPresetSection;
 
 \Breakdance\ElementStudio\registerElementForEditing(
     'KeaBreakdanceElements\\HomeHero',
@@ -19,12 +20,13 @@ class HomeHero extends \Breakdance\Elements\Element
 {
     public static function uiIcon(): string { return 'HeadingIcon'; }
     public static function tag(): string { return 'section'; }
-    public static function name(): string { return 'Startseiten-Hero'; }
+    public static function name(): string { return 'KEA-Hero'; }
     public static function className(): string { return 'kea-home-hero'; }
     public static function category(): string { return 'kea'; }
     public static function slug(): string { return __CLASS__; }
     public static function template(): string { return '%%SSR%%'; }
     public static function defaultCss(): string { return file_get_contents(__DIR__ . '/default.css') ?: ''; }
+    public static function cssTemplate(): string { return file_get_contents(__DIR__ . '/css.twig') ?: self::defaultCss(); }
 
     public static function defaultProperties(): array
     {
@@ -51,5 +53,10 @@ class HomeHero extends \Breakdance\Elements\Element
             c('secondary_url', 'Sekundäre URL', [], ['type' => 'text'], false, false, []),
         ], ['type' => 'section'], false, false, [])];
     }
-    public static function designControls(): array { return []; }
+    public static function designControls(): array { return [c('typography', 'Typografie', [
+        getPresetSection('EssentialElements\\typography', 'Kicker', 'eyebrow', ['type' => 'popout']),
+        getPresetSection('EssentialElements\\typography', 'Überschrift', 'title', ['type' => 'popout']),
+        getPresetSection('EssentialElements\\typography', 'Text', 'text', ['type' => 'popout']),
+        getPresetSection('EssentialElements\\typography', 'Buttons', 'buttons', ['type' => 'popout']),
+    ], ['type' => 'section'], false, false, [])]; }
 }

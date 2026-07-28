@@ -1,0 +1,22 @@
+{% if design.colors.background %}
+%%SELECTOR%%{background:{{ design.colors.background }};}
+{% endif %}
+{% if design.colors.heading %}
+%%SELECTOR%% .kea-destination-hero__title{color:{{ design.colors.heading }}!important;}
+{% endif %}
+{% if design.colors.text %}
+%%SELECTOR%%,%%SELECTOR%% .kea-destination-hero__eyebrow,%%SELECTOR%% .kea-destination-hero__intro{color:{{ design.colors.text }};}
+{% endif %}
+{% if design.colors.overlay %}
+%%SELECTOR%% .kea-destination-hero__veil{background:linear-gradient(90deg,color-mix(in srgb,{{ design.colors.overlay }} 82%,transparent),color-mix(in srgb,{{ design.colors.overlay }} 46%,transparent) 55%,transparent);}
+{% endif %}
+{% if design.colors.cta_background %}
+%%SELECTOR%% .kea-destination-hero__cta{background:{{ design.colors.cta_background }};}
+{% endif %}
+{% if design.colors.cta_text %}
+%%SELECTOR%% .kea-destination-hero__cta{color:{{ design.colors.cta_text }};}
+{% endif %}
+%%SELECTOR%% .kea-destination-hero__eyebrow{ {{ macros.typography(design.typography.eyebrow, globalSettings) }} }
+%%SELECTOR%% .kea-destination-hero__title{ {{ macros.typography(design.typography.title, globalSettings) }} }
+%%SELECTOR%% .kea-destination-hero__intro{ {{ macros.typography(design.typography.intro, globalSettings) }} }
+%%SELECTOR%% .kea-destination-hero__cta{ {{ macros.typography(design.typography.cta, globalSettings) }} }

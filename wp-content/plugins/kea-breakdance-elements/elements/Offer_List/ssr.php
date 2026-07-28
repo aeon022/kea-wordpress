@@ -24,7 +24,19 @@ $queryArgs = [
     'no_found_rows' => true,
 ];
 
-if (($source['scope'] ?? 'current_destination') === 'current_destination') {
+if (($source['scope'] ?? 'current_destination') === 'current_school') {
+    $schoolId = get_queried_object_id();
+
+    if ($schoolId > 0 && get_post_type($schoolId) === 'kea_school' && $isProgramList) {
+        $queryArgs['meta_query'] = [[
+            'key' => 'kea_program_school',
+            'value' => $schoolId,
+            'compare' => '=',
+        ]];
+    } else {
+        $queryArgs['post__in'] = [0];
+    }
+} elseif (($source['scope'] ?? 'current_destination') === 'current_destination') {
     $destinationId = get_queried_object_id();
 
     if ($destinationId > 0 && get_post_type($destinationId) === 'kea_destination') {

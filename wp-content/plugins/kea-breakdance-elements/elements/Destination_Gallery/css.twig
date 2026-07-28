@@ -1,0 +1,3 @@
+{% if design.colors.background %}%%SELECTOR%%{background:{{ design.colors.background }};}{% endif %}
+{% if design.colors.heading %}%%SELECTOR%% .kea-destination-gallery__heading{color:{{ design.colors.heading }};}{% endif %}
+%%SELECTOR%% .kea-destination-gallery__heading{ {{ macros.typography(design.typography.heading, globalSettings) }} }

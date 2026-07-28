@@ -1,0 +1,4 @@
+{% if design.colors.background %}%%SELECTOR%%{background:{{ design.colors.background }};}{% endif %}{% if design.colors.text %}%%SELECTOR%%{color:{{ design.colors.text }};}{% endif %}
+%%SELECTOR%% .kea-destination-testimonials__heading{ {{ macros.typography(design.typography.heading, globalSettings) }} }
+%%SELECTOR%% blockquote p{ {{ macros.typography(design.typography.quote, globalSettings) }} }
+%%SELECTOR%% blockquote footer{ {{ macros.typography(design.typography.source, globalSettings) }} }

@@ -7,6 +7,7 @@ namespace KeaBreakdanceElements;
 if (!defined('ABSPATH')) { exit; }
 
 use function Breakdance\Elements\c;
+use function Breakdance\Elements\PresetSections\getPresetSection;
 
 \Breakdance\ElementStudio\registerElementForEditing('KeaBreakdanceElements\\HomeGuide', \Breakdance\Util\getDirectoryPathRelativeToPluginFolder(__DIR__));
 
@@ -39,5 +40,6 @@ class HomeGuide extends \Breakdance\Elements\Element
     ]; }
 
     private static function cardControls(): array { $controls = []; for ($index = 1; $index <= 4; $index++) { $controls[] = c('audience_' . $index . '_title', 'Titel ' . $index, [], ['type' => 'text'], false, false, []); $controls[] = c('audience_' . $index . '_text', 'Text ' . $index, [], ['type' => 'text', 'textOptions' => ['multiline' => true]], false, false, []); $controls[] = c('audience_' . $index . '_url', 'URL ' . $index, [], ['type' => 'text'], false, false, []); } return $controls; }
-    public static function designControls(): array { return []; }
+    public static function cssTemplate(): string { return file_get_contents(__DIR__ . '/css.twig') ?: self::defaultCss(); }
+    public static function designControls(): array { return [c('typography', 'Typografie', [getPresetSection('EssentialElements\\typography', 'Kicker', 'eyebrow', ['type' => 'popout']), getPresetSection('EssentialElements\\typography', 'Überschriften', 'heading', ['type' => 'popout']), getPresetSection('EssentialElements\\typography', 'Texte', 'text', ['type' => 'popout']), getPresetSection('EssentialElements\\typography', 'Karten', 'card', ['type' => 'popout']), getPresetSection('EssentialElements\\typography', 'Links und Buttons', 'link', ['type' => 'popout'])], ['type' => 'section'], false, false, [])]; }
 }
