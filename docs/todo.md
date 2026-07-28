@@ -4,14 +4,12 @@ Stand: 28. Juli 2026
 
 ## Nächste Umsetzung – KEA-Redesign
 
-- [ ] Dublin visuell auf Desktop und Mobil abnehmen: Abstände, Typografie, Bildwirkung, leere Datenzustände, CTA-, Hover- und Fokuszustände.
-- [ ] Header mit klarer Desktop-Navigation und sichtbarem Beratungs-CTA ausbauen.
-- [ ] Mobile Navigation als eigenständigen, einfachen Einstieg gestalten.
 - [ ] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
-- [ ] Impressum, Datenschutz, Kontakt und Anfrage als verlinkte Standardseiten aufbauen; Consent und Versand anschließend technisch prüfen.
+- [ ] Impressum, Datenschutz und Kontakt als verlinkte Standardseiten aufbauen; Consent und Versand anschließend technisch prüfen. Die Anfrage-Seite mit Kontextformular ist bereits umgesetzt.
 
 ## Vom Kunden: Bestandsdaten und Bilder
 
+- [ ] Dublin sowie die übrigen Reiseziele inhaltlich und visuell freigeben: Texte, Bilder, Fakten, leere Datenzustände und CTAs im echten Inhalt prüfen.
 - [ ] Die 31 Reiseziele im Backend stichprobenartig prüfen: Titel, Land, Sprache, Text, Bild und Permalink.
 - [ ] Die sieben fehlenden Altbilder recherchieren, ersetzen oder bewusst aus den Datensätzen entfernen.
 
@@ -47,7 +45,8 @@ Stand: 28. Juli 2026
 
 - [x] Dynamisches Reiseziel-Template erstellt: Hero, Fakten, Inhalte, Partnerschulen, Programme, Galerie, Erfahrungen, FAQ und Anfrage-CTA.
 - [ ] Die Reiseziel-Blöcke mit befüllten ACF-Daten auf Desktop und Mobil testen.
-- [ ] Gestaltungsvariablen der Angebotsliste an die Headspin-Token binden, sobald Farben und Typografie final sind.
+- [x] Angebotsliste und KEA-Komponenten an die Headspin-Farben und fluiden Typografie-Tokens binden.
+- [x] Globalen Header mit Desktop-/Mobilnavigation, sichtbarem Beratungs-CTA, Hover-/Fokuszuständen und zentralem Hero-Farbwechsel umsetzen.
 - [ ] Keine einzelnen Reiseziele oder Programme als manuelle Breakdance-Seiten anlegen.
 
 ## Templates und Seiten

@@ -112,7 +112,9 @@ Pfad: **Breakdance → Templates → Main Header**. Dieser Header erscheint auf 
 
 Die Reihenfolge lautet: Sprachreisen, Reiseziele, Kurse, Warum KEA, Magazin, Kontakt. Der letzte Punkt ist bewusst der sichtbare Beratungs-CTA und führt zu **/anfrage/**. Bei einer Änderung stets Desktop und Mobilansicht prüfen; der Header bleibt über dem Hero ruhig und beim Scrollen erreichbar.
 
-Auf der Startseite und auf Reiseziel-Detailseiten liegt der Header zunächst ohne Hintergrund über dem Hero. Dort werden Navigation und Logo automatisch hell dargestellt. Nach dem Hero wird er zu einer dunklen Glasleiste – ebenfalls mit heller Navigation und hellem Logo. Auf allen anderen Seiten, Archiven und Templates ohne diesen Hero startet er direkt als dunkles Glas. Nach 280 Pixeln blendet er aus und erscheint beim Hochscrollen wieder. Das Logo muss nicht als zweite Datei gepflegt werden.
+Über jedem KEA-Hero liegt der Header zunächst ohne Hintergrund; Navigation und Logo werden automatisch hell dargestellt. Sobald der Hero verlassen wird – sowie auf Archiven, Standardseiten und Seiten ohne Hero von Beginn an – erscheint eine dunkle Glasleiste, ebenfalls mit heller Navigation und hellem Logo. Nach 280 Pixeln blendet sie aus und erscheint beim Hochscrollen wieder. Das Logo muss nicht als zweite Datei gepflegt werden.
+
+Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel; der Beratungs-CTA bleibt Coral. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
 
 **Main Header — Backup Editorial v1** ist die gesicherte vorherige Variante. Sie ist in Breakdance deaktiviert und wird nicht ausgeliefert. Erst diese Vorlage aktivieren, wenn der aktuelle Header ersetzt werden soll.
 
