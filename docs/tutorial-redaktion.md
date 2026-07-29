@@ -149,7 +149,7 @@ Die Reihenfolge lautet: Start, Sprachreisen, Reiseziele, Kurse, Warum KEA, Magaz
 
 Standard-Unterseiten verwenden im Hero den hellen KEA-Hintergrund mit dunkler Schrift. Detailseiten für Reiseziele, Schulen und Programme verwenden weiterhin das redaktionell gepflegte Hero-Bild; dessen Verlauf wird zentral im dynamischen Hero-Element gesteuert. Diese Farben und Verläufe nicht pro Seite überschreiben.
 
-Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel und verwenden den üblichen Handzeiger; der Beratungs-CTA bleibt auch auf der aktiven Anfrageseite Coral und ohne Active-Linie. Beim Hover wird er dunkelgrün, nur der Tastaturfokus erhält zusätzlich eine sichtbare Kontur. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
+Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel und verwenden den üblichen Handzeiger. Der aktive normale Menüpunkt erhält eine ruhige Hintergrundfläche statt einer Linie. Der Beratungs-CTA bleibt auch auf der aktiven Anfrageseite Coral und ohne Active-Linie. Beim Hover wird er dunkelgrün, nur der Tastaturfokus erhält zusätzlich eine sichtbare Kontur. Die feinen vertikalen Trenner bei Logo und Suche werden ebenfalls im Header-CSS gepflegt. Diese Regeln nicht auf einzelnen Seiten überschreiben.
 
 #### Custom CSS: KEA-Logo und Leitsatz im Suchoverlay
 
@@ -164,6 +164,22 @@ Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Such
 5. Im Frontend das Suchsymbol öffnen und Logo, Leitsatz, Suchfeld sowie Schließen-Symbol prüfen.
 
 ```css
+%%SELECTOR%% {
+  display: flex;
+  align-items: center;
+}
+
+%%SELECTOR%% .search-form__button--full-screen {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.5rem;
+  padding: .6rem;
+}
+
 %%SELECTOR%% .search-form__lightbox::before {
   content: "";
   position: absolute;
@@ -189,17 +205,24 @@ Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Such
   width: min(90vw, 42rem);
   transform: translateX(-50%);
   color: var(--hcl-neutral-1);
+  font-family: var(--hff-heading, serif);
   font-size: var(--hfs-h3);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.15;
+  letter-spacing: -.025em;
   text-align: center;
   pointer-events: none;
+}
+
+%%SELECTOR%% .search-form__lightbox-container {
+  width: min(calc(100% - 2rem), 48rem) !important;
+  max-width: 48rem;
 }
 ```
 
 `%%SELECTOR%%` ist ein Breakdance-Platzhalter. Beim Speichern ersetzt Breakdance ihn automatisch durch den eindeutigen Selektor des ausgewählten Suchformulars. Die Regel wirkt dadurch nur auf dieses Element.
 
-Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Der Leitsatz wird über `::after` zwischen Logo und Suchleiste positioniert. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Logo und Leitsatz sind hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
+Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Der Leitsatz wird über `::after` zwischen Logo und Suchleiste positioniert und verwendet die globale Editorial-Schrift. Die Container-Regel begrenzt das Suchfeld auf 48 rem. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Logo und Leitsatz sind hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
 
 **Main Header — Backup Editorial v1** ist die gesicherte vorherige Variante. Sie ist in Breakdance deaktiviert und wird nicht ausgeliefert. Erst diese Vorlage aktivieren, wenn der aktuelle Header ersetzt werden soll.
 
@@ -334,6 +357,12 @@ Hero mit Kategorie und Datum → Beitragsbild → Artikelinhalt → vorheriger/n
 
 Alle vorhandenen Bereiche sind dynamisch. Fehlen Daten, wird der jeweilige Bereich nicht ausgegeben.
 
+### Suche und leere Ergebnisse
+
+Pfad: **Breakdance → Templates → „Fallback: Search Results“**. Dort werden Überschrift, Einleitung, Ergebnis-Karten und der Hinweis bei null Treffern gemeinsam gepflegt. Die Ergebnisliste übernimmt automatisch den aktuellen WordPress-Suchbegriff. Der leere Zustand enthält eine neue Suche sowie Links zu Reiseziele, Magazin und Kontakt.
+
+Leere Reiseziel-Filter werden vom dynamischen Element **Destination List** ausgegeben. Text und Rücksetzlink entstehen aus den WordPress-Daten; nur die visuelle Darstellung wird im Element gepflegt. Keine zweite manuelle Leerzustands-Sektion anlegen.
+
 ### 404-Seite
 
 Pfad: **Breakdance → Templates → „404 Not Found“ → „KEA-Hero“**. Kicker, Überschrift, Text und beide Buttons werden direkt im Breakdance-Editor gepflegt. Die Seite erscheint automatisch bei nicht vorhandenen URLs; keine WordPress-Seite dafür anlegen.
@@ -353,7 +382,7 @@ Pfad: **Seiten → Anfrage → Mit Breakdance bearbeiten**.
 
 Das Formular ist ein nativer **Breakdance Form Builder**. Namen, Feldbeschriftungen, Pflichtfelder, Button, Meldungen, E-Mail-Empfänger und Formulardesign werden direkt im Element gepflegt. Neue Anfragen werden zusätzlich unter **Breakdance → Form Submissions** gespeichert.
 
-Container, Eingabefelder, Checkboxen, Meldungen und Absende-Button folgen dem eckigen KEA-Stil. Fokuszustände und Feldgrenzen sind bewusst kontrastreich. Radios bleiben rund, damit sie eindeutig von Checkboxen unterscheidbar sind; Radien und Farben nicht pro Feld überschreiben.
+Container, Eingabefelder, Checkboxen, Meldungen und Absende-Button folgen dem eckigen KEA-Stil. Fokuszustände und Feldgrenzen sind bewusst kontrastreich. Ungültige Pflichtfelder werden erst nach Interaktion oder Absendeversuch farblich markiert; Erfolgs- und Fehlermeldungen verwenden die zentralen Headspin-Farben. Radios bleiben rund, damit sie eindeutig von Checkboxen unterscheidbar sind. Diese Zustände nicht pro Feld überschreiben.
 
 Die sichtbaren Auswahlfelder für Reiseform, Anfragetyp, Reiseziel und Programm/Kurswunsch gehören ebenfalls zum Form-Builder-Element. Die Optionen können dort direkt ergänzt, umsortiert oder entfernt werden. Reiseziel und Programm sind bewusst optional: Kommt eine Person über einen CTA auf einer Detailseite, wird der passende Kontext bereits unsichtbar und verlässlich übernommen.
 

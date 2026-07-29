@@ -5,6 +5,7 @@
 - Magazin-Archiv und Magazin-Single
 - Main Header und Main Footer
 - KEA-404
+- Suchergebnisse und Anfrage-Seite
 - Singles für Reiseziel, Partnerschule und Programm
 - Archive für Reiseziele, Programme und Erfahrungen
 
