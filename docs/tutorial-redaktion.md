@@ -149,11 +149,11 @@ Die Reihenfolge lautet: Start, Sprachreisen, Reiseziele, Kurse, Warum KEA, Magaz
 
 Standard-Unterseiten verwenden im Hero den hellen KEA-Hintergrund mit dunkler Schrift. Detailseiten für Reiseziele, Schulen und Programme verwenden weiterhin das redaktionell gepflegte Hero-Bild; dessen Verlauf wird zentral im dynamischen Hero-Element gesteuert. Diese Farben und Verläufe nicht pro Seite überschreiben.
 
-Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel; der Beratungs-CTA bleibt Coral. Hover- und Tastaturfokus wechseln automatisch auf kontrastreiche Farbkombinationen. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
+Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel und verwenden den üblichen Handzeiger; der Beratungs-CTA bleibt auch auf der aktiven Anfrageseite Coral und ohne Active-Linie. Beim Hover wird er dunkelgrün, nur der Tastaturfokus erhält zusätzlich eine sichtbare Kontur. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
 
-#### Custom CSS: KEA-Logo im Suchoverlay
+#### Custom CSS: KEA-Logo und Leitsatz im Suchoverlay
 
-Das native Breakdance-Element **Search Form** besitzt keinen eigenen Bild- oder Logo-Platz für das Vollbild-Suchoverlay. Das KEA-Logo wird deshalb direkt am vorhandenen Suchformular über dessen elementbezogenes Custom CSS ergänzt.
+Das native Breakdance-Element **Search Form** besitzt keinen eigenen Platz für Logo oder Leitsatz im Vollbild-Suchoverlay. Beides wird deshalb direkt am vorhandenen Suchformular über dessen elementbezogenes Custom CSS ergänzt.
 
 Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Suchsymbol/Search Form auswählen → Advanced → Custom CSS**.
 
@@ -161,7 +161,7 @@ Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Such
 2. Den Reiter **Advanced** und darin **Custom CSS** öffnen.
 3. Den folgenden Block am Ende des vorhandenen CSS einfügen. Bereits vorhandene Regeln nicht ersetzen.
 4. Den Header speichern.
-5. Im Frontend das Suchsymbol öffnen und Logo, Suchfeld sowie Schließen-Symbol auf Desktop und Mobilgerät prüfen.
+5. Im Frontend das Suchsymbol öffnen und Logo, Leitsatz, Suchfeld sowie Schließen-Symbol prüfen.
 
 ```css
 %%SELECTOR%% .search-form__lightbox::before {
@@ -179,11 +179,27 @@ Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Such
   filter: brightness(0) invert(1);
   pointer-events: none;
 }
+
+%%SELECTOR%% .search-form__lightbox::after {
+  content: "Deine Reise. Dein nächstes Kapitel.";
+  position: absolute;
+  z-index: 20;
+  top: clamp(9rem, 27vh, 15rem);
+  left: 50%;
+  width: min(90vw, 42rem);
+  transform: translateX(-50%);
+  color: var(--hcl-neutral-1);
+  font-size: var(--hfs-h3);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  pointer-events: none;
+}
 ```
 
 `%%SELECTOR%%` ist ein Breakdance-Platzhalter. Beim Speichern ersetzt Breakdance ihn automatisch durch den eindeutigen Selektor des ausgewählten Suchformulars. Die Regel wirkt dadurch nur auf dieses Element.
 
-Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Das Logo ist hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
+Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Der Leitsatz wird über `::after` zwischen Logo und Suchleiste positioniert. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Logo und Leitsatz sind hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
 
 **Main Header — Backup Editorial v1** ist die gesicherte vorherige Variante. Sie ist in Breakdance deaktiviert und wird nicht ausgeliefert. Erst diese Vorlage aktivieren, wenn der aktuelle Header ersetzt werden soll.
 
