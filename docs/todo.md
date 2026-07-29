@@ -1,11 +1,13 @@
 # To-do – KEA-Redesign
 
-Stand: 28. Juli 2026
+Stand: 29. Juli 2026
 
 ## Nächste Umsetzung – KEA-Redesign
 
-- [ ] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
-- [ ] Impressum, Datenschutz und Kontakt als verlinkte Standardseiten aufbauen; Consent und Versand anschließend technisch prüfen. Die Anfrage-Seite mit Kontextformular ist bereits umgesetzt.
+- [x] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
+- [x] Impressum, Datenschutz und Kontakt als verlinkte Standardseiten aufbauen.
+- [x] Aktuellen Frontend-Stand auf externe Dienste prüfen: keine Analyse, Werbung, Karten, Videos oder Captcha; ungenutztes externes QR-Skript und Emoji-Fallback deaktiviert. Daher derzeit kein Consent-Banner.
+- [ ] SMTP-Versand und Formularspeicherung nach finaler Kundenfreigabe technisch abnehmen.
 
 ## Vom Kunden: Bestandsdaten und Bilder
 
@@ -58,12 +60,17 @@ Stand: 28. Juli 2026
 - [ ] Den Dublin-Testbericht vor dem Launch durch eine freigegebene echte Erfahrung ersetzen oder löschen.
 - [x] Startseite nach der Komponenten- und Template-Matrix aufbauen.
 - [x] Anfrageformular mit validiertem Kontext für Reiseziel, Schule und Programm anbinden.
+- [x] Pflichtseiten aus Konzept und Roadmap anlegen: Sprachreisen, fünf Zielgruppenseiten, Kurse, Warum KEA, Über KEA, FAQ und Magazin.
 
 ## Vom Kunden: Rechtliches und Consent freigeben
 
-- [ ] Finales Impressum mit verantwortlicher Person, Unternehmens- und Kontaktdaten liefern oder freigeben.
-- [ ] Datenschutzerklärung, eingesetzte Dienste und die Rechtsgrundlage für Formulare, Analytics und externe Medien rechtlich freigeben.
-- [ ] Entscheiden, welche optionalen Dienste tatsächlich eingesetzt werden; nur dafür wird ein Consent-Banner konfiguriert.
+- [ ] Impressumsdaten zu Christine Gütlinger-Keegan, Firmenwortlaut, Rechtsform, Anschrift, Telefon und E-Mail final bestätigen.
+- [ ] Falls vorhanden UID, Firmenbuchnummer samt Firmenbuchgericht und GISA-Zahl liefern.
+- [ ] Gewerbe- beziehungsweise Berufsbezeichnung, WKO-Fachgruppe und zuständige Aufsichtsbehörde bestätigen.
+- [ ] Hostinganbieter, Serverstandort, Auftragsverarbeitungsvereinbarung und Löschfrist der Serverprotokolle dokumentieren.
+- [ ] Löschfristen für Breakdance Form Submissions und zugehörige Anfrage-E-Mails verbindlich festlegen.
+- [ ] Datenschutzerklärung, eingesetzte Dienste und Rechtsgrundlagen rechtlich freigeben.
+- [x] Für den aktuellen Stand keine optionalen Dienste aktivieren; ein Consent-Banner wird erst bei einem tatsächlich zustimmungspflichtigen Dienst konfiguriert.
 
 ## Vor Veröffentlichung
 

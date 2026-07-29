@@ -114,9 +114,42 @@ Die Reihenfolge lautet: Sprachreisen, Reiseziele, Kurse, Warum KEA, Magazin, Kon
 
 Über jedem KEA-Hero liegt der Header zunächst ohne Hintergrund; Navigation und Logo werden automatisch hell dargestellt. Sobald der Hero verlassen wird – sowie auf Archiven, Standardseiten und Seiten ohne Hero von Beginn an – erscheint eine dunkle Glasleiste, ebenfalls mit heller Navigation und hellem Logo. Nach 280 Pixeln blendet sie aus und erscheint beim Hochscrollen wieder. Das Logo muss nicht als zweite Datei gepflegt werden.
 
-Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel; der Beratungs-CTA bleibt Coral. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
+Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel; der Beratungs-CTA bleibt Coral. Hover- und Tastaturfokus wechseln automatisch auf kontrastreiche Farbkombinationen. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
 
 **Main Header — Backup Editorial v1** ist die gesicherte vorherige Variante. Sie ist in Breakdance deaktiviert und wird nicht ausgeliefert. Erst diese Vorlage aktivieren, wenn der aktuelle Header ersetzt werden soll.
+
+### Globaler Footer
+
+Pfad: **Breakdance → Footers → Main Footer**. Der Footer erscheint auf der gesamten Website und bündelt die bestätigten KEA-Kontaktdaten, Reisebereiche, Service-Links, Social-Media-Profile und rechtlichen Links.
+
+1. Logo, Kontaktdaten, Linktexte und Linkziele direkt im globalen Footer bearbeiten.
+2. Für neue Reisebereiche oder Services vorhandene Link-Elemente duplizieren und das Ziel prüfen.
+3. Externe Social-Media-Links in einem neuen Tab öffnen.
+4. Nach Änderungen Desktop und Mobilansicht sowie Telefon-, E-Mail- und Tastaturbedienung prüfen.
+
+Der Footer zeigt bewusst nur Telefonnummer und E-Mail-Adresse; die vollständige Firmenanschrift bleibt auf Kontakt- und Impressumsseite. Die Navigationslinks sind am Desktop als zwei ausgerichtete Spalten mit einzeiligen Linkzeilen gestaltet. Unterstreichungen oder eigene Farben nicht pro Link ergänzen.
+
+Der Footer enthält keine reiseziel- oder programmbezogenen ACF-Inhalte. ACF bleibt für fachliche Datensätze zuständig; Breakdance pflegt hier ausschließlich die globale Darstellung und Navigation.
+
+### Kontaktseite
+
+Pfad: **Seiten → Kontakt → Mit Breakdance bearbeiten**. Die Seite zeigt die direkte Telefonnummer, E-Mail-Adresse und Firmenanschrift. Diese Angaben werden im Rich-Text-Element **„Direkter Kontakt“** gepflegt.
+
+Die Kontaktseite enthält bewusst kein zweites Formular. Konkrete Reisewünsche führen über **„Beratung anfragen“** zur Anfrage-Seite; nur dort werden Formularfelder, Empfänger und Anfragekontext gepflegt. Dadurch bleiben allgemeiner Kontakt und qualifizierte Reiseanfrage klar getrennt.
+
+### Impressum und Datenschutz
+
+Pfade: **Seiten → Impressum** und **Seiten → Datenschutz**. Beide Seiten verwenden denselben eckigen Standardseitenaufbau mit Inhaltsnavigation und werden im jeweiligen Breakdance-Rich-Text gepflegt.
+
+Betreiberangaben, Rechtsgrundlagen, Cookies, Dienstleister oder Empfänger nie nur im Footer ändern. Jede fachliche Änderung muss gleichzeitig auf der betreffenden Rechtseite und im internen [Datenschutzkonzept](datenschutz-konzept.md) geprüft werden. Neue Analyse-, Karten-, Video-, Captcha- oder Werbedienste dürfen nicht vor dieser Prüfung aktiviert werden.
+
+Die WordPress-Datenschutzseite ist auf **Datenschutz** gesetzt. Das Anfrageformular verlinkt sie direkt im Pflichtfeld. Wird der Slug geändert, müssen Footer und Formularlink gemeinsam angepasst und getestet werden.
+
+### Standard- und Zielgruppenseiten
+
+Die Seiten **Sprachreisen**, **Kurse**, **Warum KEA**, **Über KEA**, **FAQ**, **Magazin** sowie die fünf Zielgruppenseiten werden unter **Seiten** mit Breakdance gepflegt. Die Zielgruppenseiten liegen redaktionell unter **Sprachreisen**; diese Eltern-Kind-Struktur nicht auflösen, weil sie die URLs `/sprachreisen/.../` erzeugt.
+
+Der Inhalt liegt jeweils in einem Rich-Text-Element mit Inhaltsnavigation, Karten und optionalem Schluss-CTA. Überschriften, Aussagen und Links können dort angepasst werden. Fachliche Reiseziele, Schulen und konkrete Programme werden weiterhin ausschließlich als strukturierte Datensätze gepflegt und nicht in diese Standardseiten kopiert.
 
 ### Was im Editor bearbeitet wird
 
@@ -194,6 +227,8 @@ Pfad: **Breakdance → Templates → „404 Not Found“ → „KEA-Hero“**. K
 Pfad: **Seiten → Anfrage → Mit Breakdance bearbeiten**.
 
 Das Formular ist ein nativer **Breakdance Form Builder**. Namen, Feldbeschriftungen, Pflichtfelder, Button, Meldungen, E-Mail-Empfänger und Formulardesign werden direkt im Element gepflegt. Neue Anfragen werden zusätzlich unter **Breakdance → Form Submissions** gespeichert.
+
+Container, Eingabefelder, Checkboxen, Meldungen und Absende-Button folgen dem eckigen KEA-Stil. Fokuszustände und Feldgrenzen sind bewusst kontrastreich. Radios bleiben rund, damit sie eindeutig von Checkboxen unterscheidbar sind; Radien und Farben nicht pro Feld überschreiben.
 
 Die sichtbaren Auswahlfelder für Reiseform, Anfragetyp, Reiseziel und Programm/Kurswunsch gehören ebenfalls zum Form-Builder-Element. Die Optionen können dort direkt ergänzt, umsortiert oder entfernt werden. Reiseziel und Programm sind bewusst optional: Kommt eine Person über einen CTA auf einer Detailseite, wird der passende Kontext bereits unsichtbar und verlässlich übernommen.
 
