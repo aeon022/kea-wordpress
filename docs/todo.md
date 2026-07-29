@@ -7,7 +7,7 @@ Stand: 29. Juli 2026
 - [x] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
 - [x] Impressum, Datenschutz und Kontakt als verlinkte Standardseiten aufbauen.
 - [x] Aktuellen Frontend-Stand auf externe Dienste prüfen: keine Analyse, Werbung, Karten, Videos oder Captcha; ungenutztes externes QR-Skript und Emoji-Fallback deaktiviert. Daher derzeit kein Consent-Banner.
-- [ ] URL-Migrationsmatrix aus Altbestand und neuer Struktur erstellen; Redirects vorbereiten, aber noch nicht aktivieren.
+- [x] URL-Migrationsmatrix aus Altbestand und neuer Struktur erstellen; Redirects sind dokumentiert, aber nicht aktiviert.
 - [ ] SMTP-Versand und Formularspeicherung nach finaler Kundenfreigabe technisch abnehmen.
 
 ## Vom Kunden: Bestandsdaten und Bilder
@@ -53,7 +53,7 @@ Stand: 29. Juli 2026
 ## Technische Umsetzung und Qualitätssicherung – KEA-Redesign
 
 - [x] Dynamisches Reiseziel-Template erstellt: Hero, Fakten, Inhalte, Partnerschulen, Programme, Galerie, Erfahrungen, FAQ und Anfrage-CTA.
-- [ ] Die Reiseziel-Blöcke mit befüllten ACF-Daten auf Desktop und Mobil testen.
+- [x] Die Reiseziel-Blöcke mit befüllten und reduzierten ACF-Daten auf Desktop und Mobil testen.
 - [x] Angebotsliste und KEA-Komponenten an die Headspin-Farben und fluiden Typografie-Tokens binden.
 - [x] Globalen Header mit Desktop-/Mobilnavigation, sichtbarem Beratungs-CTA, Hover-/Fokuszuständen und zentralem Hero-Farbwechsel umsetzen.
 - [ ] Keine einzelnen Reiseziele oder Programme als manuelle Breakdance-Seiten anlegen.
@@ -83,4 +83,4 @@ Stand: 29. Juli 2026
 
 - [ ] Mobile Ansicht, Tastaturbedienung, Fokuszustände und leere Datenzustände testen.
 - [ ] Bildrechte, Alt-Texte, lokale Fonts, Consent und Formularversand prüfen.
-- [ ] Backups, SEO-Indexierung und Launch-Checkliste dokumentieren.
+- [x] Backups, SEO-Indexierung und Launch-Ablauf in `docs/launch-checklist.md` dokumentieren; Konfiguration und Freigabe bleiben Launch-Blocker.

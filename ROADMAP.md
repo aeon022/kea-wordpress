@@ -22,7 +22,7 @@ Damit vermeiden wir, dass Dublin, London und Málaga dreimal unterschiedlich auf
 
 * * *
 
-## **Projektstatus – 28. Juli 2026**
+## **Projektstatus – 29. Juli 2026**
 
 Der folgende Stand ergänzt die ursprüngliche Roadmap. Er ersetzt keine noch offenen Phasen.
 
@@ -37,22 +37,27 @@ Erledigt:
 - die KEA-Komponentenbibliothek sowie dynamische Single- und Archiv-Templates für Reiseziele, Partnerschulen, Programme und Erfahrungen sind aufgebaut
 - Startseite, Reiseziel-Archiv mit Sprach-/Landfilter, Anfragekontext sowie Header mit Desktop-/Mobilnavigation sind umgesetzt
 - der globale Header wurde auf Home, den drei Single-Typen, Archiven, Standardseiten und 404 visuell geprüft: über Hero transparent/hell, sonst dunkles Glas/hell
+- Footer, Kontakt, Impressum, Datenschutz und die weiteren Pflichtseiten sind aufgebaut und verlinkt
+- das Magazin verwendet native WordPress-Beiträge mit den Kategorien Ratgeber, Reiseberichte und Aktuelles
+- URL-Migrationsmatrix, Redaktionstutorial und Launch-Checkliste sind dokumentiert
+- eine interne Desktop-/Mobil- und Accessibility-Prüfung der repräsentativen Seitentypen ist abgeschlossen
 
 Noch offen:
 
 - sieben im Altbestand referenzierte Bilder prüfen oder ersetzen: `IMG_0852.jpg`, `map-brighton.jpg`, `DSC_1488-bearb.jpg`, `IMG_0111.jpg`, `WP_002224.jpg`, `20180829_121159-e1546633996344.jpg`, `Malaga1-e1559337096861.jpg`
 - konkrete Programme fachlich prüfen und vervollständigen; Preise, Starttermine und belastbare Kursdetails werden bewusst erst nach Freigabe übernommen
-- Footer sowie Impressum, Datenschutz und Kontakt als vollständige Standardseiten fertigstellen
 - Consent, SMTP-Versand und rechtliche Inhalte mit den finalen Kundendaten technisch abnehmen
+- Backup-Ziel und Zeitplan konfigurieren sowie die SEO-Lösung vor dem Launch festlegen
+- Redirect-Matrix nach den zwei offenen fachlichen Entscheidungen zum Launch aktivieren
 
 Die priorisierte Arbeitsliste liegt in `docs/todo.md`.
 
 ## Nächste Lieferstrecke
 
-1. Footer sowie Impressum, Datenschutz und Kontakt als hochwertige, verlinkte Standardseiten aufbauen.
+1. Breakdance-Stand und versionierte Projektdateien für die Übertragung sichern.
 2. Consent und Formularversand mit den finalen Kundendaten technisch prüfen.
 3. Kundeninhalte, Bildrechte sowie fachliche Programm- und Reisezielangaben als eigenen Freigabeblock vervollständigen.
-4. Abschließende Desktop-/Mobil-, Accessibility- und Launch-Abnahme durchführen.
+4. Backup, SEO, Redirects und abschließende Launch-Abnahme durchführen.
 
 * * *
 

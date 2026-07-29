@@ -1,0 +1,26 @@
+source_path,target_path,action,http_status,status,note
+/,/,keep,200,ready,Startseite behält ihre URL
+/kontakt/,/kontakt/,keep,200,ready,Kontaktseite behält ihre URL
+/impressum/,/impressum/,keep,200,ready,Impressum behält seine URL
+/datenschutzerklaerung/,/datenschutz/,redirect,301,ready,Neuer vereinheitlichter Slug
+/blog-2/,/magazin/,redirect,301,ready,Alte Blogübersicht wird zum Magazin
+/coming-soon/,,gone,410,ready,Veraltete Vorschaltseite ohne Nachfolgeinhalt
+/home-portfolio/lehrerfortbildung/,/sprachreisen/lehrerfortbildung/,redirect,301,ready,Neue Zielgruppenseite
+/home-portfolio/downloads/,,review,,customer,Vorhandene Downloads und Bildrechte vor einer Zielentscheidung prüfen
+/home-portfolio/kursorte-2/,/reiseziele/,redirect,301,ready,Neue dynamische Reiseziele-Übersicht
+/home-portfolio/sprachkurse-fuer-alle-zielgruppen/,/sprachreisen/,redirect,301,ready,Neue Sprachreisen-Übersicht
+/home-portfolio/schulbesuch-ausland/,/sprachreisen/schueler-jugendliche/,redirect,301,ready,Neue Zielgruppenseite
+/verreisen-nur-mit-versicherung/,/magazin/verreisen-nur-mit-versicherung/,redirect,301,blocked,Erst nach fachlicher Prüfung und Migration des Altbeitrags aktivieren
+/schulbesuch-im-ausland/,/sprachreisen/schueler-jugendliche/,redirect,301,ready,Inhalt wird in der Zielgruppenseite gebündelt
+/category/news/,/magazin/thema/aktuelles/,redirect,301,ready,Neue Magazinkategorie
+/tag/news/,/magazin/thema/aktuelles/,redirect,301,ready,Tag-Archiv entfällt
+/tag/verreisen/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/versicherung/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/reiseversicherung/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/europa/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/reisegepaeck/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/stornierung/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/notfall/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/heimtransport/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/krankenhaus/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
+/tag/kosten/,/magazin/thema/ratgeber/,redirect,301,ready,Tag-Archiv entfällt
