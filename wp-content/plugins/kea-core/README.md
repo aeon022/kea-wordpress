@@ -20,6 +20,7 @@ Dieses Plugin registriert projektspezifische Content Types, Taxonomien und klein
 - Altersgruppen
 - Interessen
 - Unterkunftsarten
+- leere Magazin-Kategorien als gültige Archive
 - Anfrage-Kontext
 - versionierte ACF-Feldgruppen
 

@@ -4,7 +4,7 @@
 /**
  * Plugin Name: KEA Core
  * Description: Content Types, Taxonomien und Projektlogik für KEA Sprachreisen.
- * Version: 0.2.2
+ * Version: 0.2.3
  * Author: ABTEILUNG83
  * Text Domain: kea-core
  */
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KEA_CORE_VERSION', '0.2.2');
+define('KEA_CORE_VERSION', '0.2.3');
 define('KEA_CORE_PATH', plugin_dir_path(__FILE__));
 define('KEA_CORE_URL', plugin_dir_url(__FILE__));
 
@@ -28,6 +28,7 @@ require_once KEA_CORE_PATH . 'src/acf-json.php';
 add_action('init', 'kea_core_register_post_types');
 add_action('init', 'kea_core_register_taxonomies');
 add_action('init', 'kea_core_register_inquiry_rewrite_tags');
+add_filter('pre_handle_404', 'kea_core_keep_empty_magazine_categories', 10, 2);
 
 register_activation_hook(__FILE__, 'kea_core_activate');
 register_deactivation_hook(__FILE__, 'kea_core_deactivate');

@@ -108,11 +108,13 @@ Pfad: **Breakdance → Templates**. Für die Vorschau oben im Editor einen passe
 
 ### Globale Navigation
 
-Pfad: **Breakdance → Templates → Main Header**. Dieser Header erscheint auf der gesamten Website. Logo, die sechs Hauptpunkte, Suche und der Button **„Beratung starten →“** werden dort zentral gepflegt – niemals auf einer einzelnen Seite.
+Pfad: **Breakdance → Templates → Main Header**. Dieser Header erscheint auf der gesamten Website. Logo, die sieben Hauptpunkte, Suche und der Button **„Beratung starten →“** werden dort zentral gepflegt – niemals auf einer einzelnen Seite.
 
-Die Reihenfolge lautet: Sprachreisen, Reiseziele, Kurse, Warum KEA, Magazin, Kontakt. Der letzte Punkt ist bewusst der sichtbare Beratungs-CTA und führt zu **/anfrage/**. Bei einer Änderung stets Desktop und Mobilansicht prüfen; der Header bleibt über dem Hero ruhig und beim Scrollen erreichbar.
+Die Reihenfolge lautet: Start, Sprachreisen, Reiseziele, Kurse, Warum KEA, Magazin, Kontakt. Der letzte Punkt ist bewusst der sichtbare Beratungs-CTA und führt zu **/anfrage/**. Bei einer Änderung stets Desktop und Mobilansicht prüfen; der Header bleibt über dem Hero ruhig und beim Scrollen erreichbar.
 
 Über jedem KEA-Hero liegt der Header zunächst ohne Hintergrund; Navigation und Logo werden automatisch hell dargestellt. Sobald der Hero verlassen wird – sowie auf Archiven, Standardseiten und Seiten ohne Hero von Beginn an – erscheint eine dunkle Glasleiste, ebenfalls mit heller Navigation und hellem Logo. Nach 280 Pixeln blendet sie aus und erscheint beim Hochscrollen wieder. Das Logo muss nicht als zweite Datei gepflegt werden.
+
+Standard-Unterseiten verwenden im Hero den hellen KEA-Hintergrund mit dunkler Schrift. Detailseiten für Reiseziele, Schulen und Programme verwenden weiterhin das redaktionell gepflegte Hero-Bild; dessen Verlauf wird zentral im dynamischen Hero-Element gesteuert. Diese Farben und Verläufe nicht pro Seite überschreiben.
 
 Im Mobilmenü sitzt der Burger rechts. Das aufgeklappte Menü verwendet automatisch das KEA-Logo und nicht das Headspin-Logo. Die Links erscheinen im hellen Menü dunkel; der Beratungs-CTA bleibt Coral. Hover- und Tastaturfokus wechseln automatisch auf kontrastreiche Farbkombinationen. Diese Farben nicht auf einzelnen Seiten überschreiben: Der globale Header erkennt die vorhandenen KEA-Heros selbst.
 
@@ -147,9 +149,23 @@ Die WordPress-Datenschutzseite ist auf **Datenschutz** gesetzt. Das Anfrageformu
 
 ### Standard- und Zielgruppenseiten
 
-Die Seiten **Sprachreisen**, **Kurse**, **Warum KEA**, **Über KEA**, **FAQ**, **Magazin** sowie die fünf Zielgruppenseiten werden unter **Seiten** mit Breakdance gepflegt. Die Zielgruppenseiten liegen redaktionell unter **Sprachreisen**; diese Eltern-Kind-Struktur nicht auflösen, weil sie die URLs `/sprachreisen/.../` erzeugt.
+Die Seiten **Sprachreisen**, **Kurse**, **Warum KEA**, **Über KEA**, **FAQ** sowie die fünf Zielgruppenseiten werden unter **Seiten** mit Breakdance gepflegt. Die Zielgruppenseiten liegen redaktionell unter **Sprachreisen**; diese Eltern-Kind-Struktur nicht auflösen, weil sie die URLs `/sprachreisen/.../` erzeugt.
 
 Der Inhalt liegt jeweils in einem Rich-Text-Element mit Inhaltsnavigation, Karten und optionalem Schluss-CTA. Überschriften, Aussagen und Links können dort angepasst werden. Fachliche Reiseziele, Schulen und konkrete Programme werden weiterhin ausschließlich als strukturierte Datensätze gepflegt und nicht in diese Standardseiten kopiert.
+
+### Magazin und Blog
+
+Pfad im Backend: **Beiträge**. Die Seite **/magazin/** ist das automatische Beitragsarchiv und wird nicht mehr wie eine normale Breakdance-Seite mit einzelnen Artikeln befüllt.
+
+1. **Beiträge → Erstellen** öffnen.
+2. Titel, Beitragsbild, Kurztext und Artikelinhalt pflegen.
+3. Eine passende Kategorie wählen: **Ratgeber**, **Reiseberichte** oder **Aktuelles**. Ohne Auswahl wird **Aktuelles** verwendet.
+4. Interne Links und Bildrechte prüfen, anschließend Vorschau auf Desktop und Mobil kontrollieren.
+5. Erst nach fachlicher Freigabe veröffentlichen.
+
+Der Kurztext erscheint auf der Archivkarte. Das Beitragsbild ist für jede Veröffentlichung erforderlich und wird im Magazinarchiv sowie im Artikeltemplate verwendet. Kommentare, Autorenbox, Newsletter und manuelle Seitenleisten sind nicht Teil des KEA-Magazins.
+
+Artikel erhalten die URL **/magazin/{slug}/**. Kategorien liegen unter **/magazin/thema/{slug}/**. Je Kategorie ist ein veröffentlichter, im Titel und Inhalt klar markierter Demoartikel angelegt. Diese Beiträge dienen nur der Layoutprüfung und müssen vor dem Launch ersetzt oder auf Entwurf gesetzt werden.
 
 ### Was im Editor bearbeitet wird
 
@@ -203,9 +219,13 @@ Hero → Fakten → Lage/KEA-Einschätzung/Ausstattung → Programme → Galerie
 
 Hero → Kursfakten → Starttermine/Leistungen/Preis-Hinweis → Anfrage-CTA
 
+### Single: Magazinartikel
+
+Hero mit Kategorie und Datum → Beitragsbild → Artikelinhalt → vorheriger/nächster Beitrag
+
 ### Archive
 
-**Reiseziele**, **Programme** und **Erfahrungen** werden automatisch aus allen veröffentlichten Datensätzen aufgebaut. Neue veröffentlichte Datensätze erscheinen ohne manuelle Breakdance-Seite. Reihenfolge, Überschriften und Gestaltung werden im jeweiligen Archive-Template gepflegt.
+**Reiseziele**, **Programme**, **Erfahrungen** und das **Magazin** werden automatisch aus allen veröffentlichten Datensätzen beziehungsweise Beiträgen aufgebaut. Neue veröffentlichte Inhalte erscheinen ohne manuelle Breakdance-Übersichtsseite. Reihenfolge, Überschriften und Gestaltung werden im jeweiligen Archive-Template gepflegt.
 
 Alle vorhandenen Bereiche sind dynamisch. Fehlen Daten, wird der jeweilige Bereich nicht ausgegeben.
 

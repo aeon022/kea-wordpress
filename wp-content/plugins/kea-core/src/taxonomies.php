@@ -150,3 +150,15 @@ function kea_core_register_accommodation_type_taxonomy(): void
         ],
     ]);
 }
+
+function kea_core_keep_empty_magazine_categories(bool $preempt, WP_Query $query): bool
+{
+    if (!$query->is_category()) {
+        return $preempt;
+    }
+
+    $category = $query->get_queried_object();
+
+    return $category instanceof WP_Term
+        && in_array($category->slug, ['ratgeber', 'reiseberichte', 'aktuelles'], true);
+}

@@ -7,13 +7,20 @@ Stand: 29. Juli 2026
 - [x] Footer ohne Platzhalter und generische Breakdance-Links aufbauen: Kontakt, Service, Reisebereiche und Rechtliches.
 - [x] Impressum, Datenschutz und Kontakt als verlinkte Standardseiten aufbauen.
 - [x] Aktuellen Frontend-Stand auf externe Dienste prüfen: keine Analyse, Werbung, Karten, Videos oder Captcha; ungenutztes externes QR-Skript und Emoji-Fallback deaktiviert. Daher derzeit kein Consent-Banner.
+- [ ] URL-Migrationsmatrix aus Altbestand und neuer Struktur erstellen; Redirects vorbereiten, aber noch nicht aktivieren.
 - [ ] SMTP-Versand und Formularspeicherung nach finaler Kundenfreigabe technisch abnehmen.
 
 ## Vom Kunden: Bestandsdaten und Bilder
 
-- [ ] Dublin sowie die übrigen Reiseziele inhaltlich und visuell freigeben: Texte, Bilder, Fakten, leere Datenzustände und CTAs im echten Inhalt prüfen.
+- [ ] Gemeinsame Pilotabnahme von Dublin später mit dem Kunden durchführen: Texte, Bilder, Fakten, leere Datenzustände, CTAs sowie Desktop und Mobil prüfen.
 - [ ] Die 31 Reiseziele im Backend stichprobenartig prüfen: Titel, Land, Sprache, Text, Bild und Permalink.
 - [ ] Die sieben fehlenden Altbilder recherchieren, ersetzen oder bewusst aus den Datensätzen entfernen.
+
+## Vom Kunden: Magazin starten
+
+- [ ] Die drei veröffentlichten Demoartikel durch fachlich freigegebene Magazinartikel ersetzen oder vor dem Launch auf Entwurf setzen.
+- [ ] Pro Artikel Titel, Kurztext, Beitragsbild mit geklärten Bildrechten, Kategorie und interne Links freigeben.
+- [ ] Vorhandene Altbeiträge den Kategorien **Ratgeber**, **Reiseberichte** oder **Aktuelles** zuordnen und auf Aktualität prüfen.
 
 ## Vom Kunden: Anfrageformular freigeben
 
@@ -74,7 +81,6 @@ Stand: 29. Juli 2026
 
 ## Vor Veröffentlichung
 
-- [ ] Alte und neue URLs in einer Migrationsmatrix zuordnen und Redirects vorbereiten.
 - [ ] Mobile Ansicht, Tastaturbedienung, Fokuszustände und leere Datenzustände testen.
 - [ ] Bildrechte, Alt-Texte, lokale Fonts, Consent und Formularversand prüfen.
 - [ ] Backups, SEO-Indexierung und Launch-Checkliste dokumentieren.
