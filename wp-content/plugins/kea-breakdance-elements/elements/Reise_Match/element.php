@@ -83,19 +83,19 @@ class ReiseMatch extends \Breakdance\Elements\Element
                     'label1'   => 'Erwachsene',
                     'desc1'    => 'Kurse, Kultur & Auszeit für Erwachsene',
                     'icon2'    => [
-                        'slug' => 'icon-graduation-cap.',
+                        'slug' => 'icon-user-graduate.',
                         'name' => 'user graduate',
                         'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM320 32L0 192l320 160 256-128v128h64V192L320 32z"/></svg>',
                     ],
-                    'label2'   => 'Schüler & Jugend',
-                    'desc2'    => 'Betreute Camps & Ferienkurse',
+                    'label2'   => 'Schüler & Jugendliche',
+                    'desc2'    => 'Betreute Schülerkurse & Jugendsprachreisen',
                     'icon3'    => [
                         'slug' => 'icon-book-open.',
                         'name' => 'book open',
                         'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.26 7.85-7.26 13.17v365.17c0 10.73 11.23 17.58 20.73 12.39 67.24-41.16 176.16-52.48 230.96-55.59 11.08-.63 19.31-9.98 19.31-21.08V53.13c0-11.78-9.84-21.14-21.78-21.08zM33.78 32.05c-11.94-.06-21.78 9.3-21.78 21.08v348.57c0 11.1 8.23 20.45 19.31 21.08 54.8 3.11 163.72 14.43 230.96 55.59 9.5 5.19 20.73-1.66 20.73-12.39V100.81c0-5.32-2.62-10.33-7.26-13.17C208.5 46.48 99.58 35.16 43.78 32.05z"/></svg>',
                     ],
                     'label3'   => 'Lehrkräfte',
-                    'desc3'    => 'Methodik & Sprachfortbildung',
+                    'desc3'    => 'Methodik & Sprachfortbildung (Erasmus+)',
                     'icon4'    => [
                         'slug' => 'icon-briefcase.',
                         'name' => 'briefcase',
@@ -116,7 +116,7 @@ class ReiseMatch extends \Breakdance\Elements\Element
                     'icon2'    => [
                         'slug' => 'icon-umbrella-beach.',
                         'name' => 'umbrella beach',
-                        'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M629.8 195.4C609.5 78.5 500 0 384 0c-99.3 0-195 62.4-221 161.4-1.9 7.2 1.3 14.8 7.8 18.4l117.8 65.5-23.7 201.2c-1 8.8 5.4 16.7 14.2 17.7 8.8 1 16.7-5.4 17.7-14.2l23.7-201.2 108.9 60.5c6.3 3.5 14.2 2.1 18.8-3.4L627 210.8c5.4-6.4 6.7-15.3 2.8-22.9zM224 480c0 17.7 14.3 32 32 32s32-14.3 32-32-14.3-32-32-32-32 14.3-32 32z"/></svg>',
+                        'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M629.8 195.4C609.5 78.5 500 0 384 0c-99.3 0-195 62.4-221 161.4-1.9 7.2 1.3 14.8 7.8 18.4l117.8 65.5-23.7 201.2c-1 8.8 5.4 16.7 14.2 17.7 8.8 1 16.7-5.4 17.7-14.2l23.7-201.2 108.9 60.5c6.3 3.5 14.2 2.1 18.8-3.4L627 210.8c5.4-6.4 6.7-15.3 2.8-22.9zM224 480c0 17.7 14.3 32 32 32s32-14.3 32-32-14.3-32-32-32-32 14.3 32z"/></svg>',
                     ],
                     'label2'   => 'Meer & Sonne',
                     'desc2'    => 'Küstenflair, Strand & mediterranes Leben',
@@ -129,28 +129,28 @@ class ReiseMatch extends \Breakdance\Elements\Element
                     'desc3'    => 'Große Metropole, Theater & Shopping',
                 ],
                 'step3' => [
-                    'question' => '3. Was steht bei deiner Reise im Vordergrund?',
+                    'question' => '3. Welche Kursart passt zu deinen Zielen?',
                     'icon1'    => [
                         'slug' => 'icon-comments.',
                         'name' => 'comments',
                         'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7 1.3 3 4.1 5 7.3 5 44.1 0 83.9-19.5 109.8-37.1 27 9.8 57.5 14.9 89.2 14.9 114.9 0 208-71.6 208-160zm160 160c0-67.4-56.8-124.4-136.2-148.9 3.9 12.3 6.2 25.3 6.2 38.9 0 114.9-114.9 208-256 208-13.6 0-26.9-1-39.8-2.7C184 480 238 512 304 512c26.4 0 51.8-4.3 74.3-12.4 21.6 14.7 54.8 31 91.5 31 2.7 0 5-1.7 6.1-4.2 1.1-2.5.6-5.3-1.3-7.2-.3-.3-18.7-20-29.9-45.2 19.9-21.8 31.7-48.1 31.7-76.8z"/></svg>',
                     ],
-                    'label1'   => 'Freies Sprechen',
-                    'desc1'    => 'Hemmungen abbauen & Land erleben',
+                    'label1'   => 'Allgemeiner Sprachkurs',
+                    'desc1'    => 'Freies Sprechen, Hemmungen abbauen & Kultur erleben',
                     'icon2'    => [
                         'slug' => 'icon-award.',
                         'name' => 'award',
                         'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M288 304v160l-96-48-96 48V304c-22.6-24.7-36-57.5-36-96 0-79.5 64.5-144 144-144s144 64.5 144 144c0 38.5-13.4 71.3-36 96zM192 96c-61.9 0-112 50.1-112 112s50.1 112 112 112 112-50.1 112-112S253.9 96 192 96z"/></svg>',
                     ],
-                    'label2'   => 'Zertifikat & Prüfung',
-                    'desc2'    => 'IELTS, Cambridge, DELE oder DELF',
+                    'label2'   => 'Prüfungsvorbereitung',
+                    'desc2'    => 'Gezielte Vorbereitung auf IELTS, Cambridge, DELE oder DELF',
                     'icon3'    => [
                         'slug' => 'icon-rocket.',
                         'name' => 'rocket',
                         'svgCode' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505.12 19.1c-1.92-3.84-5.28-6.72-9.6-7.68C460.8 2.88 320-16.32 192 111.68c-44.16 44.16-72.32 96-85.76 150.72-10.56-4.16-22.08-6.4-34.24-6.4-44.16 0-80 35.84-80 80 0 11.52 2.56 22.4 7.04 32.32L0 448l64 64 80.32-80.32c9.92 4.48 20.8 7.04 32.32 7.04 44.16 0 80-35.84 80-80 0-12.16-2.24-23.68-6.4-34.24C305.6 311.04 357.44 282.88 401.6 238.72 528 110.72 509.12-30.08 505.12 19.1zM368 176c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48z"/></svg>',
                     ],
-                    'label3'   => 'Intensivfortbildung',
-                    'desc3'    => 'Maximale Lernfortschritte in kurzer Zeit',
+                    'label3'   => 'Intensivkurs',
+                    'desc3'    => 'Maximale Lernfortschritte in kompakter Kurszeit',
                 ],
             ],
         ];
@@ -172,7 +172,7 @@ class ReiseMatch extends \Breakdance\Elements\Element
                 c('label1', 'Titel 1', [], ['type' => 'text', 'layout' => 'inline'], false, false, []),
                 c('desc1', 'Beschreibung 1', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
 
-                c('icon2', 'Icon 2 (Schüler)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
+                c('icon2', 'Icon 2 (Schüler & Jugend)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
                 c('label2', 'Titel 2', [], ['type' => 'text', 'layout' => 'inline'], false, false, []),
                 c('desc2', 'Beschreibung 2', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
 
@@ -200,17 +200,17 @@ class ReiseMatch extends \Breakdance\Elements\Element
                 c('desc3', 'Beschreibung 3', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
             ], ['type' => 'section'], false, false, []),
 
-            c('step3', 'Schritt 3: Hauptziel & Icons', [
+            c('step3', 'Schritt 3: Kursart & Icons', [
                 c('question', 'Frage Schritt 3', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
-                c('icon1', 'Icon 1 (Sprechen)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
+                c('icon1', 'Icon 1 (Allgemeiner Sprachkurs)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
                 c('label1', 'Titel 1', [], ['type' => 'text', 'layout' => 'inline'], false, false, []),
                 c('desc1', 'Beschreibung 1', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
 
-                c('icon2', 'Icon 2 (Zertifikat)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
+                c('icon2', 'Icon 2 (Prüfungsvorbereitung)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
                 c('label2', 'Titel 2', [], ['type' => 'text', 'layout' => 'inline'], false, false, []),
                 c('desc2', 'Beschreibung 2', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
 
-                c('icon3', 'Icon 3 (Intensiv)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
+                c('icon3', 'Icon 3 (Intensivkurs)', [], ['type' => 'icon', 'layout' => 'vertical'], false, false, []),
                 c('label3', 'Titel 3', [], ['type' => 'text', 'layout' => 'inline'], false, false, []),
                 c('desc3', 'Beschreibung 3', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
             ], ['type' => 'section'], false, false, []),
