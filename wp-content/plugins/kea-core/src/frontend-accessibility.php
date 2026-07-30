@@ -12,12 +12,20 @@ function kea_core_translate_breakdance_ui(string $translation, string $text, str
         return $translation;
     }
 
-    return match ($text) {
-        'Open Menu' => 'Menü öffnen',
-        'Close', 'Close Menu' => 'Menü schließen',
-        'Toggle search' => 'Suche öffnen',
-        'Close search' => 'Suche schließen',
-        'Search', 'Search for:' => 'Suchen',
-        default => $translation,
-    };
+    switch ($text) {
+        case 'Open Menu':
+            return 'Menü öffnen';
+        case 'Close':
+        case 'Close Menu':
+            return 'Menü schließen';
+        case 'Toggle search':
+            return 'Suche öffnen';
+        case 'Close search':
+            return 'Suche schließen';
+        case 'Search':
+        case 'Search for:':
+            return 'Suchen';
+        default:
+            return $translation;
+    }
 }

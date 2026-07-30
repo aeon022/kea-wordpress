@@ -8,16 +8,22 @@ if (!defined('ABSPATH')) {
 
 function kea_core_get_search_collection_post_type(string $term): string
 {
-    return match (sanitize_title($term)) {
-        'reiseziel', 'reiseziele' => 'kea_destination',
-        'partnerschule', 'partnerschulen' => 'kea_school',
-        'programm', 'programme' => 'kea_program',
-        'erfahrung', 'erfahrungen' => 'kea_testimonial',
-        default => '',
-    };
+    $map = [
+        'reiseziel'      => 'kea_destination',
+        'reiseziele'     => 'kea_destination',
+        'partnerschule'  => 'kea_school',
+        'partnerschulen' => 'kea_school',
+        'programm'       => 'kea_program',
+        'programme'      => 'kea_program',
+        'erfahrung'      => 'kea_testimonial',
+        'erfahrungen'    => 'kea_testimonial',
+    ];
+
+    $slug = sanitize_title($term);
+    return $map[$slug] ?? '';
 }
 
-function kea_core_route_collection_search(WP_Query $query): void
+function kea_core_route_collection_search(\WP_Query $query): void
 {
     if (is_admin() || !$query->is_main_query() || !$query->is_search()) {
         return;

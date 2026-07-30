@@ -26,10 +26,13 @@ require_once KEA_CORE_PATH . 'src/inquiry-context.php';
 require_once KEA_CORE_PATH . 'src/acf-json.php';
 require_once KEA_CORE_PATH . 'src/frontend-accessibility.php';
 require_once KEA_CORE_PATH . 'src/search.php';
+require_once KEA_CORE_PATH . 'src/seo.php';
+require_once KEA_CORE_PATH . 'src/admin-info.php';
 
 add_action('init', 'kea_core_register_post_types');
 add_action('init', 'kea_core_register_taxonomies');
 add_action('init', 'kea_core_register_inquiry_rewrite_tags');
+add_action('wp_head', 'kea_core_render_seo_head_tags', 1);
 add_filter('pre_handle_404', 'kea_core_keep_empty_magazine_categories', 10, 2);
 add_filter('gettext', 'kea_core_translate_breakdance_ui', 10, 3);
 add_action('pre_get_posts', 'kea_core_route_collection_search');

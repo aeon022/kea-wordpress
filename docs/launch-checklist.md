@@ -16,7 +16,7 @@ Diese Checkliste trennt den intern geprüften technischen Stand von Punkten, die
 - [x] Die geprüften Seiten haben genau eine sichtbare H1.
 - [x] Sichtbare Bilder, Links, Buttons und Formularfelder der geprüften Seiten besitzen zugängliche Namen beziehungsweise Beschriftungen.
 - [x] Breakdance-Bedientexte im globalen Header sind auf Deutsch.
-- [x] Für den aktuellen Stand werden keine optionalen Analyse-, Werbe-, Karten-, Video- oder Captcha-Dienste geladen.
+- [ ] Für den Consent-Banner wird **Complianz (Free Version)** konfiguriert und vor dem Launch getestet.
 
 Geprüfte Seitentypen: Startseite, Reiseziele-Archiv, befülltes und reduziertes Reiseziel, Partnerschule, Programm, Erfahrungen, Magazin, Magazinartikel, Kontakt, Anfrage, Datenschutz und 404.
 

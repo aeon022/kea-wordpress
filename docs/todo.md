@@ -82,15 +82,27 @@ Stand: 30. Juli 2026
 - [x] Anfrageformular mit validiertem Kontext für Reiseziel, Schule und Programm anbinden.
 - [x] Pflichtseiten aus Konzept und Roadmap anlegen: Sprachreisen, fünf Zielgruppenseiten, Kurse, Warum KEA, Über KEA, FAQ und Magazin.
 
-## Vom Kunden: Rechtliches und Consent freigeben
+## Vom Kunden: Rechtliches, Impressum, Consent & E-Mail (Launch-Blocker)
 
-- [ ] Impressumsdaten zu Christine Gütlinger-Keegan, Firmenwortlaut, Rechtsform, Anschrift, Telefon und E-Mail final bestätigen.
-- [ ] Falls vorhanden UID, Firmenbuchnummer samt Firmenbuchgericht und GISA-Zahl liefern.
-- [ ] Gewerbe- beziehungsweise Berufsbezeichnung, WKO-Fachgruppe und zuständige Aufsichtsbehörde bestätigen.
-- [ ] Hostinganbieter, Serverstandort, Auftragsverarbeitungsvereinbarung und Löschfrist der Serverprotokolle dokumentieren.
-- [ ] Löschfristen für Breakdance Form Submissions und zugehörige Anfrage-E-Mails verbindlich festlegen.
-- [ ] Datenschutzerklärung, eingesetzte Dienste und Rechtsgrundlagen rechtlich freigeben.
-- [x] Für den aktuellen Stand keine optionalen Dienste aktivieren; ein Consent-Banner wird erst bei einem tatsächlich zustimmungspflichtigen Dienst konfiguriert.
+- [ ] **Impressumsdaten finalisieren:**
+  - Exakter Firmenwortlaut & Rechtsform
+  - Offizielle Geschäftsanschrift, Telefonnummer & E-Mail-Adresse
+  - Firmenbuchnummer & Firmenbuchgericht (falls vorhanden)
+  - UID-Nummer (falls vorhanden)
+  - GISA-Zahl (Gewerbeinformationssystem Austria, falls vorhanden)
+  - Gewerbe- & Berufsbezeichnung, WKO-Fachgruppe, Aufsichtsbehörde (z. B. BH / Magistrat)
+- [ ] **Datenschutzerklärung & Hosting-Daten:**
+  - Hostinganbieter, Serverstandort & Auftragsverarbeitungsvereinbarung (AVV)
+  - Speicherdauer & Löschfristen der Server-Logfiles (z. B. 14 Tage)
+  - Verbindliche Löschfrist für Formular-Anfragen (Breakdance Form Submissions & E-Mails)
+  - Rechtliche Abnahme der Datenschutzerklärung
+- [ ] **Consent & Consent-Banner (Complianz Free):**
+  - Installation & Grundkonfiguration von **Complianz (Free Version)** für rechtssichere Cookie- & Consent-Verwaltung.
+  - Einbindung des Consent-Banners vor dem Go-Live.
+  - Rechtliche Freigabe der angezeigten Cookie-Texte & Kategorien.
+- [ ] **Anfrageformular & SMTP:**
+  - Verbindliche Empfänger-E-Mail-Adresse für eingehende Anfragen (sowie optionale CC-Empfänger)
+  - SMTP-Zugangsdaten auf KEA-Domain (Host, Port, User, Passwort) für echten E-Mail-Versand und SMTP-Test.
 
 ## Vor Veröffentlichung
 

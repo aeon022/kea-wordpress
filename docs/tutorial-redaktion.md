@@ -405,3 +405,29 @@ Für Reiseziele fehlen derzeit insbesondere Charakter, KEA-Empfehlung, Fakten un
 ## 13. Technischer Hinweis für Template-Pflege
 
 Breakdance-Template-Daten werden technisch über das Projekt gepflegt. Änderungen am Template-Speicherformat dürfen nur über die native Breakdance-Datenfunktion erfolgen. Nach technischen Template-Änderungen werden Cache, Zielseite und Template-Manager geprüft.
+
+## 14. SEO und Social-Media-Vorschau (KEA Core SEO)
+
+Das Projektplugin `kea-core` enthält ein automatisches, leichtgewichtiges SEO-Modul. Es erzeugt ohne schweres Zusatz-Plugin schlanke Meta-Beschreibungen (Meta Descriptions), Open-Graph-Tags für Facebook/WhatsApp/LinkedIn und Twitter Cards direkt im Seitenkopf (`<head>`).
+
+### Wie entsteht die Meta-Description?
+
+Die Meta-Description für Suchmaschinen wird automatisch anhand der redaktionellen Inhalte ermittelt (geprüfte Länge: max. 155 Zeichen):
+
+1. **Startseite:** Fest hinterlegter KEA-Leitsatz (*„Persönlich ausgewählte Sprachreisen für Erwachsene, Schüler, Lehrer und Unternehmen...“*).
+2. **Reiseziele, Partnerschulen & Programme:** Die Auswertung liest vorrangig das jeweilige ACF-Intro-Feld (`kea_destination_intro`, `kea_school_intro`, `kea_program_intro`). Fehlt dieses, wird der Beitrags-Auszug (*Excerpt*) oder der erste Absatz des Fließtexts verwendet.
+3. **Magazinartikel & Seiten:** Verwendet bevorzugt den manuell eingetragenen **Auszug** (*Excerpt*) in der rechten Seitenleiste des Editors. Fehlt der Auszug, wird der Text des Beitrags bereinigt übernommen.
+4. **Archivseiten (Reiseziele, Programme, Schulen, Kategorien):** Liest die Beschreibung der jeweiligen Taxonomie oder Kategorie aus.
+
+### Wie entsteht das Social-Media-Vorschaubild (Open Graph / Twitter)?
+
+Wenn ein Link auf WhatsApp, Facebook, LinkedIn oder X/Twitter geteilt wird, wählt KEA Core automatisch das beste Vorschaubild:
+
+1. **Beitragsbild (Featured Image):** Bei Beitrags- und Seiten-Datensätzen wird primär das festgelegte Beitragsbild verwendet.
+2. **Hero-Bild (ACF):** Bei Reisezielen und CPTs greift das Modul auf das im ACF-Feld `kea_destination_hero_image` hinterlegte Bild zurück.
+
+### Empfehlungen für die Redaktion
+
+* **Kurztext/Auszug pflegen:** Bei jedem neuen Magazinartikel oder Reiseziel 1–2 knackige Sätze im Auszug oder im ACF-Kurzprofil eintragen. Das sorgt für transparente Vorschautexte auf Google.
+* **Aussagekräftiges Beitrags- bzw. Hero-Bild wählen:** Für jedes Reiseziel und jeden Artikel ein hochauflösendes Bild im Format 16:9 oder 3:2 hinterlegen, damit das Teilen in sozialen Netzwerken ansprechend aussieht.
+
