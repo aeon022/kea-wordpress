@@ -25,6 +25,7 @@ Stand: 30. Juli 2026
 
 ## Vom Kunden: Bestandsdaten und Bilder
 
+- [ ] Die eigenen, selbst gemachten Originalfotos in voller Auflösung in die WordPress-Mediathek hochladen und bei den jeweiligen Reisezielen, Partnerschulen, Programmen & Beiträgen austauschen.
 - [ ] Gemeinsame Pilotabnahme von Dublin später mit dem Kunden durchführen: Texte, Bilder, Fakten, leere Datenzustände, CTAs sowie Desktop und Mobil prüfen.
 - [ ] Die 31 Reiseziele im Backend stichprobenartig prüfen: Titel, Land, Sprache, Text, Bild und Permalink.
 - [ ] Die sieben fehlenden Altbilder recherchieren, ersetzen oder bewusst aus den Datensätzen entfernen.
