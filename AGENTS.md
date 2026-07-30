@@ -808,7 +808,7 @@ Breakdance speichert Seiten- und Template-Baumstrukturen in `_breakdance_data` a
    * Fehlen `_nextNodeId`, `status` oder unvollständige Element-Properties, schlägt Breakdance's TypeScript IO-TS Validator im Editor fehl (`Validation Error: IO-TS decoding failed`).
 
 3. **Prüf- und Verifikations-Workflow:**
-   * Für `_breakdance_template_settings` ist zwingend `Breakdance\Data\set_meta()` zu verwenden.
+   * Für `_breakdance_template_settings` ist zwingend `Breakdance\Data\set_meta()` zu verwenden. Dieser Schlüssel darf NIEMALS auf normalen WordPress-Seiten (`post_type = 'page'`) gesetzt werden, sondern ausschließlich auf `breakdance_template` Post-Types, da andernfalls der Breakdance-Editor beim Laden normaler Seiten mit `Validation Error: IO-TS decoding failed` abstürzt.
    * Nach jeder Änderung an Breakdance-Templates oder -Seiten:
      1. Template-Cache mit `Breakdance\Render\generateCacheForPost()` erzeugen.
      2. Den HTTP-Status und die gerenderten HTML-Elemente der Seite prüfen.
