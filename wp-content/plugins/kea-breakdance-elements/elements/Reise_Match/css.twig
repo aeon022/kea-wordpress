@@ -25,12 +25,14 @@
 
 {% if design.colors.button_bg %}
 %%SELECTOR%% .kea-match-btn-primary {
-    background-color: {{ design.colors.button_bg }};
+    background-color: {{ design.colors.button_bg }} !important;
+    border-color: {{ design.colors.button_bg }} !important;
 }
 {% endif %}
 
 {% if design.colors.button_text %}
-%%SELECTOR%% .kea-match-btn-primary {
+%%SELECTOR%% .kea-match-btn-primary,
+%%SELECTOR%% .kea-match-btn-primary span {
     color: {{ design.colors.button_text }} !important;
 }
 {% endif %}

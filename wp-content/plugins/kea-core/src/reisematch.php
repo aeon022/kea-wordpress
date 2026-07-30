@@ -193,8 +193,8 @@ function kea_core_render_reisematch(array $atts = []): void
             }
             .kea-match-result-badge {
                 display: inline-block;
-                background: var(--hcl-tertiary-1, #e56f55);
-                color: #fff;
+                background: #e56f55;
+                color: #ffffff;
                 font-size: 0.8rem;
                 font-weight: 700;
                 padding: 0.3rem 0.8rem;
@@ -207,6 +207,7 @@ function kea_core_render_reisematch(array $atts = []): void
                 font-size: 2rem;
                 font-weight: 600;
                 margin: 0 0 0.5rem 0;
+                color: #17201d;
             }
             .kea-match-result-reason {
                 font-size: 1.05rem;
@@ -221,41 +222,66 @@ function kea_core_render_reisematch(array $atts = []): void
                 justify-content: center;
                 gap: 1rem;
             }
-            .kea-match-btn-primary {
-                background: var(--hcl-tertiary-1, #e56f55);
+            .kea-match-btn-primary,
+            a.kea-match-btn-primary,
+            a.kea-match-btn-primary:visited {
+                background-color: #183f35 !important;
                 color: #ffffff !important;
-                padding: 0.85rem 1.75rem;
-                border-radius: 999px;
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 0.95rem;
-                transition: all 0.2s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                box-shadow: 0 4px 14px rgba(229, 111, 85, 0.35);
+                border: 2px solid #183f35 !important;
+                padding: 0.85rem 1.75rem !important;
+                border-radius: 999px !important;
+                text-decoration: none !important;
+                font-weight: 700 !important;
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+                transition: all 0.2s ease !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 0.5rem !important;
+                box-shadow: 0 4px 14px rgba(24, 63, 53, 0.25) !important;
+                cursor: pointer !important;
+            }
+            .kea-match-btn-primary *,
+            .kea-match-btn-primary span,
+            a.kea-match-btn-primary span {
+                color: #ffffff !important;
+                background: transparent !important;
             }
             .kea-match-btn-primary:hover,
-            .kea-match-btn-primary:focus-visible {
-                background: #d45d43;
+            .kea-match-btn-primary:focus-visible,
+            a.kea-match-btn-primary:hover,
+            a.kea-match-btn-primary:focus-visible {
+                background-color: #0e261f !important;
                 color: #ffffff !important;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(229, 111, 85, 0.45);
+                border-color: #0e261f !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(24, 63, 53, 0.35) !important;
             }
-            .kea-match-btn-reset {
-                background: transparent;
-                border: 1px solid #ded4c3;
-                color: #55625e;
-                padding: 0.85rem 1.5rem;
-                border-radius: 999px;
-                cursor: pointer;
-                font-weight: 600;
-                font-size: 0.9rem;
-                transition: all 0.2s ease;
+            .kea-match-btn-primary:hover *,
+            .kea-match-btn-primary:hover span {
+                color: #ffffff !important;
             }
-            .kea-match-btn-reset:hover {
-                background: #ded4c3;
-                color: #17201d;
+            .kea-match-btn-reset,
+            button.kea-match-btn-reset {
+                background-color: transparent !important;
+                border: 2px solid #ded4c3 !important;
+                color: #17201d !important;
+                padding: 0.85rem 1.5rem !important;
+                border-radius: 999px !important;
+                cursor: pointer !important;
+                font-weight: 600 !important;
+                font-size: 0.9rem !important;
+                transition: all 0.2s ease !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .kea-match-btn-reset:hover,
+            button.kea-match-btn-reset:hover {
+                background-color: #ded4c3 !important;
+                color: #17201d !important;
+                border-color: #ded4c3 !important;
             }
         </style>
 
