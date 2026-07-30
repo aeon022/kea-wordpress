@@ -221,16 +221,18 @@ class ReiseMatch extends \Breakdance\Elements\Element
     {
         return [
             c('colors', 'Farben', [
-                c('background', 'Hintergrund', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('border', 'Rahmen', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('text', 'Text', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('accent', 'Akzentfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('background', 'Hintergrund Container', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('border', 'Rahmen Container', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('text', 'Textfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('accent', 'Akzent Badge', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
                 c('button_bg', 'Button Hintergrund', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('button_text', 'Button Textfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
             ], ['type' => 'section'], false, false, []),
             c('typography', 'Typografie', [
                 getPresetSection('EssentialElements\\typography', 'Kicker', 'kicker', ['type' => 'popout']),
                 getPresetSection('EssentialElements\\typography', 'Überschrift', 'title', ['type' => 'popout']),
                 getPresetSection('EssentialElements\\typography', 'Untertitel', 'subtitle', ['type' => 'popout']),
+                getPresetSection('EssentialElements\\typography', 'Button Text', 'button', ['type' => 'popout']),
             ], ['type' => 'section'], false, false, []),
         ];
     }

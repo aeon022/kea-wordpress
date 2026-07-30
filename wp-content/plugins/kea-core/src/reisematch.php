@@ -16,7 +16,7 @@ function kea_core_reisematch_shortcode(array $atts = []): string
 }
 
 /**
- * Rendert den KEA Reise-Match Wizard mit KEA-spezifischen Kursarten & Font Awesome SVGs.
+ * Rendert den KEA Reise-Match Wizard mit KEA-spezifischen Kursarten, Font Awesome SVGs & KEA CTA Button Styling.
  */
 function kea_core_render_reisematch(array $atts = []): void
 {
@@ -166,6 +166,7 @@ function kea_core_render_reisematch(array $atts = []): void
                 justify-content: center;
                 width: 2.5rem;
                 height: 2.5rem;
+                color: #183f35;
             }
             .kea-match-option-icon svg {
                 width: 1.75rem;
@@ -192,7 +193,7 @@ function kea_core_render_reisematch(array $atts = []): void
             }
             .kea-match-result-badge {
                 display: inline-block;
-                background: #e56f55;
+                background: var(--hcl-tertiary-1, #e56f55);
                 color: #fff;
                 font-size: 0.8rem;
                 font-weight: 700;
@@ -221,8 +222,8 @@ function kea_core_render_reisematch(array $atts = []): void
                 gap: 1rem;
             }
             .kea-match-btn-primary {
-                background: #183f35;
-                color: #fffdf8;
+                background: var(--hcl-tertiary-1, #e56f55);
+                color: #ffffff !important;
                 padding: 0.85rem 1.75rem;
                 border-radius: 999px;
                 text-decoration: none;
@@ -232,11 +233,14 @@ function kea_core_render_reisematch(array $atts = []): void
                 display: inline-flex;
                 align-items: center;
                 gap: 0.5rem;
+                box-shadow: 0 4px 14px rgba(229, 111, 85, 0.35);
             }
-            .kea-match-btn-primary:hover {
-                background: #123128;
-                color: #fff;
+            .kea-match-btn-primary:hover,
+            .kea-match-btn-primary:focus-visible {
+                background: #d45d43;
+                color: #ffffff !important;
                 transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(229, 111, 85, 0.45);
             }
             .kea-match-btn-reset {
                 background: transparent;
