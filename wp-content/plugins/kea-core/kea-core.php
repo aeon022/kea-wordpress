@@ -28,6 +28,8 @@ require_once KEA_CORE_PATH . 'src/frontend-accessibility.php';
 require_once KEA_CORE_PATH . 'src/search.php';
 require_once KEA_CORE_PATH . 'src/seo.php';
 require_once KEA_CORE_PATH . 'src/admin-info.php';
+require_once KEA_CORE_PATH . 'src/reisematch.php';
+require_once KEA_CORE_PATH . 'src/tagesablauf.php';
 
 add_action('init', 'kea_core_register_post_types');
 add_action('init', 'kea_core_register_taxonomies');

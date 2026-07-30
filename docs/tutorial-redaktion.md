@@ -431,3 +431,18 @@ Wenn ein Link auf WhatsApp, Facebook, LinkedIn oder X/Twitter geteilt wird, wäh
 * **Kurztext/Auszug pflegen:** Bei jedem neuen Magazinartikel oder Reiseziel 1–2 knackige Sätze im Auszug oder im ACF-Kurzprofil eintragen. Das sorgt für transparente Vorschautexte auf Google.
 * **Aussagekräftiges Beitrags- bzw. Hero-Bild wählen:** Für jedes Reiseziel und jeden Artikel ein hochauflösendes Bild im Format 16:9 oder 3:2 hinterlegen, damit das Teilen in sozialen Netzwerken ansprechend aussieht.
 
+## 15. Differentioren-Komponenten in Breakdance nutzen
+
+Zur visuellen Abhebung von Mitbewerbern stellt das KEA Core Plugin zwei interaktive Komponenten bereit, die in Breakdance über das native **Shortcode-Element** eingebunden werden können:
+
+### A) Der KEA Reise-Match (Shortcode: `[kea_reisematch]`)
+* **Verwendung:** Auf der Startseite, Zielgruppenseiten oder unter `/warum-kea/`.
+* **Einbau in Breakdance:** Im Breakdance-Editor das Element **Shortcode** hinzufügen und als Inhalt `[kea_reisematch]` eintragen.
+* **Funktion:** Interaktiver 3-Schritt Inspirations-Wizard für Besucher. Ermittelt dynamisch das passende Reiseziel und verlinkt direkt auf das vorbefüllte Anfrageformular.
+
+### B) Beispielwoche & Tagesablauf (Shortcode: `[kea_tagesablauf]`)
+* **Verwendung:** In den Single-Templates für Reiseziele, Partnerschulen und Programme.
+* **Einbau in Breakdance:** Im Breakdance-Template das Element **Shortcode** einfügen und `[kea_tagesablauf]` eintragen.
+* **Funktion:** Liest individuell gepflegte Tagesablauf-Items aus ACF aus. Sind am Datensatz noch keine spezifischen Zeiten eingetragen, wird automatisch eine hochwertige redaktionelle Tagesstruktur ausgegeben.
+
+
