@@ -6,6 +6,24 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+if (!function_exists('kea_render_bd_icon')) {
+    function kea_render_bd_icon($iconProp, string $fallbackEmoji = '⭐'): string
+    {
+        if (is_array($iconProp)) {
+            if (!empty($iconProp['svgCode'])) {
+                return (string) $iconProp['svgCode'];
+            }
+            if (!empty($iconProp['svg'])) {
+                return (string) $iconProp['svg'];
+            }
+        }
+        if (is_string($iconProp) && trim($iconProp) !== '') {
+            return esc_html($iconProp);
+        }
+        return $fallbackEmoji;
+    }
+}
+
 $header = is_array($propertiesData['content']['header'] ?? null)
     ? $propertiesData['content']['header']
     : (is_array($propertiesData['content'] ?? null) ? $propertiesData['content'] : []);
@@ -20,45 +38,45 @@ $subtitle = trim((string) ($header['subtitle'] ?? 'Finde in 3 kurzen Klicks das 
 $buttonText = trim((string) ($header['button_text'] ?? 'Beratung starten'));
 
 $s1Question = trim((string) ($step1['question'] ?? '1. Für wen ist die Sprachreise gedacht?'));
-$s1Icon1 = trim((string) ($step1['icon1'] ?? '☕'));
+$s1Icon1 = kea_render_bd_icon($step1['icon1'] ?? null, '☕');
 $s1Label1 = trim((string) ($step1['label1'] ?? 'Erwachsene'));
 $s1Desc1 = trim((string) ($step1['desc1'] ?? 'Kurse, Kultur & Auszeit für Erwachsene'));
 
-$s1Icon2 = trim((string) ($step1['icon2'] ?? '🎓'));
+$s1Icon2 = kea_render_bd_icon($step1['icon2'] ?? null, '🎓');
 $s1Label2 = trim((string) ($step1['label2'] ?? 'Schüler & Jugend'));
 $s1Desc2 = trim((string) ($step1['desc2'] ?? 'Betreute Camps & Ferienkurse'));
 
-$s1Icon3 = trim((string) ($step1['icon3'] ?? '📘'));
+$s1Icon3 = kea_render_bd_icon($step1['icon3'] ?? null, '📘');
 $s1Label3 = trim((string) ($step1['label3'] ?? 'Lehrkräfte'));
 $s1Desc3 = trim((string) ($step1['desc3'] ?? 'Methodik & Sprachfortbildung'));
 
-$s1Icon4 = trim((string) ($step1['icon4'] ?? '💼'));
+$s1Icon4 = kea_render_bd_icon($step1['icon4'] ?? null, '💼');
 $s1Label4 = trim((string) ($step1['label4'] ?? 'Business & Profis'));
 $s1Desc4 = trim((string) ($step1['desc4'] ?? 'Intensivcoaching für Beruf & Karriere'));
 
 $s2Question = trim((string) ($step2['question'] ?? '2. Welche Atmosphäre beflügelt dich vor Ort?'));
-$s2Icon1 = trim((string) ($step2['icon1'] ?? '🏰'));
+$s2Icon1 = kea_render_bd_icon($step2['icon1'] ?? null, '🏰');
 $s2Label1 = trim((string) ($step2['label1'] ?? 'Kultur & Pubs'));
 $s2Desc1 = trim((string) ($step2['desc1'] ?? 'Historische Gassen & lebendige Cafés'));
 
-$s2Icon2 = trim((string) ($step2['icon2'] ?? '🌊'));
+$s2Icon2 = kea_render_bd_icon($step2['icon2'] ?? null, '🌊');
 $s2Label2 = trim((string) ($step2['label2'] ?? 'Meer & Sonne'));
 $s2Desc2 = trim((string) ($step2['desc2'] ?? 'Küstenflair, Strand & mediterranes Leben'));
 
-$s2Icon3 = trim((string) ($step2['icon3'] ?? '🏙️'));
+$s2Icon3 = kea_render_bd_icon($step2['icon3'] ?? null, '🏙️');
 $s2Label3 = trim((string) ($step2['label3'] ?? 'Weltstadt-Flair'));
 $s2Desc3 = trim((string) ($step2['desc3'] ?? 'Große Metropole, Theater & Shopping'));
 
 $s3Question = trim((string) ($step3['question'] ?? '3. Was steht bei deiner Reise im Vordergrund?'));
-$s3Icon1 = trim((string) ($step3['icon1'] ?? '🗣️'));
+$s3Icon1 = kea_render_bd_icon($step3['icon1'] ?? null, '🗣️');
 $s3Label1 = trim((string) ($step3['label1'] ?? 'Freies Sprechen'));
 $s3Desc1 = trim((string) ($step3['desc1'] ?? 'Hemmungen abbauen & Land erleben'));
 
-$s3Icon2 = trim((string) ($step3['icon2'] ?? '📜'));
+$s3Icon2 = kea_render_bd_icon($step3['icon2'] ?? null, '📜');
 $s3Label2 = trim((string) ($step3['label2'] ?? 'Zertifikat & Prüfung'));
 $s3Desc2 = trim((string) ($step3['desc2'] ?? 'IELTS, Cambridge, DELE oder DELF'));
 
-$s3Icon3 = trim((string) ($step3['icon3'] ?? '⚡'));
+$s3Icon3 = kea_render_bd_icon($step3['icon3'] ?? null, '⚡');
 $s3Label3 = trim((string) ($step3['label3'] ?? 'Intensivfortbildung'));
 $s3Desc3 = trim((string) ($step3['desc3'] ?? 'Maximale Lernfortschritte in kurzer Zeit'));
 
@@ -88,22 +106,22 @@ $instanceId = 'kea-match-' . wp_rand(1000, 9999);
         <div class="kea-match-question"><?php echo esc_html($s1Question); ?></div>
         <div class="kea-match-options">
             <div class="kea-match-option" data-key="audience" data-value="erwachsene">
-                <span class="kea-match-option-icon"><?php echo esc_html($s1Icon1); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s1Icon1; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s1Label1); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s1Desc1); ?></span>
             </div>
             <div class="kea-match-option" data-key="audience" data-value="schueler">
-                <span class="kea-match-option-icon"><?php echo esc_html($s1Icon2); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s1Icon2; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s1Label2); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s1Desc2); ?></span>
             </div>
             <div class="kea-match-option" data-key="audience" data-value="lehrer">
-                <span class="kea-match-option-icon"><?php echo esc_html($s1Icon3); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s1Icon3; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s1Label3); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s1Desc3); ?></span>
             </div>
             <div class="kea-match-option" data-key="audience" data-value="business">
-                <span class="kea-match-option-icon"><?php echo esc_html($s1Icon4); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s1Icon4; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s1Label4); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s1Desc4); ?></span>
             </div>
@@ -115,17 +133,17 @@ $instanceId = 'kea-match-' . wp_rand(1000, 9999);
         <div class="kea-match-question"><?php echo esc_html($s2Question); ?></div>
         <div class="kea-match-options">
             <div class="kea-match-option" data-key="vibe" data-value="kultur">
-                <span class="kea-match-option-icon"><?php echo esc_html($s2Icon1); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s2Icon1; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s2Label1); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s2Desc1); ?></span>
             </div>
             <div class="kea-match-option" data-key="vibe" data-value="meer">
-                <span class="kea-match-option-icon"><?php echo esc_html($s2Icon2); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s2Icon2; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s2Label2); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s2Desc2); ?></span>
             </div>
             <div class="kea-match-option" data-key="vibe" data-value="metropole">
-                <span class="kea-match-option-icon"><?php echo esc_html($s2Icon3); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s2Icon3; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s2Label3); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s2Desc3); ?></span>
             </div>
@@ -137,17 +155,17 @@ $instanceId = 'kea-match-' . wp_rand(1000, 9999);
         <div class="kea-match-question"><?php echo esc_html($s3Question); ?></div>
         <div class="kea-match-options">
             <div class="kea-match-option" data-key="goal" data-value="sprechen">
-                <span class="kea-match-option-icon"><?php echo esc_html($s3Icon1); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s3Icon1; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s3Label1); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s3Desc1); ?></span>
             </div>
             <div class="kea-match-option" data-key="goal" data-value="zertifikat">
-                <span class="kea-match-option-icon"><?php echo esc_html($s3Icon2); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s3Icon2; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s3Label2); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s3Desc2); ?></span>
             </div>
             <div class="kea-match-option" data-key="goal" data-value="intensiv">
-                <span class="kea-match-option-icon"><?php echo esc_html($s3Icon3); ?></span>
+                <span class="kea-match-option-icon"><?php echo $s3Icon3; ?></span>
                 <span class="kea-match-option-label"><?php echo esc_html($s3Label3); ?></span>
                 <span class="kea-match-option-desc"><?php echo esc_html($s3Desc3); ?></span>
             </div>

@@ -96,6 +96,16 @@
 }
 .kea-match-option-icon {
     font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.kea-match-option-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
 }
 .kea-match-option-label {
     font-weight: 700;
