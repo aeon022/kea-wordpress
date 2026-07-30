@@ -65,13 +65,14 @@ function kea_core_render_reisematch(array $atts = []): void
     <div class="kea-reisematch-container" id="<?php echo esc_attr($instance_id); ?>"<?php echo $style_attr; ?>>
         <style>
             .kea-reisematch-container {
+                width: min(100% - 2rem, 78rem);
+                margin: clamp(2rem, 5vw, 4rem) auto;
                 background: #f4f0e8;
                 border: 1px solid #ded4c3;
                 border-radius: 16px;
                 padding: clamp(1.5rem, 4vw, 3rem);
                 color: #17201d;
                 box-shadow: 0 10px 30px rgba(23, 32, 29, 0.05);
-                margin: 2rem 0;
             }
             .kea-match-header {
                 text-align: center;
