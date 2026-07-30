@@ -25,7 +25,7 @@ class ReiseMatch extends \Breakdance\Elements\Element
 
     public static function tag(): string
     {
-        return 'div';
+        return 'section';
     }
 
     public static function name(): string
