@@ -16,6 +16,7 @@
 | Magazinartikel | `/magazin/{slug}/` |
 | Magazin-Kategorie | `/magazin/thema/{slug}/` |
 | Reise-Match (Wizard) | `/reise-match/` |
+| Tagesablauf (Beispieltag je Zielgruppe) | `/tagesablauf/` |
 | Anfrage | `/anfrage/` |
 
 Sprach- und Ländertermseiten bleiben zunächst eigenständige Archive. Eine verschachtelte URL wie `/reiseziele/englisch/irland/dublin/` wird erst umgesetzt, wenn die Redirect-Matrix und die technische Routing-Strategie freigegeben sind.

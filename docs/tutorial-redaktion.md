@@ -445,4 +445,14 @@ Zur visuellen Abhebung von Mitbewerbern stellt das KEA Core Plugin zwei interakt
 * **Einbau in Breakdance:** Im Breakdance-Template das Element **Shortcode** einfügen und `[kea_tagesablauf]` eintragen.
 * **Funktion:** Liest individuell gepflegte Tagesablauf-Items aus ACF aus. Sind am Datensatz noch keine spezifischen Zeiten eingetragen, wird automatisch eine hochwertige redaktionelle Tagesstruktur ausgegeben.
 
+## 16. Übersichtsseite „Ein Tag auf Sprachreise" (`/tagesablauf/`)
+
+Eigenständige Seite mit einem typischen Tagesablauf je Zielgruppe, ausschließlich mit **nativen Breakdance-Elementen** umgesetzt (kein Shortcode, kein eigenes Plugin-Element) – dadurch vollständig frei im Breakdance-Editor bearbeitbar.
+
+* **Aufbau:** Einleitungs-Sektion (Überschrift & Text) gefolgt von einem nativen **Advanced Tabs**-Element mit drei Reitern in dieser Reihenfolge: *Schüler & Jugendliche*, *Erwachsene*, *Business*. Jeder Reiter enthält als Inhalt eine echte Timeline (verbindende Linie, farbiger Punkt, Zeit-Badge, Titel, Beschreibung) statt reinem Fließtext.
+* **Reiterbeschriftung ändern:** Im Breakdance-Editor das Advanced-Tabs-Element auswählen → im Eigenschaften-Panel unter *Content → Tabs* den gewünschten Reiter öffnen → **Title** anpassen.
+* **Timeline-Eintrag bearbeiten:** In der Struktur-Ansicht in den gewünschten Reiter (Tab Content) hineinklicken → dort liegt ein Div „Timeline" mit einem Div „Timeline-Eintrag" pro Zeile. Jeder Eintrag enthält drei Elemente: Zeit-Text (Badge), Titel (Heading) und Beschreibung (Text) – alle drei direkt anklickbar und editierbar.
+* **Weiteren Reiter oder Timeline-Eintrag ergänzen:** Reiter über den Repeater-Button *„Add Tab"* im Tabs-Panel hinzufügen (z. B. für Sommercamp oder 50+); ein neuer Timeline-Eintrag lässt sich am einfachsten durch Duplizieren eines bestehenden „Timeline-Eintrag"-Divs in der Struktur-Ansicht erstellen.
+* **Unterschied zu `[kea_tagesablauf]`:** Diese Seite zeigt mehrere generische Beispieltage zur Orientierung für alle Zielgruppen. Der Shortcode `[kea_tagesablauf]` (siehe B) zeigt dagegen den individuellen Tagesablauf eines einzelnen Reiseziels, einer Schule oder eines Programms.
+
 
