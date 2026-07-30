@@ -803,7 +803,8 @@ Breakdance speichert Seiten- und Template-Baumstrukturen in `_breakdance_data` a
    * Der bestehende JSON-Baum muss zuerst ausgelesen, dekodiert, das neue Element in das `children`-Array an der exakten Zielposition eingefügt und anschließend wieder re-kodiert werden.
 
 2. **Erforderliche IO-TS Schema-Root-Schlüssel & Element-Properties:**
-   * Jeder Breakdance-Baum in `tree_json_string` MUSS auf oberster Ebene zwingend `root`, `_nextNodeId` (Integer, z. B. `6000`) und `status` (`"published"` oder `"draft"`) enthalten.
+   * Jeder Breakdance-Baum in `tree_json_string` MUSS auf oberster Ebene zwingend `root`, `_nextNodeId` (Integer, z. B. `6000`) und `status` enthalten.
+   * `status` ist IMMER das literale `"exported"` — unabhängig vom WordPress `post_status` (auch bei veröffentlichten Seiten). Dies ist ein interner Breakdance-Zustand, kein WordPress-Publikationsstatus. Werte wie `"published"` oder `"draft"` sind für diesen Schlüssel UNGÜLTIG und lassen den IO-TS-Decoder im Editor mit `document.tree`-Validierungsfehlern fehlschlagen (verifiziert anhand mehrerer funktionierender Seiten/Templates, die alle ausnahmslos `status: "exported"` verwenden).
    * Bei nativen Elementen wie `EssentialElements\Image2` MUSS das `image` Objekt die vollen Breakdance-Keys enthalten (`from => 'media_library'`, `lazy_load => true`, `media => ['id' => ..., 'url' => ..., 'filename' => ...]`).
    * Fehlen `_nextNodeId`, `status` oder unvollständige Element-Properties, schlägt Breakdance's TypeScript IO-TS Validator im Editor fehl (`Validation Error: IO-TS decoding failed`).
 
