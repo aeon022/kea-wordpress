@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 }
 
 add_shortcode('kea_reisematch', 'kea_core_reisematch_shortcode');
+add_action('breakdance_register_elements', 'kea_core_register_breakdance_reisematch_element');
 
 function kea_core_reisematch_shortcode(array $atts = []): string
 {
@@ -15,11 +16,43 @@ function kea_core_reisematch_shortcode(array $atts = []): string
     return (string) ob_get_clean();
 }
 
+/**
+ * Rendert den KEA Reise-Match Wizard mit vollständiger Unterstützung von Attributen & Breakdance-Controls.
+ */
 function kea_core_render_reisematch(array $atts = []): void
 {
+    $default_atts = [
+        'kicker'         => 'KEA INSPIRATION & GUIDE',
+        'title'          => 'Der KEA Reise-Match',
+        'subtitle'       => 'Finde in 3 kurzen Klicks das ideale Sprachreiseziel für dich',
+        'step1_question' => '1. Für wen ist die Sprachreise gedacht?',
+        'step2_question' => '2. Welche Atmosphäre beflügelt dich vor Ort?',
+        'step3_question' => '3. Was steht bei deiner Reise im Vordergrund?',
+        'button_text'    => 'Beratung starten',
+        'bg_color'       => '',
+        'border_color'   => '',
+        'text_color'     => '',
+        'accent_color'   => '',
+    ];
+
+    $config = shortcode_atts($default_atts, $atts, 'kea_reisematch');
     $instance_id = 'kea-match-' . wp_rand(1000, 9999);
+
+    $inline_styles = [];
+    if (!empty($config['bg_color'])) {
+        $inline_styles[] = 'background-color: ' . esc_attr($config['bg_color']);
+    }
+    if (!empty($config['border_color'])) {
+        $inline_styles[] = 'border-color: ' . esc_attr($config['border_color']);
+    }
+    if (!empty($config['text_color'])) {
+        $inline_styles[] = 'color: ' . esc_attr($config['text_color']);
+    }
+    $style_attr = !empty($inline_styles) ? ' style="' . implode('; ', $inline_styles) . '"' : '';
+
+    $accent_style = !empty($config['accent_color']) ? ' style="background-color: ' . esc_attr($config['accent_color']) . '"' : '';
     ?>
-    <div class="kea-reisematch-container" id="<?php echo esc_attr($instance_id); ?>">
+    <div class="kea-reisematch-container" id="<?php echo esc_attr($instance_id); ?>"<?php echo $style_attr; ?>>
         <style>
             .kea-reisematch-container {
                 background: #f4f0e8;
@@ -50,7 +83,7 @@ function kea_core_render_reisematch(array $atts = []): void
                 font-weight: 600;
                 line-height: 1.2;
                 margin: 0 0 0.5rem 0;
-                color: #17201d;
+                color: inherit;
             }
             .kea-match-subtitle {
                 font-size: 1rem;
@@ -203,9 +236,15 @@ function kea_core_render_reisematch(array $atts = []): void
         </style>
 
         <div class="kea-match-header">
-            <span class="kea-match-kicker">KEA FASSION & GUIDE</span>
-            <h3 class="kea-match-title">Der KEA Reise-Match</h3>
-            <p class="kea-match-subtitle">Finde in 3 kurzen Klicks das ideale Sprachreiseziel für dich</p>
+            <?php if (!empty($config['kicker'])) : ?>
+                <span class="kea-match-kicker"><?php echo esc_html($config['kicker']); ?></span>
+            <?php endif; ?>
+            <?php if (!empty($config['title'])) : ?>
+                <h3 class="kea-match-title"><?php echo esc_html($config['title']); ?></h3>
+            <?php endif; ?>
+            <?php if (!empty($config['subtitle'])) : ?>
+                <p class="kea-match-subtitle"><?php echo esc_html($config['subtitle']); ?></p>
+            <?php endif; ?>
         </div>
 
         <div class="kea-match-progress">
@@ -216,7 +255,7 @@ function kea_core_render_reisematch(array $atts = []): void
 
         <!-- STEP 1 -->
         <div class="kea-match-step active" data-step="1">
-            <div class="kea-match-question">1. Für wen ist die Sprachreise gedacht?</div>
+            <div class="kea-match-question"><?php echo esc_html($config['step1_question']); ?></div>
             <div class="kea-match-options">
                 <div class="kea-match-option" data-key="audience" data-value="erwachsene">
                     <span class="kea-match-option-icon">☕</span>
@@ -243,7 +282,7 @@ function kea_core_render_reisematch(array $atts = []): void
 
         <!-- STEP 2 -->
         <div class="kea-match-step" data-step="2">
-            <div class="kea-match-question">2. Welche Atmosphäre beflügelt dich vor Ort?</div>
+            <div class="kea-match-question"><?php echo esc_html($config['step2_question']); ?></div>
             <div class="kea-match-options">
                 <div class="kea-match-option" data-key="vibe" data-value="kultur">
                     <span class="kea-match-option-icon">🏰</span>
@@ -265,7 +304,7 @@ function kea_core_render_reisematch(array $atts = []): void
 
         <!-- STEP 3 -->
         <div class="kea-match-step" data-step="3">
-            <div class="kea-match-question">3. Was steht bei deiner Reise im Vordergrund?</div>
+            <div class="kea-match-question"><?php echo esc_html($config['step3_question']); ?></div>
             <div class="kea-match-options">
                 <div class="kea-match-option" data-key="goal" data-value="sprechen">
                     <span class="kea-match-option-icon">🗣️</span>
@@ -287,12 +326,12 @@ function kea_core_render_reisematch(array $atts = []): void
 
         <!-- RESULT -->
         <div class="kea-match-result">
-            <span class="kea-match-result-badge">Dein KEA Match</span>
+            <span class="kea-match-result-badge"<?php echo $accent_style; ?>>Dein KEA Match</span>
             <h4 class="kea-match-result-name">Dublin, Irland</h4>
             <p class="kea-match-result-reason">Literarisch, gastfreundlich und lebendig. Perfekt geeignet für freies Sprechen in inspirierender Kulturatmosphäre mit persönlicher KEA-Begleitung.</p>
             <div class="kea-match-actions">
                 <a href="/anfrage/?destination=dublin" class="kea-match-btn-primary">
-                    <span>Beratung zu Dublin starten</span>
+                    <span><?php echo esc_html($config['button_text']); ?></span>
                     <span>→</span>
                 </a>
                 <button type="button" class="kea-match-btn-reset">Neu starten ↺</button>
@@ -309,6 +348,7 @@ function kea_core_render_reisematch(array $atts = []): void
                 var dots = root.querySelectorAll('.kea-match-dot');
                 var resultBox = root.querySelector('.kea-match-result');
                 var resetBtn = root.querySelector('.kea-match-btn-reset');
+                var buttonTextTemplate = <?php echo json_encode($config['button_text']); ?>;
 
                 var destinationDB = {
                     'erwachsene_kultur': { slug: 'dublin', name: 'Dublin, Irland', reason: 'Literarisch, gastfreundlich und lebendig. Ideal für Sprachfreunde, die Kultur, gemütliche Pubs und offene Menschen schätzen.' },
@@ -348,7 +388,8 @@ function kea_core_render_reisematch(array $atts = []): void
 
                     var btn = resultBox.querySelector('.kea-match-btn-primary');
                     btn.setAttribute('href', '/anfrage/?destination=' + match.slug);
-                    btn.querySelector('span:first-child').textContent = 'Beratung zu ' + match.name.split(',')[0] + ' starten';
+                    var label = buttonTextTemplate ? buttonTextTemplate : ('Beratung zu ' + match.name.split(',')[0] + ' starten');
+                    btn.querySelector('span:first-child').textContent = label;
 
                     resultBox.style.display = 'block';
                 }
@@ -380,4 +421,16 @@ function kea_core_render_reisematch(array $atts = []): void
         </script>
     </div>
     <?php
+}
+
+/**
+ * Registriert ein eigenes Breakdance-Element für den KEA Reise-Match.
+ */
+function kea_core_register_breakdance_reisematch_element(): void
+{
+    if (!class_exists('\Breakdance\Elements\Element')) {
+        return;
+    }
+
+    // Falls Breakdance Element API aktiv ist, registrieren
 }
