@@ -10,7 +10,7 @@ Stand: 30. Juli 2026
 - [x] „Gut beraten“ am iPhone mit Zahl links und Text rechts ausrichten, sofern der Text ausreichend Platz behält.
 - [x] Hauptstrecke bei 390, 768, 1024 und 1440 Pixel prüfen: Startseite → Reiseziele → Reiseziel → Anfrage.
 - [x] Footer mobil mit zentrierter Gestaltung, umbrechbaren Links, gleichmäßigen Linkhöhen und kompakterem Spacing prüfen.
-- [ ] CTA-Hierarchie und Seitenrhythmus der Hauptstrecke prüfen.
+- [x] CTA-Hierarchie und Seitenrhythmus der Hauptstrecke prüfen.
 - [ ] Anfrageformular mobil einschließlich Fehler- und Erfolgszustand prüfen.
 - [ ] Magazinartikel auf sinnvolle interne Weiterwege prüfen.
 - [ ] Abschlusstest für Tastatur, Kontrast, Leerzustände und Performance durchführen.
