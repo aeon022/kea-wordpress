@@ -11,7 +11,7 @@ Stand: 30. Juli 2026
 - [x] Hauptstrecke bei 390, 768, 1024 und 1440 Pixel prüfen: Startseite → Reiseziele → Reiseziel → Anfrage.
 - [x] Footer mobil mit zentrierter Gestaltung, umbrechbaren Links, gleichmäßigen Linkhöhen und kompakterem Spacing prüfen.
 - [x] CTA-Hierarchie und Seitenrhythmus der Hauptstrecke prüfen.
-- [ ] Anfrageformular mobil einschließlich Fehler- und Erfolgszustand prüfen.
+- [x] Anfrageformular mobil einschließlich Validierung sowie konfiguriertem Fehler- und Erfolgszustand prüfen (echter Versand separat nach SMTP-Freigabe).
 - [ ] Magazinartikel auf sinnvolle interne Weiterwege prüfen.
 - [ ] Abschlusstest für Tastatur, Kontrast, Leerzustände und Performance durchführen.
 
