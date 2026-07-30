@@ -1,0 +1,30 @@
+/* Dateipfad: wp-content/plugins/kea-breakdance-elements/elements/Reise_Match/css.twig */
+{% if design.colors.background %}
+%%SELECTOR%% .kea-reisematch-container {
+    background-color: {{ design.colors.background }};
+}
+{% endif %}
+
+{% if design.colors.border %}
+%%SELECTOR%% .kea-reisematch-container {
+    border-color: {{ design.colors.border }};
+}
+{% endif %}
+
+{% if design.colors.text %}
+%%SELECTOR%% .kea-reisematch-container {
+    color: {{ design.colors.text }};
+}
+{% endif %}
+
+{% if design.colors.accent %}
+%%SELECTOR%% .kea-match-result-badge {
+    background-color: {{ design.colors.accent }};
+}
+{% endif %}
+
+{% if design.colors.button_bg %}
+%%SELECTOR%% .kea-match-btn-primary {
+    background-color: {{ design.colors.button_bg }};
+}
+{% endif %}
