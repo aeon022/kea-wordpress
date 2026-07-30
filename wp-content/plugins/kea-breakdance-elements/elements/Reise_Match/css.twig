@@ -23,16 +23,49 @@
 }
 {% endif %}
 
-{% if design.colors.button_bg %}
-%%SELECTOR%% .kea-match-btn-primary {
-    background-color: {{ design.colors.button_bg }} !important;
-    border-color: {{ design.colors.button_bg }} !important;
+/* Button Design Controls */
+{% if design.button_design.bg %}
+%%SELECTOR%% .kea-match-btn-primary,
+%%SELECTOR%% a.kea-match-btn-primary {
+    background-color: {{ design.button_design.bg }} !important;
 }
 {% endif %}
 
-{% if design.colors.button_text %}
+{% if design.button_design.bg_hover %}
+%%SELECTOR%% .kea-match-btn-primary:hover,
+%%SELECTOR%% a.kea-match-btn-primary:hover {
+    background-color: {{ design.button_design.bg_hover }} !important;
+}
+{% endif %}
+
+{% if design.button_design.text_color %}
 %%SELECTOR%% .kea-match-btn-primary,
+%%SELECTOR%% a.kea-match-btn-primary,
+%%SELECTOR%% .kea-match-btn-primary *,
 %%SELECTOR%% .kea-match-btn-primary span {
-    color: {{ design.colors.button_text }} !important;
+    color: {{ design.button_design.text_color }} !important;
+}
+{% endif %}
+
+{% if design.button_design.text_hover %}
+%%SELECTOR%% .kea-match-btn-primary:hover,
+%%SELECTOR%% a.kea-match-btn-primary:hover,
+%%SELECTOR%% .kea-match-btn-primary:hover *,
+%%SELECTOR%% .kea-match-btn-primary:hover span {
+    color: {{ design.button_design.text_hover }} !important;
+}
+{% endif %}
+
+{% if design.button_design.border_color %}
+%%SELECTOR%% .kea-match-btn-primary,
+%%SELECTOR%% a.kea-match-btn-primary {
+    border-color: {{ design.button_design.border_color }} !important;
+}
+{% endif %}
+
+{% if design.button_design.radius.number %}
+%%SELECTOR%% .kea-match-btn-primary,
+%%SELECTOR%% a.kea-match-btn-primary {
+    border-radius: {{ design.button_design.radius.number }}{{ design.button_design.radius.unit|default('px') }} !important;
 }
 {% endif %}

@@ -159,11 +159,11 @@ class ReiseMatch extends \Breakdance\Elements\Element
     public static function contentControls(): array
     {
         return [
-            c('header', 'Header & Button', [
+            c('header', 'Header & Button Text', [
                 c('kicker', 'Kicker Text', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
                 c('title', 'Titel Überschrift', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
                 c('subtitle', 'Untertitel', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
-                c('button_text', 'Button Text', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
+                c('button_text', 'Button Beschriftung', [], ['type' => 'text', 'layout' => 'vertical'], false, false, []),
             ], ['type' => 'section'], false, false, []),
 
             c('step1', 'Schritt 1: Zielgruppe & Icons', [
@@ -220,19 +220,28 @@ class ReiseMatch extends \Breakdance\Elements\Element
     public static function designControls(): array
     {
         return [
-            c('colors', 'Farben', [
+            c('colors', 'Farben Container', [
                 c('background', 'Hintergrund Container', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
                 c('border', 'Rahmen Container', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('text', 'Textfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('text', 'Textfarbe Container', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
                 c('accent', 'Akzent Badge', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('button_bg', 'Button Hintergrund', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
-                c('button_text', 'Button Textfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
             ], ['type' => 'section'], false, false, []),
-            c('typography', 'Typografie', [
+
+            c('button_design', 'Button Design (Haupt-CTA)', [
+                c('bg', 'Hintergrund', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('bg_hover', 'Hintergrund Hover', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('text_color', 'Textfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('text_hover', 'Textfarbe Hover', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('border_color', 'Rahmenfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
+                c('radius', 'Eckenabrundung', [], ['type' => 'unit', 'layout' => 'inline'], false, false, []),
+                getPresetSection('EssentialElements\\typography', 'Button Typografie', 'typography', ['type' => 'popout']),
+                getPresetSection('EssentialElements\\spacing_padding_all', 'Button Padding', 'padding', ['type' => 'popout']),
+            ], ['type' => 'section'], false, false, []),
+
+            c('typography', 'Typografie Texte', [
                 getPresetSection('EssentialElements\\typography', 'Kicker', 'kicker', ['type' => 'popout']),
                 getPresetSection('EssentialElements\\typography', 'Überschrift', 'title', ['type' => 'popout']),
                 getPresetSection('EssentialElements\\typography', 'Untertitel', 'subtitle', ['type' => 'popout']),
-                getPresetSection('EssentialElements\\typography', 'Button Text', 'button', ['type' => 'popout']),
             ], ['type' => 'section'], false, false, []),
         ];
     }
