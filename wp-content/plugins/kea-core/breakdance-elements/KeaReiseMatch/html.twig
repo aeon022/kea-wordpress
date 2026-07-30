@@ -1,0 +1,104 @@
+<div class="kea-reisematch-container" id="kea-match-{{ element_id }}">
+    <div class="kea-match-header">
+        {% if content.content.kicker %}
+            <span class="kea-match-kicker">{{ content.content.kicker }}</span>
+        {% endif %}
+        {% if content.content.title %}
+            <h3 class="kea-match-title">{{ content.content.title }}</h3>
+        {% endif %}
+        {% if content.content.subtitle %}
+            <p class="kea-match-subtitle">{{ content.content.subtitle }}</p>
+        {% endif %}
+    </div>
+
+    <div class="kea-match-progress">
+        <div class="kea-match-dot active" data-step="1"></div>
+        <div class="kea-match-dot" data-step="2"></div>
+        <div class="kea-match-dot" data-step="3"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="kea-match-step active" data-step="1">
+        <div class="kea-match-question">{{ content.content.step1_question|default('1. Für wen ist die Sprachreise gedacht?') }}</div>
+        <div class="kea-match-options">
+            <div class="kea-match-option" data-key="audience" data-value="erwachsene">
+                <span class="kea-match-option-icon">☕</span>
+                <span class="kea-match-option-label">Erwachsene</span>
+                <span class="kea-match-option-desc">Kurse, Kultur & Auszeit für Erwachsene</span>
+            </div>
+            <div class="kea-match-option" data-key="audience" data-value="schueler">
+                <span class="kea-match-option-icon">🎓</span>
+                <span class="kea-match-option-label">Schüler & Jugend</span>
+                <span class="kea-match-option-desc">Betreute Camps & Ferienkurse</span>
+            </div>
+            <div class="kea-match-option" data-key="audience" data-value="lehrer">
+                <span class="kea-match-option-icon">📘</span>
+                <span class="kea-match-option-label">Lehrkräfte</span>
+                <span class="kea-match-option-desc">Methodik & Sprachfortbildung</span>
+            </div>
+            <div class="kea-match-option" data-key="audience" data-value="business">
+                <span class="kea-match-option-icon">💼</span>
+                <span class="kea-match-option-label">Business & Profis</span>
+                <span class="kea-match-option-desc">Intensivcoaching für Beruf & Karriere</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="kea-match-step" data-step="2">
+        <div class="kea-match-question">{{ content.content.step2_question|default('2. Welche Atmosphäre beflügelt dich vor Ort?') }}</div>
+        <div class="kea-match-options">
+            <div class="kea-match-option" data-key="vibe" data-value="kultur">
+                <span class="kea-match-option-icon">🏰</span>
+                <span class="kea-match-option-label">Kultur & Pubs</span>
+                <span class="kea-match-option-desc">Historische Gassen & lebendige Cafés</span>
+            </div>
+            <div class="kea-match-option" data-key="vibe" data-value="meer">
+                <span class="kea-match-option-icon">🌊</span>
+                <span class="kea-match-option-label">Meer & Sonne</span>
+                <span class="kea-match-option-desc">Küstenflair, Strand & mediterranes Leben</span>
+            </div>
+            <div class="kea-match-option" data-key="vibe" data-value="metropole">
+                <span class="kea-match-option-icon">🏙️</span>
+                <span class="kea-match-option-label">Weltstadt-Flair</span>
+                <span class="kea-match-option-desc">Große Metropole, Theater & Shopping</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="kea-match-step" data-step="3">
+        <div class="kea-match-question">{{ content.content.step3_question|default('3. Was steht bei deiner Reise im Vordergrund?') }}</div>
+        <div class="kea-match-options">
+            <div class="kea-match-option" data-key="goal" data-value="sprechen">
+                <span class="kea-match-option-icon">🗣️</span>
+                <span class="kea-match-option-label">Freies Sprechen</span>
+                <span class="kea-match-option-desc">Hemmungen abbauen & Land erleben</span>
+            </div>
+            <div class="kea-match-option" data-key="goal" data-value="zertifikat">
+                <span class="kea-match-option-icon">📜</span>
+                <span class="kea-match-option-label">Zertifikat & Prüfung</span>
+                <span class="kea-match-option-desc">IELTS, Cambridge, DELE oder DELF</span>
+            </div>
+            <div class="kea-match-option" data-key="goal" data-value="intensiv">
+                <span class="kea-match-option-icon">⚡</span>
+                <span class="kea-match-option-label">Intensivfortbildung</span>
+                <span class="kea-match-option-desc">Maximale Lernfortschritte in kurzer Zeit</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="kea-match-result">
+        <span class="kea-match-result-badge">Dein KEA Match</span>
+        <h4 class="kea-match-result-name">Dublin, Irland</h4>
+        <p class="kea-match-result-reason">Literarisch, gastfreundlich und lebendig. Perfekt geeignet für freies Sprechen in inspirierender Kulturatmosphäre mit persönlicher KEA-Begleitung.</p>
+        <div class="kea-match-actions">
+            <a href="/anfrage/?destination=dublin" class="kea-match-btn-primary">
+                <span>{{ content.content.button_text|default('Beratung starten') }}</span>
+                <span>→</span>
+            </a>
+            <button type="button" class="kea-match-btn-reset">Neu starten ↺</button>
+        </div>
+    </div>
+</div>
