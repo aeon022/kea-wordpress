@@ -802,9 +802,10 @@ Breakdance speichert Seiten- und Template-Baumstrukturen in `_breakdance_data` a
    * Beim Hinzufügen von Elementen zu bestehenden Seiten darf NIEMALS der gesamte `_breakdance_data` Baum durch synthetische Arrays oder Teilbäume ersetzt werden.
    * Der bestehende JSON-Baum muss zuerst ausgelesen, dekodiert, das neue Element in das `children`-Array an der exakten Zielposition eingefügt und anschließend wieder re-kodiert werden.
 
-2. **Erforderliche IO-TS Schema-Root-Schlüssel:**
+2. **Erforderliche IO-TS Schema-Root-Schlüssel & Element-Properties:**
    * Jeder Breakdance-Baum in `tree_json_string` MUSS auf oberster Ebene zwingend `root`, `_nextNodeId` (Integer, z. B. `6000`) und `status` (`"published"` oder `"draft"`) enthalten.
-   * Fehlt `_nextNodeId` oder `status`, schlägt Breakdance's TypeScript IO-TS Validator im Editor fehlschlagend fehl (`Validation Error: IO-TS decoding failed`).
+   * Bei nativen Elementen wie `EssentialElements\Image2` MUSS das `image` Objekt die vollen Breakdance-Keys enthalten (`from => 'media_library'`, `lazy_load => true`, `media => ['id' => ..., 'url' => ..., 'filename' => ...]`).
+   * Fehlen `_nextNodeId`, `status` oder unvollständige Element-Properties, schlägt Breakdance's TypeScript IO-TS Validator im Editor fehl (`Validation Error: IO-TS decoding failed`).
 
 3. **Prüf- und Verifikations-Workflow:**
    * Für `_breakdance_template_settings` ist zwingend `Breakdance\Data\set_meta()` zu verwenden.
