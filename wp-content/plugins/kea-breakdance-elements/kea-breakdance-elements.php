@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * Plugin Name: KEA Breakdance Elements
  * Description: Eigene dynamische Elemente für die KEA-Ausgabe in Breakdance.
- * Version: 0.4.6
+ * Version: 0.4.8
  * Requires Plugins: breakdance
  * Requires PHP: 8.2
  */
@@ -14,7 +14,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KEA_BREAKDANCE_ELEMENTS_VERSION', '0.4.6');
+define('KEA_BREAKDANCE_ELEMENTS_VERSION', '0.4.8');
+
+function kea_breakdance_url(string $url): string
+{
+    $url = trim($url);
+
+    return str_starts_with($url, '/') && !str_starts_with($url, '//') ? home_url($url) : $url;
+}
 
 add_action('breakdance_loaded', static function (): void {
     \Breakdance\ElementStudio\registerSaveLocation(

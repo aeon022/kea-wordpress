@@ -21,6 +21,7 @@ Dieses Plugin registriert projektspezifische Content Types, Taxonomien und klein
 - Interessen
 - Unterkunftsarten
 - leere Magazin-Kategorien als gültige Archive
+- Sammelbegriffe in der Suche für Reiseziele, Partnerschulen, Programme und Erfahrungen
 - Anfrage-Kontext
 - versionierte ACF-Feldgruppen
 

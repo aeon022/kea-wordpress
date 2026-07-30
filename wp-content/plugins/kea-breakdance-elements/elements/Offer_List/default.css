@@ -74,12 +74,14 @@ body.post-type-archive-kea_program .kea-offer-list__title { font-size: var(--hfs
 }
 
 .kea-offer-list__name {
+    display: block;
     margin: 0 0 .5rem;
     font-size: clamp(1.25rem, 2vw, 1.9rem);
     line-height: 1.05;
 }
 
 .kea-offer-list__text {
+    display: block;
     margin: 0;
     color: var(--kea-offer-list-muted);
 }

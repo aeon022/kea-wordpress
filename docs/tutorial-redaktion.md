@@ -215,14 +215,15 @@ Pfad: **Breakdance → Templates → Main Header → Edit in Breakdance → Such
 }
 
 %%SELECTOR%% .search-form__lightbox-container {
-  width: min(calc(100% - 2rem), 48rem) !important;
-  max-width: 48rem;
+  width: min(calc(100% - 2rem), 64rem) !important;
+  max-width: 64rem;
+  margin-inline: auto;
 }
 ```
 
 `%%SELECTOR%%` ist ein Breakdance-Platzhalter. Beim Speichern ersetzt Breakdance ihn automatisch durch den eindeutigen Selektor des ausgewählten Suchformulars. Die Regel wirkt dadurch nur auf dieses Element.
 
-Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Der Leitsatz wird über `::after` zwischen Logo und Suchleiste positioniert und verwendet die globale Editorial-Schrift. Die Container-Regel begrenzt das Suchfeld auf 48 rem. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Logo und Leitsatz sind hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
+Die lokale schwarze Logo-Datei wird über `filter: brightness(0) invert(1)` im dunklen Overlay weiß dargestellt. Der Leitsatz wird über `::after` zwischen Logo und Suchleiste positioniert und verwendet die globale Editorial-Schrift. Die Container-Regel begrenzt das Suchfeld auf 64 rem und zentriert es im Overlay. Wird das Logo später in der Mediathek ersetzt, muss die URL in `background` ebenfalls angepasst werden. Logo und Leitsatz sind hier dekorativ und nicht anklickbar; Navigation und Suchfunktion bleiben unverändert.
 
 **Main Header — Backup Editorial v1** ist die gesicherte vorherige Variante. Sie ist in Breakdance deaktiviert und wird nicht ausgeliefert. Erst diese Vorlage aktivieren, wenn der aktuelle Header ersetzt werden soll.
 
@@ -359,7 +360,14 @@ Alle vorhandenen Bereiche sind dynamisch. Fehlen Daten, wird der jeweilige Berei
 
 ### Suche und leere Ergebnisse
 
-Pfad: **Breakdance → Templates → „Fallback: Search Results“**. Dort werden Überschrift, Einleitung, Ergebnis-Karten und der Hinweis bei null Treffern gemeinsam gepflegt. Die Ergebnisliste übernimmt automatisch den aktuellen WordPress-Suchbegriff. Der leere Zustand enthält eine neue Suche sowie Links zu Reiseziele, Magazin und Kontakt.
+Pfad: **Breakdance → Templates → „Fallback: Search Results“**. Dort werden Kicker, Überschrift, Einleitung, neue Suche, Ergebnis-Karten und der Hinweis bei null Treffern gemeinsam gepflegt. Die Überschrift übernimmt automatisch den aktuellen WordPress-Suchbegriff. Der leere Zustand enthält eine eigene neue Suche sowie Links zu Reiseziele, Magazin und Kontakt.
+
+Die Suche unterscheidet zwei Fälle:
+
+- **Sammelbegriffe:** „Reiseziele“, „Partnerschulen“, „Programme“ und „Erfahrungen“ sowie ihre hinterlegten Singularformen zeigen alle veröffentlichten Einträge dieses Inhaltstyps alphabetisch.
+- **Normale Suchbegriffe:** Namen und Themen wie „Dublin“ werden über die native WordPress-Suche in den öffentlichen Inhalten gesucht und dürfen gemischte Treffertypen liefern.
+
+Diese Sammelbegriffe werden technisch im KEA-Core gepflegt, nicht im Breakdance-Template. Die Suche verwendet bewusst keine externe Such-Engine, keine automatische Rechtschreibkorrektur und keine unscharfe Trefferlogik.
 
 Leere Reiseziel-Filter werden vom dynamischen Element **Destination List** ausgegeben. Text und Rücksetzlink entstehen aus den WordPress-Daten; nur die visuelle Darstellung wird im Element gepflegt. Keine zweite manuelle Leerzustands-Sektion anlegen.
 

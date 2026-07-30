@@ -1,6 +1,19 @@
 # To-do – KEA-Redesign
 
-Stand: 29. Juli 2026
+Stand: 30. Juli 2026
+
+## UI/UX-Finetuning
+
+- [x] Interne Links nach der Übertragung unter `/wp7/` geprüft.
+- [x] Startseiten-Header am iPhone über die volle Breite ausgeben und auf dem Hero positionieren, ohne sichtbaren Seitenhintergrund.
+- [x] „Ausgewählte Programme“ am iPhone lesbar ordnen und Textüberschneidungen verhindern.
+- [x] „Gut beraten“ am iPhone mit Zahl links und Text rechts ausrichten, sofern der Text ausreichend Platz behält.
+- [x] Hauptstrecke bei 390, 768, 1024 und 1440 Pixel prüfen: Startseite → Reiseziele → Reiseziel → Anfrage.
+- [x] Footer mobil mit zentrierter Gestaltung, umbrechbaren Links, gleichmäßigen Linkhöhen und kompakterem Spacing prüfen.
+- [ ] CTA-Hierarchie und Seitenrhythmus der Hauptstrecke prüfen.
+- [ ] Anfrageformular mobil einschließlich Fehler- und Erfolgszustand prüfen.
+- [ ] Magazinartikel auf sinnvolle interne Weiterwege prüfen.
+- [ ] Abschlusstest für Tastatur, Kontrast, Leerzustände und Performance durchführen.
 
 ## Nächste Umsetzung – KEA-Redesign
 

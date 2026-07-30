@@ -16,7 +16,7 @@ $title = trim((string) ($content['title'] ?? ''));
     <?php if ($title !== '') : ?><h1><?php echo esc_html($title); ?></h1><?php endif; ?>
     <?php if (($content['text'] ?? '') !== '') : ?><p class="kea-home-hero__text"><?php echo esc_html((string) $content['text']); ?></p><?php endif; ?>
     <div class="kea-home-hero__actions">
-        <a class="kea-home-hero__primary" href="<?php echo esc_url((string) ($content['primary_url'] ?? '/reiseziele/')); ?>"><?php echo esc_html((string) ($content['primary_label'] ?? 'Reiseziele entdecken')); ?></a>
-        <a class="kea-home-hero__secondary" href="<?php echo esc_url((string) ($content['secondary_url'] ?? '/anfrage/')); ?>"><?php echo esc_html((string) ($content['secondary_label'] ?? 'Beratung')); ?></a>
+        <a class="kea-home-hero__primary" href="<?php echo esc_url(kea_breakdance_url((string) ($content['primary_url'] ?? '/reiseziele/'))); ?>"><?php echo esc_html((string) ($content['primary_label'] ?? 'Reiseziele entdecken')); ?></a>
+        <a class="kea-home-hero__secondary" href="<?php echo esc_url(kea_breakdance_url((string) ($content['secondary_url'] ?? '/anfrage/'))); ?>"><?php echo esc_html((string) ($content['secondary_label'] ?? 'Beratung')); ?></a>
     </div>
 </div>
