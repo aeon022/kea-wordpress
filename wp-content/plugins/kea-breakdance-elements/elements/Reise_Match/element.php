@@ -234,8 +234,7 @@ class ReiseMatch extends \Breakdance\Elements\Element
                 c('text_hover', 'Textfarbe Hover', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
                 c('border_color', 'Rahmenfarbe', [], ['type' => 'color', 'layout' => 'vertical'], false, false, []),
                 c('radius', 'Eckenabrundung', [], ['type' => 'unit', 'layout' => 'inline'], false, false, []),
-                getPresetSection('EssentialElements\\typography', 'Button Typografie', 'typography', ['type' => 'popout']),
-                getPresetSection('EssentialElements\\spacing_padding_all', 'Button Padding', 'padding', ['type' => 'popout']),
+                getPresetSection('EssentialElements\\typography', 'Button Typografie', 'button_typo', ['type' => 'popout']),
             ], ['type' => 'section'], false, false, []),
 
             c('typography', 'Typografie Texte', [
