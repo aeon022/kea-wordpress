@@ -2,7 +2,7 @@
 
 Stand: 29. Juli 2026
 
-Diese Checkliste trennt den intern geprüften technischen Stand von Punkten, die Kundendaten, rechtliche Freigabe oder die spätere Pilotabnahme benötigen. Ein Launch erfolgt erst, wenn alle als **Blocker** markierten Punkte erledigt sind.
+Diese Checkliste trennt den intern geprüften technischen Stand von Punkten, die Kundendaten, rechtliche Freigabe oder die spätere Pilotabnahme benötigen. Ein Launch erfolgt erst, wenn alle als **Blocker** markierten Punkte erledigt sind. Für die kundenfreundliche Zusammenfassung siehe [`kunde-status-todo.md`](kunde-status-todo.md).
 
 ## 1. Aktueller technischer Stand
 

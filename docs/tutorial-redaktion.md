@@ -455,4 +455,18 @@ Eigenständige Seite mit einem typischen Tagesablauf je Zielgruppe, ausschließl
 * **Weiteren Reiter oder Timeline-Eintrag ergänzen:** Reiter über den Repeater-Button *„Add Tab"* im Tabs-Panel hinzufügen (z. B. für Sommercamp oder 50+); ein neuer Timeline-Eintrag lässt sich am einfachsten durch Duplizieren eines bestehenden „Timeline-Eintrag"-Divs in der Struktur-Ansicht erstellen.
 * **Unterschied zu `[kea_tagesablauf]`:** Diese Seite zeigt mehrere generische Beispieltage zur Orientierung für alle Zielgruppen. Der Shortcode `[kea_tagesablauf]` (siehe B) zeigt dagegen den individuellen Tagesablauf eines einzelnen Reiseziels, einer Schule oder eines Programms.
 
+## 17. Baustatus der fünf strategischen Differentioren
+
+`docs/differentiators.md` beschreibt fünf geplante Alleinstellungsmerkmale gegenüber Mitbewerbern. Aktueller Stand:
+
+| # | Feature | Status | Wo dokumentiert |
+| --- | --- | --- | --- |
+| 1 | Gegenüberstellung „Plattform vs. KEA Boutique" (Trust-Design-Block) | **Nicht gebaut** | Idee, siehe `docs/ideen-backlog.md` |
+| 2 | KEA Reise-Match (Inspirations-Wizard) | **Live** (`/reise-match/`) | Abschnitt 15A oben |
+| 3 | Redaktionelle „KEA-Einschätzung" (Expertise-Box) | **Gebaut** — Felder `kea_destination_kea_recommendation` und `kea_school_kea_assessment` sind als eigene redaktionelle Abschnitte in die Templates verdrahtet | Abschnitt 2 („KEA-Empfehlung") und Abschnitt 3 („KEA-Einschätzung") oben |
+| 4 | Tagesablauf / Beispielwoche (Timeline) | **Gebaut** — als Shortcode je Datensatz und als eigenständige Übersichtsseite | Abschnitt 15B und 16 oben |
+| 5 | Favoriten & Merkliste ohne Zwangsanmeldung (localStorage) | **Nicht gebaut** | Idee, siehe `docs/ideen-backlog.md` |
+
+Zwei der fünf Differentioren (2 und 4) sind bereits live; Nummer 3 ist über die ACF-Felder ebenfalls umgesetzt. Nummer 1 und 5 sind noch offene Ideen.
+
 

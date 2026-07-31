@@ -2,7 +2,7 @@
 
 Stand: 29. Juli 2026
 
-Dieses Dokument beschreibt den technisch geprüften Stand des KEA-Redesigns. Es ist die Arbeitsgrundlage für datensparsame Umsetzung und Betrieb. Die öffentliche Datenschutzerklärung muss vor dem Livegang von KEA rechtlich freigegeben und bei Änderungen an Diensten oder Prozessen aktualisiert werden.
+Dieses Dokument beschreibt den technisch geprüften Stand des KEA-Redesigns. Es ist die Arbeitsgrundlage für datensparsame Umsetzung und Betrieb. Die öffentliche Datenschutzerklärung muss vor dem Livegang von KEA rechtlich freigegeben und bei Änderungen an Diensten oder Prozessen aktualisiert werden. Die konkreten Freigabepunkte für KEA sind zusätzlich kompakt in [`kunde-status-todo.md`](kunde-status-todo.md) zusammengefasst.
 
 ## 1. Grundsatz
 

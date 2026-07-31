@@ -2,6 +2,8 @@
 
 Dieses Dokument beschreibt die 5 strategischen Alleinstellungsmerkmale (Differentioren), mit denen sich KEA Sprachreisen visuell, inhaltlich und funktional von großen Buchungsportalen und Massenanbietern (EF, ESL, Sprachcaffe etc.) abhebt.
 
+> **Baustatus:** Zwei der fünf sind bereits live, eines ist über ACF-Felder umgesetzt, zwei sind noch offene Ideen. Die aktuelle Tabelle mit Verweisen auf die jeweilige Umsetzung steht in [`tutorial-redaktion.md`, Abschnitt 17](tutorial-redaktion.md#17-baustatus-der-fünf-strategischen-differentioren). Die ursprüngliche Beschreibung unten bleibt als konzeptionelle Referenz erhalten.
+
 ---
 
 ## 1. Gegenüberstellung „Plattform vs. KEA Boutique“ (Trust-Design-Block)

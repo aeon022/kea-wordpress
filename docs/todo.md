@@ -2,6 +2,8 @@
 
 Stand: 30. Juli 2026
 
+Granulare interne Arbeitsliste. Für die kundenfreundliche Zusammenfassung siehe [`kunde-status-todo.md`](kunde-status-todo.md).
+
 ## UI/UX-Finetuning
 
 - [x] Interne Links nach der Übertragung unter `/wp7/` geprüft.

@@ -104,7 +104,7 @@ Source of Truth
 
 Die zentrale fachliche und strategische Projektbeschreibung liegt in:
 
-MASTER_CONCEPT.md
+Master-Konzept.md
 
 Vor größeren Entscheidungen muss diese Datei gelesen werden.
 
@@ -117,7 +117,7 @@ Wenn eine technische Entscheidung dem Master-Konzept widerspricht:
 
 Priorität der Informationsquellen:
 
-MASTER_CONCEPT.md
+Master-Konzept.md
 → bestehender Code
 → vorhandene ACF-JSON-Dateien
 → bestehende WordPress-Struktur
@@ -1073,7 +1073,7 @@ Sprache & Aktivitäten
 
 Primärer CTA:
 
-Kostenlos beraten lassen
+Kostenlos beraten lassen (umgesetzt als „Beratung starten →", siehe docs/tutorial-redaktion.md)
 
 ⸻
 
@@ -1155,6 +1155,8 @@ Zu berücksichtigen:
 ⸻
 
 Nicht in Phase 1 bauen
+
+Siehe auch docs/ideen-backlog.md für die vollständige, konsolidierte Liste inklusive Produkt-Ideen für nach dem Launch.
 
 Nicht ohne ausdrückliche Freigabe entwickeln:
 

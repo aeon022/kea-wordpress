@@ -225,7 +225,9 @@ Gruppenreisen
 
 Die URLs müssen feststehen, bevor Inhalte migriert werden.
 
-Beispiel:
+> **Aktualisiert:** Die hier ursprünglich skizzierten verschachtelten URLs (`/reiseziele/englisch/irland/dublin/`) wurden **nicht** so umgesetzt. Verbindlich ist die flache Struktur in [`docs/url-structure.md`](docs/url-structure.md) (`/reiseziele/{slug}/`); eine verschachtelte Variante wird erst nach Freigabe der Redirect-Matrix umgesetzt. Der `/kurse/`-Zweig wurde ebenfalls nicht als eigener URL-Ast gebaut (Kursarten sind eine Taxonomie, siehe `AGENTS.md`).
+
+Ursprünglich skizziertes Beispiel (siehe Korrektur oben):
 
 ```text
 /reiseziele/
@@ -280,6 +282,8 @@ Das ist der wichtigste technische Schritt.
 
 ## **3.1 Custom Post Types**
 
+> **Aktualisiert:** Umgesetzt wurden die `kea_`-präfigierten Slugs aus `AGENTS.md`/`docs/content-model.md` (`kea_destination`, `kea_school`, `kea_program`, `kea_testimonial`, `kea_team_member`), nicht die unpräfigierten Namen unten.
+
 Empfohlen:
 
 ```text
@@ -297,9 +301,11 @@ accommodation
 faq
 ```
 
-FAQs können anfangs auch als strukturierte ACF-Repeater gepflegt werden. Erst bei starker Wiederverwendung lohnt ein eigener Post Type.
+FAQs können anfangs auch als strukturierte ACF-Repeater gepflegt werden. Erst bei starker Wiederverwendung lohnt ein eigener Post Type. Umgesetzt wurde stattdessen ein ACF-Feld (`kea_destination_faq`) direkt am Reiseziel; ein eigener `accommodation`-Post-Type wurde nicht gebaut.
 
 ## **3.2 Taxonomien**
+
+> **Aktualisiert:** Umgesetzt mit `kea_`-Präfix (`kea_language`, `kea_country`, `kea_target_group`, `kea_course_type`, `kea_age_group`, `kea_interest`, `kea_accommodation_type`), siehe `AGENTS.md`.
 
 ```text
 language
@@ -792,7 +798,9 @@ Sondern:
 
 Erst nach stabilen Daten und Templates.
 
-## **Reise-Finder Version 1**
+> **Aktualisiert:** Umgesetzt als „KEA Reise-Match" (`/reise-match/`, 3-Schritt-Wizard: Zielgruppe → Atmosphäre → Kursart) — bereits vor Launch live, nicht wie hier ursprünglich als spätere Phase-9-Aufgabe mit den Fragen unten geplant. Details in `docs/differentiators.md` und `docs/tutorial-redaktion.md`.
+
+## **Reise-Finder Version 1** (ursprüngliche Planung, so nicht umgesetzt)
 
 Fragen:
 
@@ -991,6 +999,8 @@ Backup
 * * *
 
 # **Was wir bewusst später bauen**
+
+Siehe auch `docs/ideen-backlog.md` für die vollständige, konsolidierte Liste inklusive Produkt-Ideen für nach dem Launch.
 
 Diese Funktionen gehören nicht in die erste Ausbaustufe:
 
